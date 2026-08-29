@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="is-loading">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CarRental — Cars on Rent</title>
+    <title>CarRental — Luxury Cars on Rent</title>
+
+    <!-- Critical image preloads: these start downloading immediately -->
+    <link rel="preload" as="image" href="assets/main_car.png" fetchpriority="high" />
+    <link rel="preload" as="image" href="assets/car_image1.png" />
+    <link rel="preload" as="image" href="assets/car_image4.png" />
+    <link rel="preload" as="image" href="assets/car_image3.png" />
+    <link rel="preload" as="image" href="assets/banner_car_image.png" />
+    <link rel="preload" as="image" href="assets/user_profile.png" />
+    <link rel="preload" as="image" href="assets/testimonial_image_1.png" />
+    <link rel="preload" as="image" href="assets/testimonial_image_2.png" />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -126,10 +137,143 @@
                 animation: none !important;
             }
         }
+
+
+        /* =========================================================
+           PAGE LOADER / IMAGE PRELOADING
+        ========================================================== */
+        html.is-loading,
+        html.is-loading body {
+            overflow: hidden;
+        }
+
+        #page-loader {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f5f9;
+            opacity: 1;
+            visibility: visible;
+            transition:
+                opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                visibility 0.55s;
+        }
+
+        #page-loader.is-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .loader-logo {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: #0f172a;
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+
+        .loader-logo-mark {
+            display: grid;
+            width: 31px;
+            height: 31px;
+            place-items: center;
+            border-radius: 9px;
+            background: #2563eb;
+            color: white;
+        }
+
+        .loader-spinner {
+            width: 34px;
+            height: 34px;
+            margin-top: 28px;
+            border: 3px solid #dbeafe;
+            border-top-color: #2563eb;
+            border-radius: 50%;
+            animation: loaderSpin 0.8s linear infinite;
+        }
+
+        .loader-text {
+            margin-top: 14px;
+            color: #64748b;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .loader-progress {
+            width: 170px;
+            height: 3px;
+            margin-top: 12px;
+            overflow: hidden;
+            border-radius: 999px;
+            background: #e2e8f0;
+        }
+
+        .loader-progress-bar {
+            width: 0%;
+            height: 100%;
+            border-radius: inherit;
+            background: #2563eb;
+            transition: width 0.25s ease;
+        }
+
+        @keyframes loaderSpin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .loader-spinner {
+                animation: none;
+            }
+        }
     </style>
 </head>
 
 <body class="bg-white text-slate-900 antialiased">
+
+    <!-- =========================================================
+         PAGE LOADER
+         The page stays hidden until the required images are loaded.
+    ========================================================== -->
+    <div id="page-loader" role="status" aria-live="polite" aria-label="Loading page">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span class="loader-logo-mark">
+                    <svg viewBox="0 0 24 24" class="h-4 w-4 fill-none stroke-current stroke-[2.2]" aria-hidden="true">
+                        <path d="M4 7h12l3 4v5H5a2 2 0 0 1-2-2V9a2 2 0 0 1 1-2Z" />
+                        <path d="M7 16v2M17 16v2M4 12h16" />
+                    </svg>
+                </span>
+                <span>CarRental</span>
+            </div>
+
+            <div class="loader-spinner" aria-hidden="true"></div>
+
+            <p id="loader-text" class="loader-text">
+                Loading cars...
+            </p>
+
+            <div class="loader-progress" aria-hidden="true">
+                <div id="loader-progress-bar" class="loader-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- =========================
        HEADER
@@ -185,7 +329,7 @@
             <div class="mx-auto max-w-[1200px] px-5 pb-20 pt-24 lg:px-0 lg:pb-24 lg:pt-32">
                 <h1
                     class="hero-load text-center text-[30px] font-extrabold tracking-[-0.04em] sm:text-[34px] lg:text-[38px]">
-                    Cars on Rent
+                    Luxury cars on Rent
                 </h1>
 
                 <!-- Search / booking bar -->
@@ -318,7 +462,7 @@
                 <div
                     class="relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 via-blue-500 to-blue-300 px-7 py-8 text-white sm:px-10 sm:py-8">
                     <div class="relative z-10 max-w-[520px]">
-                        <h2 data-reveal="left" class="text-[20px] font-extrabold sm:text-[22px]">Do You Own a
+                        <h2 data-reveal="left" class="text-[20px] font-extrabold sm:text-[22px]">Do You Own a Luxury
                             Car?</h2>
                         <p data-reveal="left" style="--reveal-delay: 100ms"
                             class="mt-1 max-w-[500px] text-[10px] leading-[1.6] text-blue-50 sm:text-[11px]">
@@ -584,6 +728,154 @@
 
             revealElements.forEach((element) => observer.observe(element));
         });
+    </script>
+
+
+    <script>
+        /*
+         * =========================================================
+         * CARRENTAL IMAGE PRELOADER
+         * =========================================================
+         *
+         * GitHub Pages can render the HTML before larger images have
+         * finished downloading. This loader keeps the page hidden
+         * until the local image assets are ready.
+         *
+         * It also:
+         * - preloads images referenced by <img>
+         * - handles browser-cache hits
+         * - shows loading progress
+         * - has a safety timeout so a broken asset cannot permanently
+         *   block the website
+         * - removes the loading overlay with a smooth fade
+         */
+
+        (function () {
+            const root = document.documentElement;
+            const loader = document.getElementById("page-loader");
+            const loaderText = document.getElementById("loader-text");
+            const progressBar = document.getElementById("loader-progress-bar");
+
+            if (!loader) {
+                root.classList.remove("is-loading");
+                return;
+            }
+
+            // Collect all local image sources currently used by the page.
+            const imageElements = Array.from(document.images);
+
+            const imageSources = [
+                ...imageElements.map((img) => img.currentSrc || img.src),
+            ];
+
+            // Remove duplicates and ignore data/blob URLs.
+            const sources = [...new Set(
+                imageSources.filter((src) =>
+                    src &&
+                    !src.startsWith("data:") &&
+                    !src.startsWith("blob:")
+                )
+            )];
+
+            let loaded = 0;
+            const total = sources.length;
+
+            function updateProgress() {
+                const percentage = total === 0
+                    ? 100
+                    : Math.round((loaded / total) * 100);
+
+                if (progressBar) {
+                    progressBar.style.width = percentage + "%";
+                }
+
+                if (loaderText) {
+                    loaderText.textContent =
+                        percentage >= 100
+                            ? "Ready"
+                            : `Loading cars... ${percentage}%`;
+                }
+            }
+
+            function finishLoading() {
+                updateProgress();
+
+                // Give the browser one paint cycle to display the final
+                // loaded images before removing the overlay.
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        loader.classList.add("is-hidden");
+                        root.classList.remove("is-loading");
+
+                        // Remove the loader from the accessibility tree
+                        // after its fade-out has completed.
+                        setTimeout(() => {
+                            loader.remove();
+                        }, 650);
+                    });
+                });
+            }
+
+            // No images: show page immediately.
+            if (total === 0) {
+                finishLoading();
+                return;
+            }
+
+            let completed = false;
+
+            function imageFinished() {
+                loaded += 1;
+                updateProgress();
+
+                if (loaded >= total && !completed) {
+                    completed = true;
+                    finishLoading();
+                }
+            }
+
+            // Start all downloads in parallel.
+            sources.forEach((src) => {
+                const image = new Image();
+                let finished = false;
+
+                const done = () => {
+                    // Prevent cached-image detection and onload/onerror
+                    // from counting the same asset twice.
+                    if (finished) return;
+                    finished = true;
+                    imageFinished();
+                };
+
+                image.onload = done;
+                image.onerror = done;
+                image.src = src;
+
+                // Cached images can already be complete.
+                if (image.complete) {
+                    done();
+                }
+            });
+
+            updateProgress();
+
+            /*
+             * Safety fallback:
+             * If GitHub Pages/CDN has a broken or unavailable asset,
+             * don't leave the visitor staring at the loader forever.
+             */
+            setTimeout(() => {
+                if (!completed) {
+                    completed = true;
+
+                    if (loaderText) {
+                        loaderText.textContent = "Almost ready...";
+                    }
+
+                    finishLoading();
+                }
+            }, 8000);
+        })();
     </script>
 
 </body>
