@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CarRental — Cars on Rent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+                    },
+                    colors: {
+                        brand: {
+                            500: '#2463eb',
+                            600: '#1d59df'
+                        }
+                    },
+                    boxShadow: {
+                        soft: '0 12px 35px rgba(15, 23, 42, 0.10)',
+                        card: '0 7px 20px rgba(15, 23, 42, 0.10)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+        }
+
+        .hero-grid {
+            background:
+                radial-gradient(circle at 50% 42%, rgba(255, 255, 255, .88) 0 14%, transparent 40%),
+                #f1f5f9;
+        }
+
+        .car-placeholder {
+            filter: drop-shadow(0 18px 10px rgba(15, 23, 42, .12));
+        }
+
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            opacity: .72;
+            cursor: pointer;
+        }
+
+        /* =========================================================
+           SMOOTH SCROLL-REVEAL SYSTEM
+           Elements reveal when they enter the viewport.
+        ========================================================== */
+        [data-reveal] {
+            opacity: 0;
+            transform: translate3d(0, 55px, 0);
+            transition:
+                opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+            transition-delay: var(--reveal-delay, 0ms);
+            will-change: opacity, transform;
+        }
+
+        [data-reveal="up"] {
+            transform: translate3d(0, 55px, 0);
+        }
+
+        [data-reveal="left"] {
+            transform: translate3d(-65px, 0, 0);
+        }
+
+        [data-reveal="right"] {
+            transform: translate3d(65px, 0, 0);
+        }
+
+        [data-reveal="scale"] {
+            transform: scale(0.92);
+        }
+
+        [data-reveal="fade"] {
+            transform: none;
+        }
+
+        [data-reveal].is-visible {
+            opacity: 1;
+            transform: translate3d(0, 0, 0) scale(1);
+        }
+
+        /* Hero gets a gentle entrance on initial page load. */
+        .hero-load {
+            opacity: 0;
+            transform: translate3d(0, 32px, 0);
+            animation: heroLoad 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        .hero-load-delay-1 {
+            animation-delay: 120ms;
+        }
+
+        .hero-load-delay-2 {
+            animation-delay: 260ms;
+        }
+
+        @keyframes heroLoad {
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        /* Respect accessibility / reduced motion preferences. */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            [data-reveal],
+            .hero-load {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-900 antialiased">
+
+    <!-- =========================
+       HEADER
+  ========================== -->
+    <header class="border-b border-slate-200 bg-slate-100/90">
+        <div class="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5 lg:px-0">
+            <a href="#" class="flex items-center gap-2 text-[21px] font-bold tracking-[-0.02em]">
+                <!-- Logo placeholder -->
+                <span class="grid h-7 w-7 place-items-center rounded-[8px] bg-blue-600 text-white">
+                    <svg viewBox="0 0 24 24" class="h-4 w-4 fill-none stroke-current stroke-[2.2]" aria-hidden="true">
+                        <path d="M4 7h12l3 4v5H5a2 2 0 0 1-2-2V9a2 2 0 0 1 1-2Z" />
+                        <path d="M7 16v2M17 16v2M4 12h16" />
+                    </svg>
+                </span>
+                <span>CarRental</span>
+            </a>
+
+            <nav class="hidden items-center gap-8 text-[12px] font-medium text-slate-600 md:flex">
+                <a href="#" class="hover:text-slate-950">Home</a>
+                <a href="#cars" class="hover:text-slate-950">Cars</a>
+                <a href="#bookings" class="hover:text-slate-950">My Bookings</a>
+
+                <div
+                    class="flex h-9 w-44 items-center rounded-full border border-slate-300 bg-white px-3 text-slate-400">
+                    <input type="text" placeholder="Search cars"
+                        class="min-w-0 flex-1 bg-transparent text-[12px] text-slate-700 outline-none placeholder:text-slate-400" />
+                    <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="none" stroke="currentColor"
+                        stroke-width="1.8">
+                        <circle cx="11" cy="11" r="6.5"></circle>
+                        <path d="m16 16 4 4"></path>
+                    </svg>
+                </div>
+
+                <a href="#list" class="hover:text-slate-950">List cars</a>
+                <a href="#login"
+                    class="rounded-md bg-blue-600 px-5 py-2.5 text-white shadow-sm hover:bg-blue-700">Login</a>
+            </nav>
+
+            <button class="rounded-lg border border-slate-300 bg-white p-2 text-slate-700 md:hidden"
+                aria-label="Open menu">
+                <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 7h16M4 12h16M4 17h16"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- =========================
+       HERO
+  ========================== -->
+    <main>
+        <section class="hero-grid overflow-hidden">
+            <div class="mx-auto max-w-[1200px] px-5 pb-20 pt-24 lg:px-0 lg:pb-24 lg:pt-32">
+                <h1
+                    class="hero-load text-center text-[30px] font-extrabold tracking-[-0.04em] sm:text-[34px] lg:text-[38px]">
+                    Cars on Rent
+                </h1>
+
+                <!-- Search / booking bar -->
+                <div
+                    class="hero-load hero-load-delay-1 mx-auto mt-10 flex max-w-[715px] flex-col gap-3 rounded-[28px] bg-white p-4 shadow-soft sm:flex-row sm:items-center sm:gap-5 sm:rounded-full sm:px-9 sm:py-5">
+                    <div class="flex-1">
+                        <label class="flex items-center gap-1 text-[12px] font-medium text-slate-950">
+                            Pickup Location
+                            <svg viewBox="0 0 24 24" class="h-3 w-3" fill="none" stroke="currentColor"
+                                stroke-width="1.8">
+                                <path d="m7 10 5 5 5-5"></path>
+                            </svg>
+                        </label>
+                        <p class="mt-1 text-[10px] text-slate-400">Please select location</p>
+                    </div>
+
+                    <div class="hidden h-7 w-px bg-slate-200 sm:block"></div>
+
+                    <div class="min-w-[110px]">
+                        <label class="text-[12px] font-medium text-slate-950">Pick-up Date</label>
+                        <div class="mt-1 flex items-center gap-2 text-[10px] text-slate-400">
+                            <input type="date" class="w-full border-0 bg-transparent p-0 text-[10px] outline-none"
+                                aria-label="Pick-up date" />
+                        </div>
+                    </div>
+
+                    <div class="hidden h-7 w-px bg-slate-200 sm:block"></div>
+
+                    <div class="min-w-[110px]">
+                        <label class="text-[12px] font-medium text-slate-950">Return Date</label>
+                        <div class="mt-1 flex items-center gap-2 text-[10px] text-slate-400">
+                            <input type="date" class="w-full border-0 bg-transparent p-0 text-[10px] outline-none"
+                                aria-label="Return date" />
+                        </div>
+                    </div>
+
+                    <button
+                        class="flex h-11 shrink-0 items-center justify-center gap-1.5 rounded-full bg-blue-600 px-7 text-[12px] font-medium text-white shadow-sm transition hover:bg-blue-700">
+                        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <circle cx="11" cy="11" r="6.5"></circle>
+                            <path d="m16 16 4 4"></path>
+                        </svg>
+                        Search
+                    </button>
+                </div>
+
+                <!-- HERO CAR PLACEHOLDER
+             Replace with your actual hero vehicle image. -->
+                <div
+                    class="hero-load hero-load-delay-2 mx-auto mt-12 flex h-[280px] max-w-[850px] items-center justify-center sm:mt-14 sm:h-[320px]">
+                    <img src="assets/main_car.png" alt="Luxury rental car"
+                        class="car-placeholder max-h-full w-auto max-w-[92%] object-contain"
+                        onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" />
+                    <div
+                        class="hidden h-40 w-[82%] max-w-[700px] rounded-[50%] border-2 border-dashed border-slate-300 bg-slate-100/70 sm:h-48">
+                        <div
+                            class="flex h-full items-center justify-center text-center text-sm font-medium text-slate-400">
+                            HERO CAR IMAGE<br />
+                            <span class="ml-1 font-normal">assets/hero-car.png</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+         FEATURED VEHICLES
+    ========================== -->
+        <section id="cars" class="bg-white">
+            <div class="mx-auto max-w-[1200px] px-5 py-16 lg:px-0 lg:py-20">
+                <div class="text-center">
+                    <h2 data-reveal="up" class="text-[25px] font-extrabold tracking-[-0.03em] sm:text-[28px]">Featured
+                        Vehicles</h2>
+                    <p data-reveal="up" style="--reveal-delay: 100ms"
+                        class="mx-auto mt-2 max-w-[600px] text-[12px] text-slate-400">
+                        Explore our selection of premium vehicles available for your next adventure.
+                    </p>
+                </div>
+
+                <!-- Featured vehicle cards -->
+                <div class="mx-auto mt-10 grid max-w-[1035px] gap-5 md:grid-cols-3">
+
+                    <!-- Vehicle 1 -->
+                    <div class="flex flex-col">
+                        <div data-reveal="up" style="--reveal-delay: 0ms"
+                            class="h-[180px] w-full overflow-hidden bg-slate-100">
+                            <img src="assets/car_image1.png" alt="Featured BMW"
+                                class="block h-full w-full object-cover object-center" />
+                        </div>
+                    </div>
+
+                    <!-- Vehicle 2 -->
+                    <div class="flex flex-col">
+                        <div data-reveal="up" style="--reveal-delay: 120ms"
+                            class="h-[180px] w-full overflow-hidden bg-slate-100">
+                            <img src="assets/car_image4.png" alt="Featured Chevrolet"
+                                class="block h-full w-full object-cover object-center" />
+                        </div>
+                    </div>
+
+                    <!-- Vehicle 3 -->
+                    <div class="flex flex-col">
+                        <div data-reveal="up" style="--reveal-delay: 240ms"
+                            class="h-[180px] w-full overflow-hidden bg-slate-100">
+                            <img src="assets/car_image3.png" alt="Featured Tesla"
+                                class="block h-full w-full object-cover object-center" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Explore button below the complete card/image row -->
+                <div data-reveal="up" style="--reveal-delay: 180ms" class="mt-7 flex justify-center">
+                    <a href="#"
+                        class="inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-4 py-2.5 text-[11px] font-medium text-slate-900 transition hover:bg-slate-50">
+                        Explore all cars
+                        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.7">
+                            <path d="M5 12h14M13 6l6 6-6 6"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+         LIST YOUR CAR BANNER
+    ========================== -->
+        <section id="list" class="bg-white pb-12">
+            <div class="mx-auto max-w-[1030px] px-5 lg:px-0">
+                <div
+                    class="relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-600 via-blue-500 to-blue-300 px-7 py-8 text-white sm:px-10 sm:py-8">
+                    <div class="relative z-10 max-w-[520px]">
+                        <h2 data-reveal="left" class="text-[20px] font-extrabold sm:text-[22px]">Do You Own a
+                            Car?</h2>
+                        <p data-reveal="left" style="--reveal-delay: 100ms"
+                            class="mt-1 max-w-[500px] text-[10px] leading-[1.6] text-blue-50 sm:text-[11px]">
+                            Monetize your vehicle effortlessly by listing it on CarRental.<br class="hidden sm:block" />
+                            We take care of insurance, driver verification and secure payments — so<br
+                                class="hidden md:block" />
+                            you can earn passive income, stress-free.
+                        </p>
+                        <a data-reveal="left" style="--reveal-delay: 180ms" href="#"
+                            class="mt-4 inline-flex rounded-md bg-white px-4 py-2.5 text-[10px] font-medium text-blue-600 shadow-sm hover:bg-blue-50">
+                            List your car
+                        </a>
+                    </div>
+
+                    <!-- Replace with your banner vehicle image -->
+                    <div class="absolute bottom-0 right-2 hidden h-full w-[42%] sm:block">
+                        <img data-reveal="right" style="--reveal-delay: 120ms" src="assets/banner_car_image.png"
+                            alt="Car owner banner vehicle" class="h-full w-full object-contain object-right-bottom"
+                            onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" />
+                        <div
+                            class="hidden h-full items-end justify-center pb-5 text-center text-xs font-medium text-blue-950/55">
+                            Replace with<br />assets/list-your-car.png
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+         TESTIMONIALS
+    ========================== -->
+        <section class="bg-white py-12">
+            <div class="mx-auto max-w-[1000px] px-5 lg:px-0">
+                <div class="text-center">
+                    <h2 data-reveal="up" class="text-[25px] font-extrabold tracking-[-0.03em] sm:text-[28px]">What Our
+                        Customers Say</h2>
+                    <p data-reveal="up" style="--reveal-delay: 100ms"
+                        class="mx-auto mt-2 max-w-[590px] text-[11px] leading-5 text-slate-400">
+                        Discover why discerning travelers choose StayVenture for their luxury accommodations<br
+                            class="hidden sm:block" />
+                        around the world.
+                    </p>
+                </div>
+
+                <div class="mt-10 grid gap-5 md:grid-cols-3">
+                    <!-- Testimonial 1 -->
+                    <article data-reveal="up" style="--reveal-delay: 0ms"
+                        class="rounded-lg border border-slate-100 bg-white p-4 shadow-card">
+                        <div class="flex items-center gap-3">
+                            <img src="assets/user_profile.png" alt="Emma Rodriguez"
+                                class="h-9 w-9 rounded-full object-cover"
+                                onerror="this.src='https://ui-avatars.com/api/?name=Emma+Rodriguez&background=e2e8f0&color=334155&size=96';" />
+                            <div>
+                                <h3 class="text-[12px] font-semibold">Emma Rodriguez</h3>
+                                <p class="text-[10px] text-slate-400">Barcelona, Spain</p>
+                            </div>
+                        </div>
+                        <div class="mt-3 text-[11px] tracking-[0.13em] text-blue-600">★★★★★</div>
+                        <p class="mt-2 text-[10px] leading-[1.7] text-slate-500">
+                            “I've rented cars from various companies, but the experience with CarRental was
+                            exceptional.”
+                        </p>
+                    </article>
+
+                    <!-- Testimonial 2 -->
+                    <article data-reveal="up" style="--reveal-delay: 120ms"
+                        class="rounded-lg border border-slate-100 bg-white p-4 shadow-card">
+                        <div class="flex items-center gap-3">
+                            <img src="assets/testimonial_image_1.png" alt="John Smith"
+                                class="h-9 w-9 rounded-full object-cover"
+                                onerror="this.src='https://ui-avatars.com/api/?name=John+Smith&background=e2e8f0&color=334155&size=96';" />
+                            <div>
+                                <h3 class="text-[12px] font-semibold">John Smith</h3>
+                                <p class="text-[10px] text-slate-400">New York, USA</p>
+                            </div>
+                        </div>
+                        <div class="mt-3 text-[11px] tracking-[0.13em] text-blue-600">★★★★★</div>
+                        <p class="mt-2 text-[10px] leading-[1.7] text-slate-500">
+                            “CarRental made my trip so much easier. The car was delivered right to my door, and the
+                            customer service was fantastic!”
+                        </p>
+                    </article>
+
+                    <!-- Testimonial 3 -->
+                    <article data-reveal="up" style="--reveal-delay: 240ms"
+                        class="rounded-lg border border-slate-100 bg-white p-4 shadow-card">
+                        <div class="flex items-center gap-3">
+                            <img src="assets/testimonial_image_2.png" alt="Ava Johnson"
+                                class="h-9 w-9 rounded-full object-cover"
+                                onerror="this.src='https://ui-avatars.com/api/?name=Ava+Johnson&background=e2e8f0&color=334155&size=96';" />
+                            <div>
+                                <h3 class="text-[12px] font-semibold">Ava Johnson</h3>
+                                <p class="text-[10px] text-slate-400">Sydney, Australia</p>
+                            </div>
+                        </div>
+                        <div class="mt-3 text-[11px] tracking-[0.13em] text-blue-600">★★★★★</div>
+                        <p class="mt-2 text-[10px] leading-[1.7] text-slate-500">
+                            “I highly recommend CarRental! Their fleet is amazing, and I always feel like I'm getting
+                            the best deal with excellent service.”
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+         NEWSLETTER
+    ========================== -->
+        <section class="bg-white py-14">
+            <div class="mx-auto max-w-[780px] px-5 text-center">
+                <h2 data-reveal="up" class="text-[25px] font-extrabold tracking-[-0.03em]">Never Miss a Deal!</h2>
+                <p data-reveal="up" style="--reveal-delay: 100ms" class="mt-2 text-[11px] text-slate-400">Subscribe to
+                    get the latest offers, new arrivals, and
+                    exclusive discounts</p>
+
+                <form data-reveal="up" style="--reveal-delay: 180ms"
+                    class="mx-auto mt-8 flex max-w-[620px] overflow-hidden rounded-md border border-slate-200 bg-white">
+                    <input type="email" placeholder="Enter your email"
+                        class="min-w-0 flex-1 px-4 py-3 text-[11px] outline-none placeholder:text-slate-300" />
+                    <button
+                        class="w-28 bg-blue-600 px-4 py-3 text-[11px] font-medium text-white hover:bg-blue-700 sm:w-32">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- =========================
+       FOOTER
+  ========================== -->
+    <footer class="bg-white pt-16">
+        <div class="mx-auto max-w-[1000px] px-5 lg:px-0">
+            <div class="grid gap-10 pb-8 md:grid-cols-[1.65fr_1fr_1fr_1fr]">
+                <div data-reveal="up">
+                    <a href="#" class="flex items-center gap-2 text-[20px] font-bold">
+                        <span class="grid h-7 w-7 place-items-center rounded-[8px] bg-blue-600 text-white">
+                            <svg viewBox="0 0 24 24" class="h-4 w-4 fill-none stroke-current stroke-[2.2]"
+                                aria-hidden="true">
+                                <path d="M4 7h12l3 4v5H5a2 2 0 0 1-2-2V9a2 2 0 0 1 1-2Z" />
+                                <path d="M7 16v2M17 16v2M4 12h16" />
+                            </svg>
+                        </span>
+                        <span>CarRental</span>
+                    </a>
+                    <p class="mt-4 max-w-[265px] text-[10px] leading-[1.7] text-slate-400">
+                        Premium car rental service with a wide selection of luxury and everyday vehicles for all your
+                        driving needs.
+                    </p>
+                    <div class="mt-4 flex gap-3 text-slate-500">
+                        <a href="#" aria-label="Facebook" class="hover:text-blue-600">
+                            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor">
+                                <path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9c0-.7.3-1 1-1Z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="hover:text-blue-600">
+                            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor"
+                                stroke-width="1.8">
+                                <rect x="3" y="3" width="18" height="18" rx="5" />
+                                <circle cx="12" cy="12" r="4" />
+                                <circle cx="17.2" cy="6.8" r="1" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="hover:text-blue-600">
+                            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor">
+                                <path
+                                    d="M19.8 7.1c.01.17.01.34.01.51 0 5.2-3.96 11.2-11.2 11.2-2.22 0-4.29-.64-6.03-1.75.31.04.61.05.93.05a7.92 7.92 0 0 0 4.9-1.69 3.95 3.95 0 0 1-3.69-2.74c.24.04.49.07.75.07.36 0 .72-.05 1.05-.14a3.94 3.94 0 0 1-3.16-3.87v-.05c.53.3 1.14.48 1.78.5a3.94 3.94 0 0 1-1.76-3.28c0-.74.19-1.41.53-2 1.94 2.39 4.85 3.96 8.12 4.13-.06-.29-.1-.6-.1-.91a3.94 3.94 0 0 1 6.81-2.7 7.8 7.8 0 0 0 2.5-.95 3.93 3.93 0 0 1-1.73 2.17 7.83 7.83 0 0 0 2.26-.61 8.5 8.5 0 0 1-1.98 2.05Z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Email" class="hover:text-blue-600">
+                            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor"
+                                stroke-width="1.8">
+                                <rect x="3" y="5" width="18" height="14" rx="2" />
+                                <path d="m4 7 8 6 8-6" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div data-reveal="up" style="--reveal-delay: 100ms">
+                    <h3 class="text-[11px] font-semibold">QUICK LINKS</h3>
+                    <div class="mt-4 space-y-2 text-[10px] text-slate-500">
+                        <a href="#" class="block hover:text-slate-900">Home</a>
+                        <a href="#cars" class="block hover:text-slate-900">Browse Cars</a>
+                        <a href="#list" class="block hover:text-slate-900">List Your Car</a>
+                        <a href="#" class="block hover:text-slate-900">About Us</a>
+                    </div>
+                </div>
+
+                <div data-reveal="up" style="--reveal-delay: 180ms">
+                    <h3 class="text-[11px] font-semibold">RESOURCES</h3>
+                    <div class="mt-4 space-y-2 text-[10px] text-slate-500">
+                        <a href="#" class="block hover:text-slate-900">Help Center</a>
+                        <a href="#" class="block hover:text-slate-900">Terms of Service</a>
+                        <a href="#" class="block hover:text-slate-900">Privacy Policy</a>
+                        <a href="#" class="block hover:text-slate-900">Insurance</a>
+                    </div>
+                </div>
+
+                <div data-reveal="up" style="--reveal-delay: 260ms">
+                    <h3 class="text-[11px] font-semibold">CONTACT</h3>
+                    <div class="mt-4 space-y-2 text-[10px] leading-4 text-slate-500">
+                        <p>1234 Luxury Drive</p>
+                        <p>San Francisco, CA 94107</p>
+                        <p>+1 234 567890</p>
+                        <p>info@example.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="flex flex-col justify-between gap-3 border-t border-slate-200 py-5 text-[9px] text-slate-400 sm:flex-row sm:items-center">
+                <p>© 2026 Brand. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-slate-700">Privacy</a>
+                    <span>|</span>
+                    <a href="#" class="hover:text-slate-700">Terms</a>
+                    <span>|</span>
+                    <a href="#" class="hover:text-slate-700">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        /*
+         * Scroll Reveal
+         * ---------------------------------------------------------
+         * Uses IntersectionObserver so animations are only triggered
+         * when an element actually enters the viewport.
+         *
+         * Add data-reveal="up|left|right|scale|fade" to any element.
+         * Optional: style="--reveal-delay: 120ms"
+         */
+        document.addEventListener("DOMContentLoaded", () => {
+            const revealElements = document.querySelectorAll("[data-reveal]");
+
+            if (!("IntersectionObserver" in window)) {
+                revealElements.forEach((element) => {
+                    element.classList.add("is-visible");
+                });
+                return;
+            }
+
+            const observer = new IntersectionObserver(
+                (entries, currentObserver) => {
+                    entries.forEach((entry) => {
+                        if (!entry.isIntersecting) return;
+
+                        entry.target.classList.add("is-visible");
+
+                        // Animate once, just like the smooth reveal
+                        // behavior on modern landing pages.
+                        currentObserver.unobserve(entry.target);
+                    });
+                },
+                {
+                    threshold: 0.12,
+                    rootMargin: "0px 0px -50px 0px"
+                }
+            );
+
+            revealElements.forEach((element) => observer.observe(element));
+        });
+    </script>
+
+</body>
+
+</html>
