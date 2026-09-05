@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Executive Motion - Company</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap"
+                rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                rel="stylesheet" />
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <script id="tailwind-config">
+                tailwind.config = {
+                        darkMode: "class",
+                        theme: {
+                                extend: {
+                                        "colors": {
+                                                "secondary-fixed": "#e1e2e6",
+                                                "on-primary-fixed-variant": "#454749",
+                                                "surface-container-low": "#f6f3f2",
+                                                "error": "#ba1a1a",
+                                                "on-surface-variant": "#45474a",
+                                                "surface-bright": "#fcf8f8",
+                                                "inverse-primary": "#c6c6c9",
+                                                "primary-fixed-dim": "#c6c6c9",
+                                                "surface-variant": "#e5e2e1",
+                                                "error-container": "#ffdad6",
+                                                "primary-fixed": "#e2e2e5",
+                                                "on-primary": "#ffffff",
+                                                "on-secondary-fixed": "#191c1f",
+                                                "on-tertiary": "#ffffff",
+                                                "outline": "#75777a",
+                                                "on-background": "#1c1b1b",
+                                                "on-primary-container": "#838486",
+                                                "primary": "#000000",
+                                                "surface-container-highest": "#e5e2e1",
+                                                "on-error": "#ffffff",
+                                                "primary-container": "#1a1c1e",
+                                                "outline-variant": "#c5c6ca",
+                                                "on-secondary": "#ffffff",
+                                                "secondary": "#5c5f62",
+                                                "on-tertiary-fixed-variant": "#4c4640",
+                                                "inverse-on-surface": "#f4f0ef",
+                                                "tertiary": "#000000",
+                                                "surface-tint": "#5d5e61",
+                                                "secondary-container": "#dee0e4",
+                                                "surface-container-lowest": "#ffffff",
+                                                "on-surface": "#1c1b1b",
+                                                "tertiary-fixed": "#ebe1d9",
+                                                "surface-container-high": "#ebe7e7",
+                                                "surface-dim": "#ddd9d9",
+                                                "on-primary-fixed": "#1a1c1e",
+                                                "on-tertiary-fixed": "#1f1b16",
+                                                "surface-container": "#f1eded",
+                                                "tertiary-fixed-dim": "#cec5bd",
+                                                "tertiary-container": "#1f1b16",
+                                                "background": "#fcf8f8",
+                                                "on-error-container": "#93000a",
+                                                "on-secondary-fixed-variant": "#44474a",
+                                                "secondary-fixed-dim": "#c5c6ca",
+                                                "inverse-surface": "#313030",
+                                                "on-tertiary-container": "#8a827c",
+                                                "surface": "#fcf8f8",
+                                                "on-secondary-container": "#606366",
+                                                "electric-lime": "#C8FF3D",
+                                                "obsidian-black": "#0B0D0F",
+                                                "warm-off-white": "#F5F4F0"
+                                        },
+                                        "borderRadius": {
+                                                "DEFAULT": "0.125rem",
+                                                "lg": "0.25rem",
+                                                "xl": "0.5rem",
+                                                "full": "0.75rem"
+                                        },
+                                        "spacing": {
+                                                "margin-desktop": "64px",
+                                                "container-max": "1440px",
+                                                "gutter": "24px",
+                                                "unit": "8px",
+                                                "margin-mobile": "16px",
+                                                "section-gap": "120px"
+                                        },
+                                        "fontFamily": {
+                                                "display-lg": [
+                                                        "Inter"
+                                                ],
+                                                "headline-md": [
+                                                        "Inter"
+                                                ],
+                                                "body-lg": [
+                                                        "Inter"
+                                                ],
+                                                "display-lg-mobile": [
+                                                        "Inter"
+                                                ],
+                                                "body-md": [
+                                                        "Inter"
+                                                ],
+                                                "headline-lg": [
+                                                        "Inter"
+                                                ],
+                                                "label-caps": [
+                                                        "Inter"
+                                                ]
+                                        },
+                                        "fontSize": {
+                                                "display-lg": [
+                                                        "72px",
+                                                        {
+                                                                "lineHeight": "1.0",
+                                                                "letterSpacing": "-0.04em",
+                                                                "fontWeight": "800"
+                                                        }
+                                                ],
+                                                "headline-md": [
+                                                        "24px",
+                                                        {
+                                                                "lineHeight": "1.3",
+                                                                "letterSpacing": "-0.01em",
+                                                                "fontWeight": "700"
+                                                        }
+                                                ],
+                                                "body-lg": [
+                                                        "18px",
+                                                        {
+                                                                "lineHeight": "1.6",
+                                                                "letterSpacing": "0",
+                                                                "fontWeight": "500"
+                                                        }
+                                                ],
+                                                "display-lg-mobile": [
+                                                        "40px",
+                                                        {
+                                                                "lineHeight": "1.1",
+                                                                "letterSpacing": "-0.03em",
+                                                                "fontWeight": "800"
+                                                        }
+                                                ],
+                                                "body-md": [
+                                                        "16px",
+                                                        {
+                                                                "lineHeight": "1.6",
+                                                                "letterSpacing": "0",
+                                                                "fontWeight": "400"
+                                                        }
+                                                ],
+                                                "headline-lg": [
+                                                        "32px",
+                                                        {
+                                                                "lineHeight": "1.2",
+                                                                "letterSpacing": "-0.02em",
+                                                                "fontWeight": "700"
+                                                        }
+                                                ],
+                                                "label-caps": [
+                                                        "12px",
+                                                        {
+                                                                "lineHeight": "1.0",
+                                                                "letterSpacing": "0.1em",
+                                                                "fontWeight": "700"
+                                                        }
+                                                ]
+                                        }
+                                }
+                        }
+                }
+        </script>
+        <style>
+                .premium-shadow {
+                        box-shadow: 0px 4px 20px rgba(11, 13, 15, 0.04);
+                }
+
+                .material-symbols-outlined {
+                        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+                }
+
+                .btn-lime {
+                        background-color: #C8FF3D;
+                        color: #000000;
+                }
+
+                .btn-lime:hover {
+                        background-color: #b3e637;
+                }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body
+        class="bg-warm-off-white text-primary font-body-md antialiased selection:bg-electric-lime selection:text-obsidian-black">
+        <!-- TopNavBar -->
+        <nav class="absolute top-0 left-0 w-full z-50 transition-colors">
+                <div
+                        class="flex justify-between items-center w-full px-margin-desktop h-20 max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
+                        <!-- Brand -->
+                        <a href="index.html"
+                                class="font-headline-md text-headline-md font-bold text-white tracking-tight">
+                                Executive Motion
+                        </a>
+                        <!-- Center Navigation (Hidden on Mobile) -->
+                        <div
+                                class="hidden md:flex items-center gap-8 font-label-caps text-label-caps uppercase tracking-widest text-white/80">
+                                <a class="hover:text-white transition-colors duration-300" href="index.html"
+                                        id="nav-home">Home</a>
+                                <a class="text-white border-b-2 border-electric-lime pb-1 font-bold" href="company.html"
+                                        id="nav-company">Company</a>
+                                <a class="hover:text-white transition-colors duration-300" href="fleet.html"
+                                        id="nav-fleet">Fleet</a>
+                        </div>
+                        <!-- Trailing Actions -->
+                        <div class="hidden md:flex items-center gap-4">
+                                <a href="#"
+                                        class="font-label-caps text-label-caps uppercase tracking-widest text-white/80 hover:text-white transition-colors text-center inline-block">Corporate
+                                        Login</a>
+                                <button
+                                        class="font-label-caps text-label-caps uppercase tracking-widest px-6 py-3 rounded-lg font-bold btn-lime transition-colors">Get
+                                        a Quote</button>
+                        </div>
+                        <button class="md:hidden text-white">
+                                <span class="material-symbols-outlined">menu</span>
+                        </button>
+                </div>
+        </nav>
+        <main>
+                <!-- HERO SECTION -->
+                <section
+                        class="relative min-h-[921px] flex items-center justify-center px-margin-mobile md:px-margin-desktop overflow-hidden">
+                        <div class="absolute inset-0 z-0">
+                                <div class="w-full h-full bg-cover bg-center"
+                                        data-alt="A cinematic, high-contrast black-and-white image of a modern architectural building's facade, emphasizing stark geometric lines and deep shadows. The composition is sleek and imposing, conveying a sense of corporate power and precision. The lighting is dramatic, highlighting the sleek textures of glass and steel in a minimalist style."
+                                        style="background-image: url('assets/images.jpg')">
+                                </div>
+                                <div class="absolute inset-0 bg-obsidian-black/60"></div>
+                        </div>
+                        <div class="relative z-10 max-w-container-max mx-auto text-center w-full">
+                                <div class="max-w-4xl mx-auto space-y-8">
+                                        <h1
+                                                class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-primary">
+                                                The standard for corporate mobility.
+                                        </h1>
+                                        <p class="font-body-lg text-body-lg text-on-primary/80 max-w-2xl mx-auto">
+                                                We are more than a transportation provider. We are an operational
+                                                partner built for the modern enterprise.
+                                        </p>
+                                </div>
+                        </div>
+                </section>
+                <!-- OUR MISSION -->
+                <section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+                                <div class="md:col-span-5">
+                                        <h2 class="font-headline-lg text-headline-lg text-primary mb-6">Redefining how
+                                                business moves.</h2>
+                                </div>
+                                <div class="md:col-span-7 space-y-12">
+                                        <p class="font-body-lg text-body-lg text-on-surface-variant">
+                                                Executive Motion was founded on a simple premise: corporate
+                                                transportation shouldn't be a logistical burden. We combine luxury
+                                                automotive excellence with sophisticated SaaS technology to provide
+                                                organizations with total visibility and uncompromising reliability.
+                                        </p>
+                                        <div
+                                                class="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-8 border-t border-outline-variant/20">
+                                                <div>
+                                                        <div
+                                                                class="font-headline-lg text-headline-lg text-primary mb-2 stat-number">
+                                                                100+</div>
+                                                        <div
+                                                                class="font-label-caps text-label-caps uppercase text-on-surface-variant">
+                                                                Cities</div>
+                                                </div>
+                                                <div>
+                                                        <div
+                                                                class="font-headline-lg text-headline-lg text-primary mb-2 stat-number">
+                                                                50K+</div>
+                                                        <div
+                                                                class="font-label-caps text-label-caps uppercase text-on-surface-variant">
+                                                                Annual Trips</div>
+                                                </div>
+                                                <div>
+                                                        <div
+                                                                class="font-headline-lg text-headline-lg text-primary mb-2 stat-number">
+                                                                99.8%</div>
+                                                        <div
+                                                                class="font-label-caps text-label-caps uppercase text-on-surface-variant">
+                                                                Safety Record</div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+                <!-- OUR PHILOSOPHY (FLEET & PEOPLE) -->
+                <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-lowest">
+                        <div class="max-w-container-max mx-auto">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+                                        <!-- The Fleet -->
+                                        <div
+                                                class="bg-surface-bright premium-shadow rounded-lg overflow-hidden group company-card">
+                                                <div class="h-64 overflow-hidden">
+                                                        <div class="w-full h-full bg-cover bg-center transform group-hover:scale-105 transition-transform duration-700"
+                                                                data-alt="A close-up, desaturated shot of the front grille and sleek headlights of a high-end luxury black executive sedan. The lighting is soft and sophisticated, emphasizing the polished metal and pristine condition of the vehicle. The mood is premium, controlled, and distinctly corporate."
+                                                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCNMcYBY8XELnq_GvGX1D3c5_-vuaZpTFBGt-qOUoV7uuoPnc2CNxy2CN6Q3xen4-e8zzW-toqg-n75Mw3W4Gl02wbhc_zaHOYBBeV7xNn5SFIqVAAZO01LGAVywh6CLxel8IJuL3SCcQ75xB7IwinNikw8BSUuKcl6i0h3x5gQRkiruASUCIQ-T3DEZstfkrZIcXp8tiXQr_iW7t7azB8GqulF-1aCnnFLklLeS6MCaMFUKzbv')">
+                                                        </div>
+                                                </div>
+                                                <div class="p-8 space-y-4">
+                                                        <h3 class="font-headline-md text-headline-md text-primary">The
+                                                                Fleet</h3>
+                                                        <p class="font-body-md text-body-md text-on-surface-variant">
+                                                                Our premium vehicle standard demands rigorous
+                                                                inspections and meticulous maintenance. From Executive
+                                                                sedans to Group transport and Workforce solutions, our
+                                                                diverse categories ensure the perfect vehicle for every
+                                                                operational need.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                        <!-- The Chauffeurs -->
+                                        <div
+                                                class="bg-surface-bright premium-shadow rounded-lg overflow-hidden group company-card">
+                                                <div class="h-64 overflow-hidden">
+                                                        <div class="w-full h-full bg-cover bg-center transform group-hover:scale-105 transition-transform duration-700"
+                                                                data-alt="A cinematic, shallow depth-of-field shot of a professional chauffeur in a crisp, dark suit opening the door of a black luxury vehicle. The image is black-and-white, focusing on the meticulous detail of the uniform and the gesture of service. The aesthetic is polished, trustworthy, and elite."
+                                                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDIJRaHQswG1TsA_h14TMA6XMfY9YxMvCpl6Xb_IN1FM4aRF9f09uaMLCI-q66n8lPyWsPop8nKEG1TH5Ue5SRWo6Rfza-RYbCweh3Or8XlxdEcw3gYP2FK016VvjWUh3DiLZWnTBtF8ERSXN6oJ7-nMKxN8IpSPUTkTl387QfoVRg38wVuUSXIP4LlOKrXCHbneuX4KnP-82Tk9uz5qk5_qQSb2BFYh-VqhLlKadGPztTPl0_o')">
+                                                        </div>
+                                                </div>
+                                                <div class="p-8 space-y-4">
+                                                        <h3 class="font-headline-md text-headline-md text-primary">The
+                                                                Chauffeurs</h3>
+                                                        <p class="font-body-md text-body-md text-on-surface-variant">
+                                                                We elevate service through rigorous professional
+                                                                training and comprehensive background checks. Our
+                                                                standard of chauffeur service goes far beyond
+                                                                ride-sharing, offering a dedicated professional
+                                                                committed to your safety and schedule.
+                                                        </p>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+                <!-- GLOBAL REACH -->
+                <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-obsidian-black text-on-primary">
+                        <div class="max-w-container-max mx-auto">
+                                <div class="text-center mb-16">
+                                        <h2 class="font-headline-lg text-headline-lg text-on-primary">A local presence
+                                                on a global scale.</h2>
+                                </div>
+                                <div
+                                        class="relative w-full rounded-lg overflow-hidden border border-outline/20 global-map">
+                                        <img src="screenshots/image.png" class="w-full h-auto block opacity-80"
+                                                data-alt="A stylized, highly minimal dark-mode world map graphic, rendered in deep obsidian blacks and subtle graphite grays. Scattered across the continents are sharp, glowing electric lime dots indicating major global hubs. The aesthetic is tech-forward, precise, and data-driven." />
+                                        <!-- Decorative Map Dots -->
+                                        <div
+                                                class="absolute top-[30%] left-[20%] w-2 h-2 bg-electric-lime rounded-full shadow-[0_0_10px_rgba(200,255,61,0.8)]">
+                                        </div>
+                                        <div
+                                                class="absolute top-[40%] left-[25%] w-2 h-2 bg-electric-lime rounded-full shadow-[0_0_10px_rgba(200,255,61,0.8)]">
+                                        </div>
+                                        <div
+                                                class="absolute top-[25%] left-[50%] w-2 h-2 bg-electric-lime rounded-full shadow-[0_0_10px_rgba(200,255,61,0.8)]">
+                                        </div>
+                                        <div
+                                                class="absolute top-[35%] left-[75%] w-2 h-2 bg-electric-lime rounded-full shadow-[0_0_10px_rgba(200,255,61,0.8)]">
+                                        </div>
+                                        <div
+                                                class="absolute top-[60%] left-[80%] w-2 h-2 bg-electric-lime rounded-full shadow-[0_0_10px_rgba(200,255,61,0.8)]">
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+                <!-- OUR VALUES -->
+                <section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+                        <div class="text-center mb-16">
+                                <span
+                                        class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase mb-4 block">Our
+                                        Values</span>
+                                <h2 class="font-headline-lg text-headline-lg text-primary">The principles that drive
+                                        every mile.</h2>
+                        </div>
+                        <div class="grid md:grid-cols-3 gap-gutter">
+                                <div
+                                        class="text-center p-8 rounded-lg border border-outline-variant/10 hover:border-electric-lime/30 transition-colors group">
+                                        <span
+                                                class="material-symbols-outlined text-electric-lime text-4xl mb-4 block group-hover:scale-110 transition-transform">precision_manufacturing</span>
+                                        <h3 class="font-headline-md text-headline-md text-primary mb-3">Precision</h3>
+                                        <p class="font-body-md text-body-md text-on-surface-variant">Every detail
+                                                matters — from route planning and vehicle maintenance to billing
+                                                accuracy. We operate with surgical precision because your time is your
+                                                most valuable asset.</p>
+                                </div>
+                                <div
+                                        class="text-center p-8 rounded-lg border border-outline-variant/10 hover:border-electric-lime/30 transition-colors group">
+                                        <span
+                                                class="material-symbols-outlined text-electric-lime text-4xl mb-4 block group-hover:scale-110 transition-transform">handshake</span>
+                                        <h3 class="font-headline-md text-headline-md text-primary mb-3">Trust</h3>
+                                        <p class="font-body-md text-body-md text-on-surface-variant">Confidentiality,
+                                                discretion, and reliability form the backbone of every relationship.
+                                                Corporate leaders trust us with their most sensitive travel needs — and
+                                                we never break that trust.</p>
+                                </div>
+                                <div
+                                        class="text-center p-8 rounded-lg border border-outline-variant/10 hover:border-electric-lime/30 transition-colors group">
+                                        <span
+                                                class="material-symbols-outlined text-electric-lime text-4xl mb-4 block group-hover:scale-110 transition-transform">eco</span>
+                                        <h3 class="font-headline-md text-headline-md text-primary mb-3">Responsibility
+                                        </h3>
+                                        <p class="font-body-md text-body-md text-on-surface-variant">We are committed to
+                                                reducing our environmental footprint through sustainable fleet choices,
+                                                carbon offset programs, and responsible business practices that benefit
+                                                future generations.</p>
+                                </div>
+                        </div>
+                </section>
+                <!-- TECHNOLOGY & PLATFORM -->
+                <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-lowest">
+                        <div class="max-w-container-max mx-auto">
+                                <div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+                                        <div class="md:col-span-5">
+                                                <span
+                                                        class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase mb-4 block">Technology</span>
+                                                <h2 class="font-headline-lg text-headline-lg text-primary mb-6">Built
+                                                        for the way enterprises move.</h2>
+                                                <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                                                        Our SaaS platform transforms corporate ground transportation
+                                                        from a fragmented process into a unified, data-driven operation.
+                                                        Real-time visibility, automated workflows, and actionable
+                                                        insights — all from a single dashboard.
+                                                </p>
+                                                <div class="space-y-6">
+                                                        <div class="flex items-start gap-4">
+                                                                <span
+                                                                        class="material-symbols-outlined text-electric-lime mt-1">dashboard</span>
+                                                                <div>
+                                                                        <h4
+                                                                                class="font-headline-md text-headline-md text-primary">
+                                                                                Centralized Dashboard</h4>
+                                                                        <p
+                                                                                class="font-body-md text-body-md text-on-surface-variant text-sm">
+                                                                                Book, track, and manage all corporate
+                                                                                travel from one intuitive interface.
+                                                                                Multi-department support with role-based
+                                                                                access controls.</p>
+                                                                </div>
+                                                        </div>
+                                                        <div class="flex items-start gap-4">
+                                                                <span
+                                                                        class="material-symbols-outlined text-electric-lime mt-1">analytics</span>
+                                                                <div>
+                                                                        <h4
+                                                                                class="font-headline-md text-headline-md text-primary">
+                                                                                Real-Time Analytics</h4>
+                                                                        <p
+                                                                                class="font-body-md text-body-md text-on-surface-variant text-sm">
+                                                                                Spend tracking, utilization reports, and
+                                                                                cost optimization recommendations
+                                                                                powered by machine learning.</p>
+                                                                </div>
+                                                        </div>
+                                                        <div class="flex items-start gap-4">
+                                                                <span
+                                                                        class="material-symbols-outlined text-electric-lime mt-1">route</span>
+                                                                <div>
+                                                                        <h4
+                                                                                class="font-headline-md text-headline-md text-primary">
+                                                                                AI-Optimized Routing</h4>
+                                                                        <p
+                                                                                class="font-body-md text-body-md text-on-surface-variant text-sm">
+                                                                                Intelligent route optimization reduces
+                                                                                travel time by 22% while accounting for
+                                                                                traffic patterns, road closures, and
+                                                                                client preferences.</p>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="md:col-span-7">
+                                                <div
+                                                        class="bg-primary rounded-2xl p-10 text-white relative overflow-hidden">
+                                                        <div
+                                                                class="absolute top-0 right-0 w-64 h-64 bg-electric-lime/10 rounded-full -translate-y-1/2 translate-x-1/2">
+                                                        </div>
+                                                        <div class="relative z-10">
+                                                                <h3
+                                                                        class="font-headline-md text-headline-md text-electric-lime mb-8">
+                                                                        Platform Capabilities</h3>
+                                                                <div class="grid grid-cols-2 gap-8">
+                                                                        <div
+                                                                                class="border-l-2 border-electric-lime/30 pl-4">
+                                                                                <div
+                                                                                        class="font-headline-lg text-headline-lg text-electric-lime mb-1">
+                                                                                        24/7</div>
+                                                                                <div
+                                                                                        class="font-label-caps text-label-caps text-surface-container-high">
+                                                                                        Live Operations Support</div>
+                                                                        </div>
+                                                                        <div
+                                                                                class="border-l-2 border-electric-lime/30 pl-4">
+                                                                                <div
+                                                                                        class="font-headline-lg text-headline-lg text-electric-lime mb-1">
+                                                                                        &lt;3min</div>
+                                                                                <div
+                                                                                        class="font-label-caps text-label-caps text-surface-container-high">
+                                                                                        Average Response Time</div>
+                                                                        </div>
+                                                                        <div
+                                                                                class="border-l-2 border-electric-lime/30 pl-4">
+                                                                                <div
+                                                                                        class="font-headline-lg text-headline-lg text-electric-lime mb-1">
+                                                                                        99.9%</div>
+                                                                                <div
+                                                                                        class="font-label-caps text-label-caps text-surface-container-high">
+                                                                                        Platform Uptime SLA</div>
+                                                                        </div>
+                                                                        <div
+                                                                                class="border-l-2 border-electric-lime/30 pl-4">
+                                                                                <div
+                                                                                        class="font-headline-lg text-headline-lg text-electric-lime mb-1">
+                                                                                        15+</div>
+                                                                                <div
+                                                                                        class="font-label-caps text-label-caps text-surface-container-high">
+                                                                                        Enterprise Integrations</div>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="mt-8 pt-8 border-t border-white/10">
+                                                                        <p
+                                                                                class="font-body-md text-body-md text-surface-container-high italic">
+                                                                                "Executive Motion's platform gave us
+                                                                                complete visibility into our executive
+                                                                                travel program. We reduced costs by 31%
+                                                                                in the first quarter."</p>
+                                                                        <p
+                                                                                class="font-label-caps text-label-caps text-electric-lime mt-3">
+                                                                                — VP of Operations, Global Consulting
+                                                                                Firm</p>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+                <!-- SAFETY & COMPLIANCE -->
+                <section class="py-section-gap px-margin-mobile md:px-margin-desktop">
+                        <div class="max-w-container-max mx-auto">
+                                <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+                                        <div class="md:col-span-5">
+                                                <span
+                                                        class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase mb-4 block">Safety</span>
+                                                <h2 class="font-headline-lg text-headline-lg text-primary mb-6">Safety
+                                                        is not a feature. It's our foundation.</h2>
+                                                <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                                                        Every aspect of our operation — from vehicle maintenance and
+                                                        chauffeur vetting to real-time monitoring and insurance coverage
+                                                        — is designed to exceed the highest safety standards in the
+                                                        industry.
+                                                </p>
+                                                <div class="grid grid-cols-2 gap-6">
+                                                        <div
+                                                                class="text-center p-6 rounded-lg bg-surface-container-low">
+                                                                <div
+                                                                        class="font-headline-lg text-headline-lg text-primary mb-1">
+                                                                        99.8%</div>
+                                                                <div
+                                                                        class="font-label-caps text-label-caps text-on-surface-variant">
+                                                                        Safety Record</div>
+                                                        </div>
+                                                        <div
+                                                                class="text-center p-6 rounded-lg bg-surface-container-low">
+                                                                <div
+                                                                        class="font-headline-lg text-headline-lg text-primary mb-1">
+                                                                        100%</div>
+                                                                <div
+                                                                        class="font-label-caps text-label-caps text-on-surface-variant">
+                                                                        Background Checked</div>
+                                                        </div>
+                                                        <div
+                                                                class="text-center p-6 rounded-lg bg-surface-container-low">
+                                                                <div
+                                                                        class="font-headline-lg text-headline-lg text-primary mb-1">
+                                                                        ISO</div>
+                                                                <div
+                                                                        class="font-label-caps text-label-caps text-on-surface-variant">
+                                                                        9001 & 27001</div>
+                                                        </div>
+                                                        <div
+                                                                class="text-center p-6 rounded-lg bg-surface-container-low">
+                                                                <div
+                                                                        class="font-headline-lg text-headline-lg text-primary mb-1">
+                                                                        $5M</div>
+                                                                <div
+                                                                        class="font-label-caps text-label-caps text-on-surface-variant">
+                                                                        Insurance Coverage</div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="md:col-span-7 space-y-6">
+                                                <div
+                                                        class="flex items-start gap-4 p-6 rounded-lg bg-surface-bright premium-shadow">
+                                                        <span
+                                                                class="material-symbols-outlined text-electric-lime text-3xl">verified_user</span>
+                                                        <div>
+                                                                <h4
+                                                                        class="font-headline-md text-headline-md text-primary mb-1">
+                                                                        Chauffeur Vetting</h4>
+                                                                <p
+                                                                        class="font-body-md text-body-md text-on-surface-variant">
+                                                                        Multi-stage background checks, defensive driving
+                                                                        certification, ongoing performance reviews, and
+                                                                        annual re-certification. Only 4% of applicants
+                                                                        meet our standards.</p>
+                                                        </div>
+                                                </div>
+                                                <div
+                                                        class="flex items-start gap-4 p-6 rounded-lg bg-surface-bright premium-shadow">
+                                                        <span
+                                                                class="material-symbols-outlined text-electric-lime text-3xl">build</span>
+                                                        <div>
+                                                                <h4
+                                                                        class="font-headline-md text-headline-md text-primary mb-1">
+                                                                        Vehicle Standards</h4>
+                                                                <p
+                                                                        class="font-body-md text-body-md text-on-surface-variant">
+                                                                        Fleet age under 2 years. Multi-point inspections
+                                                                        before every trip. Real-time diagnostics
+                                                                        monitoring tire pressure, brake health, and
+                                                                        engine performance.</p>
+                                                        </div>
+                                                </div>
+                                                <div
+                                                        class="flex items-start gap-4 p-6 rounded-lg bg-surface-bright premium-shadow">
+                                                        <span
+                                                                class="material-symbols-outlined text-electric-lime text-3xl">sos</span>
+                                                        <div>
+                                                                <h4
+                                                                        class="font-headline-md text-headline-md text-primary mb-1">
+                                                                        Emergency Response</h4>
+                                                                <p
+                                                                        class="font-body-md text-body-md text-on-surface-variant">
+                                                                        In-vehicle SOS buttons, 24/7 operations center
+                                                                        with live monitoring, automated check-ins, and
+                                                                        immediate incident response protocols.</p>
+                                                        </div>
+                                                </div>
+                                                <div
+                                                        class="flex items-start gap-4 p-6 rounded-lg bg-surface-bright premium-shadow">
+                                                        <span
+                                                                class="material-symbols-outlined text-electric-lime text-3xl">gpp_maybe</span>
+                                                        <div>
+                                                                <h4
+                                                                        class="font-headline-md text-headline-md text-primary mb-1">
+                                                                        Data Security</h4>
+                                                                <p
+                                                                        class="font-body-md text-body-md text-on-surface-variant">
+                                                                        SOC 2 Type II compliant. End-to-end encryption
+                                                                        for all data. GDPR adherence. Role-based access
+                                                                        controls for sensitive travel information.</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+                <!-- SUSTAINABILITY -->
+                <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-obsidian-black text-on-primary">
+                        <div class="max-w-container-max mx-auto">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                                        <div>
+                                                <span
+                                                        class="font-label-caps text-label-caps text-electric-lime tracking-widest uppercase mb-4 block">Sustainability</span>
+                                                <h2 class="font-headline-lg text-headline-lg text-on-primary mb-6">
+                                                        Moving forward, responsibly.</h2>
+                                                <p class="font-body-lg text-body-lg text-on-primary/70 mb-8">
+                                                        We believe luxury mobility and environmental responsibility are
+                                                        not mutually exclusive. Our sustainability initiatives are woven
+                                                        into every aspect of our operations — from the vehicles we
+                                                        deploy to the routes we optimize.
+                                                </p>
+                                                <div class="space-y-6">
+                                                        <div class="flex items-start gap-4">
+                                                                <span
+                                                                        class="material-symbols-outlined text-electric-lime text-2xl">electric_car</span>
+                                                                <div>
+                                                                        <h4
+                                                                                class="font-headline-md text-headline-md text-on-primary mb-1">
+                                                                                Green Fleet Expansion</h4>
+                                                                        <p
+                                                                                class="font-body-md text-body-md text-on-primary/60">
+                                                                                30% of our fleet now comprises hybrid
+                                                                                and fully electric vehicles, with a
+                                                                                target of 60% by 2028.</p>
+                                                                </div>
+                                                        </div>
+                                                        <div class="flex items-start gap-4">
+                                                                <span
+                                                                        class="material-symbols-outlined text-electric-lime text-2xl">forest</span>
+                                                                <div>
+                                                                        <h4
+                                                                                class="font-headline-md text-headline-md text-on-primary mb-1">
+                                                                                Carbon Offset Program</h4>
+                                                                        <p
+                                                                                class="font-body-md text-body-md text-on-primary/60">
+                                                                                We offset 100% of emissions from every
+                                                                                trip through verified carbon removal
+                                                                                projects, contributing over $50,000
+                                                                                annually to climate initiatives.</p>
+                                                                </div>
+                                                        </div>
+                                                        <div class="flex items-start gap-4">
+                                                                <span
+                                                                        class="material-symbols-outlined text-electric-lime text-2xl">route</span>
+                                                                <div>
+                                                                        <h4
+                                                                                class="font-headline-md text-headline-md text-on-primary mb-1">
+                                                                                Smart Route Optimization</h4>
+                                                                        <p
+                                                                                class="font-body-md text-body-md text-on-primary/60">
+                                                                                AI-powered routing reduces fuel
+                                                                                consumption by 18% and cuts average trip
+                                                                                emissions by 22% across our global
+                                                                                network.</p>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="grid grid-cols-2 gap-6">
+                                                <div
+                                                        class="bg-white/5 border border-white/10 rounded-xl p-8 text-center">
+                                                        <span
+                                                                class="material-symbols-outlined text-electric-lime text-4xl mb-4 block">co2</span>
+                                                        <div
+                                                                class="font-headline-lg text-headline-lg text-electric-lime mb-1">
+                                                                -42%</div>
+                                                        <div class="font-label-caps text-label-caps text-on-primary/60">
+                                                                CO2 Reduction Since 2022</div>
+                                                </div>
+                                                <div
+                                                        class="bg-white/5 border border-white/10 rounded-xl p-8 text-center">
+                                                        <span
+                                                                class="material-symbols-outlined text-electric-lime text-4xl mb-4 block">solar_power</span>
+                                                        <div
+                                                                class="font-headline-lg text-headline-lg text-electric-lime mb-1">
+                                                                30%</div>
+                                                        <div class="font-label-caps text-label-caps text-on-primary/60">
+                                                                Electric & Hybrid Fleet</div>
+                                                </div>
+                                                <div
+                                                        class="bg-white/5 border border-white/10 rounded-xl p-8 text-center">
+                                                        <span
+                                                                class="material-symbols-outlined text-electric-lime text-4xl mb-4 block">park</span>
+                                                        <div
+                                                                class="font-headline-lg text-headline-lg text-electric-lime mb-1">
+                                                                100%</div>
+                                                        <div class="font-label-caps text-label-caps text-on-primary/60">
+                                                                Emissions Offset Annually</div>
+                                                </div>
+                                                <div
+                                                        class="bg-white/5 border border-white/10 rounded-xl p-8 text-center">
+                                                        <span
+                                                                class="material-symbols-outlined text-electric-lime text-4xl mb-4 block">recycling</span>
+                                                        <div
+                                                                class="font-headline-lg text-headline-lg text-electric-lime mb-1">
+                                                                Zero</div>
+                                                        <div class="font-label-caps text-label-caps text-on-primary/60">
+                                                                Single-Use Plastics in Fleet</div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+                <!-- LEADERSHIP TEAM -->
+                <section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+                        <div class="text-center mb-16">
+                                <span
+                                        class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase mb-4 block">Leadership</span>
+                                <h2 class="font-headline-lg text-headline-lg text-primary">The minds behind the
+                                        movement.</h2>
+                        </div>
+                        <div class="grid md:grid-cols-4 gap-gutter">
+                                <div class="text-center group">
+                                        <div
+                                                class="w-full aspect-square rounded-xl bg-surface-container-low overflow-hidden mb-4">
+                                                <div class="w-full h-full flex items-center justify-center">
+                                                        <span
+                                                                class="material-symbols-outlined text-on-surface-variant/30 text-8xl">person</span>
+                                                </div>
+                                        </div>
+                                        <h4 class="font-headline-md text-headline-md text-primary">James Mitchell</h4>
+                                        <p class="font-label-caps text-label-caps text-on-surface-variant">CEO & Founder
+                                        </p>
+                                        <p class="font-body-md text-body-md text-on-surface-variant text-sm mt-2">Former
+                                                VP at Hertz Global. 20+ years in mobility and fleet operations.</p>
+                                </div>
+                                <div class="text-center group">
+                                        <div
+                                                class="w-full aspect-square rounded-xl bg-surface-container-low overflow-hidden mb-4">
+                                                <div class="w-full h-full flex items-center justify-center">
+                                                        <span
+                                                                class="material-symbols-outlined text-on-surface-variant/30 text-8xl">person</span>
+                                                </div>
+                                        </div>
+                                        <h4 class="font-headline-md text-headline-md text-primary">Sarah Chen</h4>
+                                        <p class="font-label-caps text-label-caps text-on-surface-variant">Chief
+                                                Technology Officer</p>
+                                        <p class="font-body-md text-body-md text-on-surface-variant text-sm mt-2">
+                                                Ex-Uber Engineering Lead. Built mobility platforms serving 50M+ users.
+                                        </p>
+                                </div>
+                                <div class="text-center group">
+                                        <div
+                                                class="w-full aspect-square rounded-xl bg-surface-container-low overflow-hidden mb-4">
+                                                <div class="w-full h-full flex items-center justify-center">
+                                                        <span
+                                                                class="material-symbols-outlined text-on-surface-variant/30 text-8xl">person</span>
+                                                </div>
+                                        </div>
+                                        <h4 class="font-headline-md text-headline-md text-primary">Marcus Webb</h4>
+                                        <p class="font-label-caps text-label-caps text-on-surface-variant">Chief
+                                                Operations Officer</p>
+                                        <p class="font-body-md text-body-md text-on-surface-variant text-sm mt-2">15
+                                                years in luxury hospitality. Previously MD at Blacklane全球 operations.
+                                        </p>
+                                </div>
+                                <div class="text-center group">
+                                        <div
+                                                class="w-full aspect-square rounded-xl bg-surface-container-low overflow-hidden mb-4">
+                                                <div class="w-full h-full flex items-center justify-center">
+                                                        <span
+                                                                class="material-symbols-outlined text-on-surface-variant/30 text-8xl">person</span>
+                                                </div>
+                                        </div>
+                                        <h4 class="font-headline-md text-headline-md text-primary">Elena Rossi</h4>
+                                        <p class="font-label-caps text-label-caps text-on-surface-variant">VP of Client
+                                                Success</p>
+                                        <p class="font-body-md text-body-md text-on-surface-variant text-sm mt-2">
+                                                Enterprise SaaS veteran. Scaled client success at SAP Concur and Amex
+                                                GBT.</p>
+                                </div>
+                        </div>
+                </section>
+                <!-- TESTIMONIALS -->
+                <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-lowest">
+                        <div class="max-w-container-max mx-auto">
+                                <div class="text-center mb-16">
+                                        <span
+                                                class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase mb-4 block">What
+                                                Clients Say</span>
+                                        <h2 class="font-headline-lg text-headline-lg text-primary">Trusted by industry
+                                                leaders worldwide.</h2>
+                                </div>
+                                <div class="grid md:grid-cols-3 gap-gutter">
+                                        <div class="bg-surface-bright premium-shadow rounded-lg p-8">
+                                                <div class="flex items-center gap-1 mb-4">
+                                                        <span
+                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                        <span
+                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                        <span
+                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                        <span
+                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                        <span
+                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                </div>
+                                                <p
+                                                        class="font-body-md text-body-md text-on-surface-variant mb-6 italic">
+                                                        "Executive Motion transformed how we manage executive travel.
+                                                        The platform's visibility and control are unmatched. We've
+                                                        reduced costs by 31% while improving chauffeur quality."</p>
+                                                <div class="flex items-center gap-3">
+                                                        <div
+                                                                class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+                                                                <span class="text-white font-bold text-sm">RH</span>
+                                                        </div>
+                                                        <div>
+                                                                <p
+                                                                        class="font-headline-md text-headline-md text-primary text-sm">
+                                                                        Robert Harrison</p>
+                                                                <p
+                                                                        class="font-body-md text-body-md text-on-surface-variant text-xs">
+                                                                        VP Operations, Deloitte</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="bg-surface-bright premium-shadow rounded-lg p-8">
+                                                <div class="flex items-center gap-1 mb-4">
+                                                        <span
+                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                        <span
+                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                        <span
+                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                        <span
+                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                        <span
+                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                </div>
+                                                <p
+                                                        class="font-body-md text-body-md text-on-surface-variant mb-6 italic">
+                                                        "The reliability is extraordinary. In 18 months of service, we
+                                                        haven't had a single late pickup. For our C-suite team, that
+                                                        level of consistency is non-negotiable."</p>
+                                                <div class="flex items-center gap-3">
+                                                        <div
+                                                                class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+                                                                <span class="text-white font-bold text-sm">AP</span>
+                                                        </div>
+                                                        <div>
+                                                                <p
+                                                                        class="font-headline-md text-headline-md text-primary text-sm">
+                                                                        Amanda Petrov</p>
+                                                                <p
+                                                                        class="font-body-md text-body-md text-on-surface-variant text-xs">
+                                                                        Chief of Staff, Goldman Sachs</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="bg-surface-bright premium-shadow rounded-lg p-8">
+                                                <div class="flex items-center gap-1 mb-4">
+                                                        <span
+                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                        <span
+                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                        <span
+                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                        <span
+                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                        <span
+                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                </div>
+                                                <p
+                                                        class="font-body-md text-body-md text-on-surface-variant mb-6 italic">
+                                                        "Their global network is impressive. Whether our team is in
+                                                        London, Singapore, or New York, the service quality is
+                                                        identical. Executive Motion is our single global partner."</p>
+                                                <div class="flex items-center gap-3">
+                                                        <div
+                                                                class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+                                                                <span class="text-white font-bold text-sm">DK</span>
+                                                        </div>
+                                                        <div>
+                                                                <p
+                                                                        class="font-headline-md text-headline-md text-primary text-sm">
+                                                                        David Kim</p>
+                                                                <p
+                                                                        class="font-body-md text-body-md text-on-surface-variant text-xs">
+                                                                        Global Travel Director, McKinsey</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+                <!-- AWARDS & RECOGNITION -->
+                <section class="py-section-gap px-margin-mobile md:px-margin-desktop">
+                        <div class="max-w-container-max mx-auto">
+                                <div class="text-center mb-16">
+                                        <span
+                                                class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase mb-4 block">Recognition</span>
+                                        <h2 class="font-headline-lg text-headline-lg text-primary">Industry-leading
+                                                standards, independently verified.</h2>
+                                </div>
+                                <div class="grid md:grid-cols-4 gap-8">
+                                        <div class="text-center p-6 rounded-lg border border-outline-variant/10">
+                                                <span
+                                                        class="material-symbols-outlined text-electric-lime text-4xl mb-4 block">emoji_events</span>
+                                                <h4 class="font-headline-md text-headline-md text-primary mb-2">Best
+                                                        Corporate Mobility Platform 2024</h4>
+                                                <p class="font-body-md text-body-md text-on-surface-variant text-sm">
+                                                        Global Travel Tech Awards</p>
+                                        </div>
+                                        <div class="text-center p-6 rounded-lg border border-outline-variant/10">
+                                                <span
+                                                        class="material-symbols-outlined text-electric-lime text-4xl mb-4 block">workspace_premium</span>
+                                                <h4 class="font-headline-md text-headline-md text-primary mb-2">ISO 9001
+                                                        & ISO 27001 Certified</h4>
+                                                <p class="font-body-md text-body-md text-on-surface-variant text-sm">
+                                                        Quality & Information Security</p>
+                                        </div>
+                                        <div class="text-center p-6 rounded-lg border border-outline-variant/10">
+                                                <span
+                                                        class="material-symbols-outlined text-electric-lime text-4xl mb-4 block">star</span>
+                                                <h4 class="font-headline-md text-headline-md text-primary mb-2">4.9/5
+                                                        Client Satisfaction</h4>
+                                                <p class="font-body-md text-body-md text-on-surface-variant text-sm">NPS
+                                                        Score Across 250+ Clients</p>
+                                        </div>
+                                        <div class="text-center p-6 rounded-lg border border-outline-variant/10">
+                                                <span
+                                                        class="material-symbols-outlined text-electric-lime text-4xl mb-4 block">eco</span>
+                                                <h4 class="font-headline-md text-headline-md text-primary mb-2">Green
+                                                        Mobility Leader 2024</h4>
+                                                <p class="font-body-md text-body-md text-on-surface-variant text-sm">
+                                                        Sustainable Transport Council</p>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+                <!-- FINAL CTA -->
+                <section class="py-section-gap px-margin-mobile md:px-margin-desktop text-center">
+                        <div class="max-w-3xl mx-auto space-y-8">
+                                <h2
+                                        class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary">
+                                        Join the future of mobility.
+                                </h2>
+                                <div class="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+                                        <button
+                                                class="font-label-caps text-label-caps uppercase tracking-widest bg-electric-lime text-obsidian-black px-8 py-4 rounded-DEFAULT hover:opacity-90 transition-opacity">
+                                                Get a Corporate Quote
+                                        </button>
+                                        <button
+                                                class="font-label-caps text-label-caps uppercase tracking-widest bg-obsidian-black text-on-primary px-8 py-4 rounded-DEFAULT hover:bg-surface-tint transition-colors">
+                                                Contact Sales
+                                        </button>
+                                </div>
+                        </div>
+                </section>
+        </main>
+        <!-- Footer -->
+        <footer
+                class="bg-primary-container relative w-full bottom-0 border-t border-outline-variant/20 pt-section-gap pb-12">
+                <div
+                        class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-gutter max-w-container-max mx-auto px-margin-desktop mb-16">
+                        <div class="col-span-2 lg:col-span-2">
+                                <div class="font-display-lg text-headline-lg text-primary-fixed mb-6">Executive Motion
+                                </div>
+                                <p class="font-body-md text-body-md text-white max-w-sm mb-6">
+                                        Corporate Mobility, Managed Better. Executive transport solutions for teams that
+                                        demand excellence.</p>
+                        </div>
+                        <div class="col-span-1 lg:col-span-1">
+                                <h4 class="font-label-caps text-label-caps text-on-primary-fixed mb-4">Platform</h4>
+                                <ul class="space-y-3 font-body-md text-body-md text-on-primary-fixed-variant">
+                                        <li><a class="hover:text-primary-fixed transition-colors"
+                                                        href="fleet.html">Solutions</a></li>
+                                        <li><a class="hover:text-primary-fixed transition-colors"
+                                                        href="fleet.html">Fleet</a></li>
+                                        <li><a class="hover:text-primary-fixed transition-colors"
+                                                        href="dashboard.html">Platform</a></li>
+                                </ul>
+                        </div>
+                        <div class="col-span-1 lg:col-span-1">
+                                <h4 class="font-label-caps text-label-caps text-on-primary-fixed mb-4">Company</h4>
+                                <ul class="space-y-3 font-body-md text-body-md text-on-primary-fixed-variant">
+                                        <li><a class="hover:text-primary-fixed transition-colors"
+                                                        href="company.html">About Us</a></li>
+                                        <li><a class="hover:text-primary-fixed transition-colors"
+                                                        href="careers.html">Careers</a></li>
+                                        <li><a class="hover:text-primary-fixed transition-colors"
+                                                        href="contact.html">Contact</a></li>
+                                </ul>
+                        </div>
+                        <div class="col-span-2 lg:col-span-2">
+                                <h4 class="font-label-caps text-label-caps text-on-primary-fixed mb-4">Stay Updated</h4>
+                                <div class="flex">
+                                        <input class="bg-surface-container-highest border-0 rounded-l-lg px-4 py-3 w-full font-body-md text-body-md text-primary focus:ring-2 focus:ring-primary focus:outline-none placeholder-on-surface-variant"
+                                                placeholder="Corporate Email" type="email" />
+                                        <button
+                                                class="bg-primary text-white rounded-r-lg px-6 font-label-caps text-label-caps">Subscribe</button>
+                                </div>
+                        </div>
+                </div>
+                <div
+                        class="max-w-container-max mx-auto px-margin-desktop border-t border-outline-variant/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                        <p class="font-body-md text-body-md text-white">© 2026 Executive Motion. All
+                                rights reserved.</p>
+                        <div class="flex gap-6 font-body-md text-body-md text-on-primary-fixed-variant">
+                                <a class="hover:text-primary-fixed transition-colors" href="privacy-policy.html">Privacy
+                                        Policy</a>
+                                <a class="hover:text-primary-fixed transition-colors" href="terms-conditions.html">Terms
+                                        of Service</a>
+                        </div>
+                </div>
+        </footer>
+        <script>
+                gsap.registerPlugin(ScrollTrigger);
+
+                // Header scroll effect: transparent -> solid background
+                const headerNav = document.querySelector('nav');
+                ScrollTrigger.create({
+                        start: "top -80",
+                        onUpdate: (self) => {
+                                if (window.scrollY > 80) {
+                                        headerNav.classList.add('bg-white', 'shadow-sm');
+                                        headerNav.classList.remove('absolute');
+                                        headerNav.classList.add('sticky');
+                                        headerNav.querySelectorAll('a').forEach(a => {
+                                                if (!a.classList.contains('btn-lime')) {
+                                                        a.classList.remove('text-white', 'text-white/80');
+                                                        a.classList.add('text-primary');
+                                                }
+                                        });
+                                        headerNav.querySelector('button.md\\:hidden')?.classList.remove('text-white');
+                                        headerNav.querySelector('button.md\\:hidden')?.classList.add('text-primary');
+                                } else {
+                                        headerNav.classList.remove('bg-white', 'shadow-sm');
+                                        headerNav.classList.add('absolute');
+                                        headerNav.classList.remove('sticky');
+                                        headerNav.querySelectorAll('a').forEach(a => {
+                                                if (!a.classList.contains('btn-lime')) {
+                                                        a.classList.remove('text-primary');
+                                                        a.classList.add('text-white', 'text-white/80');
+                                                }
+                                        });
+                                        headerNav.querySelector('button.md\\:hidden')?.classList.remove('text-primary');
+                                        headerNav.querySelector('button.md\\:hidden')?.classList.add('text-white');
+                                }
+                        }
+                });
+
+                // Hero reveal
+                const heroTl = gsap.timeline({ defaults: { ease: "power3.out", duration: 1 } });
+                heroTl.from("main h1", { y: 40, opacity: 0, delay: 0.2 })
+                        .from("main p", { y: 30, opacity: 0 }, "-=0.8");
+
+                // Counter animations
+                const countElements = document.querySelectorAll(".stat-number");
+                countElements.forEach(el => {
+                        const rawText = el.innerText.trim();
+                        const cleanVal = parseFloat(rawText.replace(/[^0-9.]/g, ''));
+                        const suffix = rawText.replace(/[0-9.]/g, '');
+
+                        const obj = { val: 0 };
+                        gsap.to(obj, {
+                                val: cleanVal,
+                                scrollTrigger: {
+                                        trigger: el,
+                                        start: "top 95%"
+                                },
+                                duration: 1.8,
+                                ease: "power2.out",
+                                onUpdate: () => {
+                                        el.innerText = (obj.val % 1 === 0 ? Math.floor(obj.val) : obj.val.toFixed(1)) + suffix;
+                                }
+                        });
+                });
+
+                // Philosophy cards staggered reveal
+                gsap.from(".company-card", {
+                        scrollTrigger: {
+                                trigger: ".company-card",
+                                start: "top 85%"
+                        },
+                        opacity: 0,
+                        y: 50,
+                        stagger: 0.2,
+                        duration: 1.2,
+                        ease: "power3.out"
+                });
+
+                // Global map reveal
+                gsap.from(".global-map", {
+                        scrollTrigger: {
+                                trigger: ".global-map",
+                                start: "top 75%"
+                        },
+                        scale: 0.95,
+                        opacity: 0,
+                        duration: 1.5,
+                        ease: "power2.out"
+                });
+        </script>
+</body>
+
+</html>

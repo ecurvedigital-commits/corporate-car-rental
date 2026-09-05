@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Fleet Directory - Executive Motion</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                rel="stylesheet" />
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&amp;display=swap"
+                rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                rel="stylesheet" />
+        <script id="tailwind-config">
+                tailwind.config = {
+                        darkMode: "class",
+                        theme: {
+                                extend: {
+                                        "colors": {
+                                                "surface-bright": "#fcf8f8",
+                                                "on-surface-variant": "#45474a",
+                                                "outline": "#75777a",
+                                                "primary-fixed": "#e2e2e5",
+                                                "error-container": "#ffdad6",
+                                                "inverse-on-surface": "#f4f0ef",
+                                                "on-background": "#1c1b1b",
+                                                "tertiary-container": "#1f1b16",
+                                                "background": "#fcf8f8",
+                                                "tertiary-fixed": "#ebe1d9",
+                                                "on-primary-fixed-variant": "#454749",
+                                                "surface-container-lowest": "#ffffff",
+                                                "secondary": "#5c5f62",
+                                                "on-error": "#ffffff",
+                                                "on-primary-fixed": "#1a1c1e",
+                                                "surface-variant": "#e5e2e1",
+                                                "on-secondary-fixed": "#191c1f",
+                                                "tertiary-fixed-dim": "#cec5bd",
+                                                "inverse-surface": "#313030",
+                                                "on-secondary-fixed-variant": "#44474a",
+                                                "secondary-fixed-dim": "#c5c6ca",
+                                                "tertiary": "#000000",
+                                                "secondary-container": "#dee0e4",
+                                                "surface-container-highest": "#e5e2e1",
+                                                "surface-container-low": "#f6f3f2",
+                                                "primary-fixed-dim": "#c6c6c9",
+                                                "error": "#ba1a1a",
+                                                "surface": "#fcf8f8",
+                                                "on-error-container": "#93000a",
+                                                "on-tertiary-fixed": "#1f1b16",
+                                                "surface-tint": "#5d5e61",
+                                                "inverse-primary": "#c6c6c9",
+                                                "outline-variant": "#c5c6ca",
+                                                "on-surface": "#1c1b1b",
+                                                "on-primary": "#ffffff",
+                                                "on-primary-container": "#838486",
+                                                "on-secondary": "#ffffff",
+                                                "surface-container": "#f1eded",
+                                                "on-tertiary-fixed-variant": "#4c4640",
+                                                "surface-container-high": "#ebe7e7",
+                                                "primary": "#000000",
+                                                "surface-dim": "#ddd9d9",
+                                                "primary-container": "#1a1c1e",
+                                                "on-tertiary-container": "#8a827c",
+                                                "on-secondary-container": "#606366",
+                                                "on-tertiary": "#ffffff",
+                                                "secondary-fixed": "#e1e2e6",
+                                                "electric-lime": "#ccff00" // Adding the requested brand color conceptually
+                                        },
+                                        "borderRadius": {
+                                                "DEFAULT": "0.125rem",
+                                                "lg": "0.25rem",
+                                                "xl": "0.5rem",
+                                                "full": "0.75rem"
+                                        },
+                                        "spacing": {
+                                                "gutter": "24px",
+                                                "margin-mobile": "16px",
+                                                "section-gap": "120px",
+                                                "container-max": "1440px",
+                                                "unit": "8px",
+                                                "margin-desktop": "64px"
+                                        },
+                                        "fontFamily": {
+                                                "display-lg-mobile": [
+                                                        "Inter"
+                                                ],
+                                                "body-md": [
+                                                        "Inter"
+                                                ],
+                                                "display-lg": [
+                                                        "Inter"
+                                                ],
+                                                "body-lg": [
+                                                        "Inter"
+                                                ],
+                                                "headline-md": [
+                                                        "Inter"
+                                                ],
+                                                "label-caps": [
+                                                        "Inter"
+                                                ],
+                                                "headline-lg": [
+                                                        "Inter"
+                                                ]
+                                        },
+                                        "fontSize": {
+                                                "display-lg-mobile": [
+                                                        "40px",
+                                                        {
+                                                                "lineHeight": "1.1",
+                                                                "letterSpacing": "-0.03em",
+                                                                "fontWeight": "800"
+                                                        }
+                                                ],
+                                                "body-md": [
+                                                        "16px",
+                                                        {
+                                                                "lineHeight": "1.6",
+                                                                "letterSpacing": "0",
+                                                                "fontWeight": "400"
+                                                        }
+                                                ],
+                                                "display-lg": [
+                                                        "72px",
+                                                        {
+                                                                "lineHeight": "1.0",
+                                                                "letterSpacing": "-0.04em",
+                                                                "fontWeight": "800"
+                                                        }
+                                                ],
+                                                "body-lg": [
+                                                        "18px",
+                                                        {
+                                                                "lineHeight": "1.6",
+                                                                "letterSpacing": "0",
+                                                                "fontWeight": "500"
+                                                        }
+                                                ],
+                                                "headline-md": [
+                                                        "24px",
+                                                        {
+                                                                "lineHeight": "1.3",
+                                                                "letterSpacing": "-0.01em",
+                                                                "fontWeight": "700"
+                                                        }
+                                                ],
+                                                "label-caps": [
+                                                        "12px",
+                                                        {
+                                                                "lineHeight": "1.0",
+                                                                "letterSpacing": "0.1em",
+                                                                "fontWeight": "700"
+                                                        }
+                                                ],
+                                                "headline-lg": [
+                                                        "32px",
+                                                        {
+                                                                "lineHeight": "1.2",
+                                                                "letterSpacing": "-0.02em",
+                                                                "fontWeight": "700"
+                                                        }
+                                                ]
+                                        }
+                                },
+                        },
+                }
+        </script>
+        <style>
+                body {
+                        background-color: #F5F4F0;
+                        color: #1c1b1b;
+                }
+
+                .btn-lime {
+                        background-color: #C8FF3D;
+                        color: #000000;
+                }
+
+                .btn-lime:hover {
+                        background-color: #B3E600;
+                }
+
+                .card-shadow {
+                        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.04);
+                }
+
+                .electric-lime-btn {
+                        background-color: #ccff00;
+                        color: #000000;
+                }
+
+                .electric-lime-btn:hover {
+                        background-color: #b3e600;
+                }
+
+                .ghost-btn {
+                        border: 1px solid rgba(117, 119, 122, 0.2);
+                        color: #000000;
+                }
+
+                .ghost-btn:hover {
+                        background-color: #f1eded;
+                }
+
+                .thin-border {
+                        border: 1px solid rgba(117, 119, 122, 0.1);
+                }
+
+                /* Hide scrollbar for horizontal scrolling but keep functionality */
+                .no-scrollbar::-webkit-scrollbar {
+                        display: none;
+                }
+
+                .no-scrollbar {
+                        -ms-overflow-style: none;
+                        scrollbar-width: none;
+                }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body class="font-body-md text-body-md antialiased min-h-screen flex flex-col">
+        <!-- TopNavBar -->
+        <nav class="absolute top-0 left-0 w-full z-50 transition-colors">
+                <div
+                        class="flex justify-between items-center w-full px-margin-desktop h-20 max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
+                        <!-- Brand -->
+                        <a href="index.html"
+                                class="font-headline-md text-headline-md font-bold text-white tracking-tight">
+                                Executive Motion
+                        </a>
+                        <!-- Center Navigation (Hidden on Mobile) -->
+                        <div
+                                class="hidden md:flex items-center gap-8 font-label-caps text-label-caps uppercase tracking-widest text-white/80">
+                                <a class="hover:text-white transition-colors duration-300" href="index.html"
+                                        id="nav-home">Home</a>
+                                <a class="hover:text-white transition-colors duration-300" href="company.html"
+                                        id="nav-company">Company</a>
+                                <a class="text-white border-b-2 border-electric-lime pb-1 font-bold" href="fleet.html"
+                                        id="nav-fleet">Fleet</a>
+                        </div>
+                        <!-- Trailing Actions -->
+                        <div class="hidden md:flex items-center gap-4">
+                                <a href="#"
+                                        class="font-label-caps text-label-caps uppercase tracking-widest text-white/80 hover:text-white transition-colors text-center inline-block">Corporate
+                                        Login</a>
+                                <button
+                                        class="font-label-caps text-label-caps uppercase tracking-widest px-6 py-3 rounded-lg font-bold btn-lime transition-colors">Get
+                                        a Quote</button>
+                        </div>
+                        <button class="md:hidden text-white">
+                                <span class="material-symbols-outlined">menu</span>
+                        </button>
+                </div>
+        </nav>
+        <!-- Main Content Area -->
+        <main class="flex-grow flex flex-col items-center w-full pb-section-gap">
+                <!-- Hero Section -->
+                <header class="relative w-full h-[80vh] min-h-[600px] flex items-end pb-16 md:pb-24 overflow-hidden">
+                        <!-- Hero Background Image -->
+                        <div class="absolute inset-0 w-full h-full">
+                                <img src="assets/fleet-main.jpg" alt="Executive Motion Premium Fleet"
+                                        class="w-full h-full object-cover object-center">
+                                <!-- Dark Gradient Overlay -->
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20">
+                                </div>
+                        </div>
+                        <!-- Hero Content -->
+                        <div
+                                class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+                                <h1
+                                        class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-white mb-4">
+                                        The Fleet.</h1>
+                                <p class="font-body-lg text-body-lg text-white/80 max-w-2xl">Uncompromising
+                                        performance meets absolute refinement. Explore our curated selection of premium
+                                        mobility
+                                        solutions designed for modern enterprise.</p>
+                        </div>
+                </header>
+                <!-- Operational Hubs (Horizontal Scroll) -->
+                <section
+                        class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-16 mt-20 md:mb-24">
+                        <div class="flex items-center justify-between mb-6">
+                                <h2
+                                        class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase">
+                                        Operational Hubs &amp; Partners</h2>
+                        </div>
+                        <div class="flex gap-4 overflow-x-auto no-scrollbar pb-4 snap-x">
+                                <!-- Hub 1 - Connaught Place -->
+                                <div
+                                        class="snap-start shrink-0 w-64 md:w-72 bg-surface-container-lowest card-shadow rounded-lg p-6 flex flex-col justify-between thin-border hover:bg-surface-bright transition-colors cursor-pointer group">
+                                        <div>
+                                                <div
+                                                        class="w-10 h-10 bg-primary text-on-primary rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                                        <span class="material-symbols-outlined text-sm"
+                                                                data-icon="location_city">location_city</span>
+                                                </div>
+                                                <h3 class="font-headline-md text-headline-md text-primary mb-1">Connaught Place
+                                                </h3>
+                                                <p class="font-body-md text-body-md text-on-surface-variant">Delhi NCR
+                                                        Headquarters</p>
+                                        </div>
+                                        <div
+                                                class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between">
+                                                <span class="font-label-caps text-label-caps text-secondary">25
+                                                        Partners</span>
+                                                <div class="w-2 h-2 rounded-full electric-lime-btn"></div>
+                                        </div>
+                                </div>
+                                <!-- Hub 2 - Gurugram -->
+                                <div
+                                        class="snap-start shrink-0 w-64 md:w-72 bg-surface-container-lowest card-shadow rounded-lg p-6 flex flex-col justify-between thin-border hover:bg-surface-bright transition-colors cursor-pointer group">
+                                        <div>
+                                                <div
+                                                        class="w-10 h-10 bg-primary text-on-primary rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                                        <span class="material-symbols-outlined text-sm"
+                                                                data-icon="apartment">apartment</span>
+                                                </div>
+                                                <h3 class="font-headline-md text-headline-md text-primary mb-1">Gurugram
+                                                </h3>
+                                                <p class="font-body-md text-body-md text-on-surface-variant">Cyber City
+                                                        Hub</p>
+                                        </div>
+                                        <div
+                                                class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between">
+                                                <span class="font-label-caps text-label-caps text-secondary">18
+                                                        Partners</span>
+                                                <div class="w-2 h-2 rounded-full electric-lime-btn"></div>
+                                        </div>
+                                </div>
+                                <!-- Hub 3 - Noida -->
+                                <div
+                                        class="snap-start shrink-0 w-64 md:w-72 bg-surface-container-lowest card-shadow rounded-lg p-6 flex flex-col justify-between thin-border hover:bg-surface-bright transition-colors cursor-pointer group">
+                                        <div>
+                                                <div
+                                                        class="w-10 h-10 bg-primary text-on-primary rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                                        <span class="material-symbols-outlined text-sm"
+                                                                data-icon="business">business</span>
+                                                </div>
+                                                <h3 class="font-headline-md text-headline-md text-primary mb-1">
+                                                        Noida</h3>
+                                                <p class="font-body-md text-body-md text-on-surface-variant">IT Corridor
+                                                </p>
+                                        </div>
+                                        <div
+                                                class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between">
+                                                <span class="font-label-caps text-label-caps text-secondary">15
+                                                        Partners</span>
+                                                <div class="w-2 h-2 rounded-full electric-lime-btn"></div>
+                                        </div>
+                                </div>
+                                <!-- Hub 4 - Delhi Airport -->
+                                <div
+                                        class="snap-start shrink-0 w-64 md:w-72 bg-surface-container-lowest card-shadow rounded-lg p-6 flex flex-col justify-between thin-border hover:bg-surface-bright transition-colors cursor-pointer group">
+                                        <div>
+                                                <div
+                                                        class="w-10 h-10 bg-primary text-on-primary rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                                        <span class="material-symbols-outlined text-sm"
+                                                                data-icon="corporate_fare">corporate_fare</span>
+                                                </div>
+                                                <h3 class="font-headline-md text-headline-md text-primary mb-1">Delhi Airport
+                                                </h3>
+                                                <p class="font-body-md text-body-md text-on-surface-variant">IGI Terminal
+                                                        Ops</p>
+                                        </div>
+                                        <div
+                                                class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between">
+                                                <span class="font-label-caps text-label-caps text-secondary">20
+                                                        Partners</span>
+                                                <div class="w-2 h-2 rounded-full electric-lime-btn"></div>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+                <!-- Fleet Grid -->
+                <section class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+                        <!-- Filters -->
+                        <div class="flex flex-wrap items-center gap-4 mb-8 border-b border-outline-variant/20 pb-4">
+                                <button
+                                        class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-caps text-label-caps uppercase tracking-widest hover:opacity-90 transition-opacity">All</button>
+                                <button
+                                        class="bg-surface-container-lowest text-on-surface-variant border border-outline-variant/30 px-6 py-2 rounded-full font-label-caps text-label-caps uppercase tracking-widest hover:bg-surface-container transition-colors">Premium</button>
+                                <button
+                                        class="bg-surface-container-lowest text-on-surface-variant border border-outline-variant/30 px-6 py-2 rounded-full font-label-caps text-label-caps uppercase tracking-widest hover:bg-surface-container transition-colors">Group</button>
+                                <button
+                                        class="bg-surface-container-lowest text-on-surface-variant border border-outline-variant/30 px-6 py-2 rounded-full font-label-caps text-label-caps uppercase tracking-widest hover:bg-surface-container transition-colors">Electric</button>
+                                <button
+                                        class="bg-surface-container-lowest text-on-surface-variant border border-outline-variant/30 px-6 py-2 rounded-full font-label-caps text-label-caps uppercase tracking-widest hover:bg-surface-container transition-colors">Workforce</button>
+                        </div>
+                        <!-- Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-gutter">
+                                <!-- Vehicle Card 1 - Maruti Suzuki Ertiga -->
+                                <article
+                                        class="bg-surface-container-lowest rounded-lg overflow-hidden card-shadow flex flex-col thin-border group">
+                                        <div
+                                                class="h-64 md:h-80 w-full overflow-hidden relative bg-surface-container-high">
+                                                <img alt="Maruti Suzuki Ertiga"
+                                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                                        src="assets/car_image1.png" />
+                                                <div
+                                                        class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-3 py-1 rounded font-label-caps text-label-caps text-primary border border-outline-variant/20">
+                                                        Group</div>
+                                        </div>
+                                        <div class="p-8 flex flex-col flex-grow">
+                                                <div class="flex justify-between items-start mb-4">
+                                                        <h3
+                                                                class="font-headline-lg text-headline-lg text-primary leading-tight">
+                                                                Maruti Suzuki Ertiga</h3>
+                                                </div>
+                                                <p
+                                                        class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                                                        Versatile 7-seater MPV perfect for corporate group travel. Spacious interior with comfortable seating, fuel-efficient performance, and ample luggage space for team outings and business trips.</p>
+                                                <div
+                                                        class="flex items-center gap-6 mb-8 border-t border-b border-outline-variant/20 py-4">
+                                                        <div class="flex items-center gap-2 text-on-surface-variant">
+                                                                <span class="material-symbols-outlined text-secondary"
+                                                                        data-icon="group">group</span>
+                                                                <span class="font-label-caps text-label-caps">Max
+                                                                        7</span>
+                                                        </div>
+                                                        <div class="flex items-center gap-2 text-on-surface-variant">
+                                                                <span class="material-symbols-outlined text-secondary"
+                                                                        data-icon="luggage">luggage</span>
+                                                                <span class="font-label-caps text-label-caps">4
+                                                                        Large</span>
+                                                        </div>
+                                                </div>
+                                                <a href="car.html?id=ertiga"
+                                                        class="w-full py-4 electric-lime-btn rounded-lg font-label-caps text-label-caps uppercase tracking-widest transition-colors font-bold text-center block">
+                                                        View Details
+                                                </a>
+                                        </div>
+                                </article>
+                                <!-- Vehicle Card 2 - MG Hector -->
+                                <article
+                                        class="bg-surface-container-lowest rounded-lg overflow-hidden card-shadow flex flex-col thin-border group">
+                                        <div
+                                                class="h-64 md:h-80 w-full overflow-hidden relative bg-surface-container-high">
+                                                <img alt="MG Hector"
+                                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                                        src="assets/car_image2.png" />
+                                                <div
+                                                        class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-3 py-1 rounded font-label-caps text-label-caps text-primary border border-outline-variant/20">
+                                                        Premium</div>
+                                        </div>
+                                        <div class="p-8 flex flex-col flex-grow">
+                                                <div class="flex justify-between items-start mb-4">
+                                                        <h3
+                                                                class="font-headline-lg text-headline-lg text-primary leading-tight">
+                                                                MG Hector</h3>
+                                                </div>
+                                                <p
+                                                        class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                                                        Premium SUV with commanding road presence. Features luxurious interior, advanced infotainment system, and smooth ride quality ideal for executive travel and client meetings.</p>
+                                                <div
+                                                        class="flex items-center gap-6 mb-8 border-t border-b border-outline-variant/20 py-4">
+                                                        <div class="flex items-center gap-2 text-on-surface-variant">
+                                                                <span class="material-symbols-outlined text-secondary"
+                                                                        data-icon="person">person</span>
+                                                                <span class="font-label-caps text-label-caps">Max
+                                                                        5</span>
+                                                        </div>
+                                                        <div class="flex items-center gap-2 text-on-surface-variant">
+                                                                <span class="material-symbols-outlined text-secondary"
+                                                                        data-icon="luggage">luggage</span>
+                                                                <span class="font-label-caps text-label-caps">3
+                                                                        Large</span>
+                                                        </div>
+                                                </div>
+                                                <a href="car.html?id=hector"
+                                                        class="w-full py-4 electric-lime-btn rounded-lg font-label-caps text-label-caps uppercase tracking-widest transition-colors font-bold text-center block">
+                                                        View Details
+                                                </a>
+                                        </div>
+                                </article>
+                                <!-- Vehicle Card 3 - BYD e6 -->
+                                <article
+                                        class="bg-surface-container-lowest rounded-lg overflow-hidden card-shadow flex flex-col thin-border group">
+                                        <div
+                                                class="h-64 md:h-80 w-full overflow-hidden relative bg-surface-container-high">
+                                                <img alt="BYD e6"
+                                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                                        src="assets/car_image3.png" />
+                                                <div
+                                                        class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-3 py-1 rounded font-label-caps text-label-caps text-primary border border-outline-variant/20">
+                                                        Electric</div>
+                                        </div>
+                                        <div class="p-8 flex flex-col flex-grow">
+                                                <div class="flex justify-between items-start mb-4">
+                                                        <h3
+                                                                class="font-headline-lg text-headline-lg text-primary leading-tight">
+                                                                BYD e6</h3>
+                                                </div>
+                                                <p
+                                                        class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                                                        Zero-emission electric MPV for sustainable corporate travel. Silent operation, spacious cabin with premium seating, and eco-friendly mobility for environmentally conscious organizations.</p>
+                                                <div
+                                                        class="flex items-center gap-6 mb-8 border-t border-b border-outline-variant/20 py-4">
+                                                        <div class="flex items-center gap-2 text-on-surface-variant">
+                                                                <span class="material-symbols-outlined text-secondary"
+                                                                        data-icon="group">group</span>
+                                                                <span class="font-label-caps text-label-caps">Max
+                                                                        7</span>
+                                                        </div>
+                                                        <div class="flex items-center gap-2 text-on-surface-variant">
+                                                                <span class="material-symbols-outlined text-secondary"
+                                                                        data-icon="luggage">luggage</span>
+                                                                <span class="font-label-caps text-label-caps">5
+                                                                        Large</span>
+                                                        </div>
+                                                </div>
+                                                <a href="car.html?id=byd-e6"
+                                                        class="w-full py-4 electric-lime-btn rounded-lg font-label-caps text-label-caps uppercase tracking-widest transition-colors font-bold text-center block">
+                                                        View Details
+                                                </a>
+                                        </div>
+                                </article>
+                                <!-- Vehicle Card 4 - Honda Mobilio -->
+                                <article
+                                        class="bg-surface-container-lowest rounded-lg overflow-hidden card-shadow flex flex-col thin-border group">
+                                        <div
+                                                class="h-64 md:h-80 w-full overflow-hidden relative bg-surface-container-high">
+                                                <img alt="Honda Mobilio"
+                                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                                        src="assets/car_image4.png" />
+                                                <div
+                                                        class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-3 py-1 rounded font-label-caps text-label-caps text-primary border border-outline-variant/20">
+                                                        Workforce</div>
+                                        </div>
+                                        <div class="p-8 flex flex-col flex-grow">
+                                                <div class="flex justify-between items-start mb-4">
+                                                        <h3
+                                                                class="font-headline-lg text-headline-lg text-primary leading-tight">
+                                                                Honda Mobilio</h3>
+                                                </div>
+                                                <p
+                                                        class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                                                        Reliable 7-seater for daily corporate commute and workforce transportation. Honda's trusted build quality, comfortable ride, and efficient performance for regular business travel.</p>
+                                                <div
+                                                        class="flex items-center gap-6 mb-8 border-t border-b border-outline-variant/20 py-4">
+                                                        <div class="flex items-center gap-2 text-on-surface-variant">
+                                                                <span class="material-symbols-outlined text-secondary"
+                                                                        data-icon="group">group</span>
+                                                                <span class="font-label-caps text-label-caps">Max
+                                                                        7</span>
+                                                        </div>
+                                                        <div class="flex items-center gap-2 text-on-surface-variant">
+                                                                <span class="material-symbols-outlined text-secondary"
+                                                                        data-icon="luggage">luggage</span>
+                                                                <span class="font-label-caps text-label-caps">3
+                                                                        Large</span>
+                                                        </div>
+                                                </div>
+                                                <a href="car.html?id=mobilio"
+                                                        class="w-full py-4 electric-lime-btn rounded-lg font-label-caps text-label-caps uppercase tracking-widest transition-colors font-bold text-center block">
+                                                        View Details
+                                                </a>
+                                        </div>
+                                </article>
+                        </div>
+                </section>
+        </main>
+        <!-- Footer -->
+        <footer
+                class="bg-primary-container relative w-full bottom-0 border-t border-outline-variant/20 pt-section-gap pb-12">
+                <div
+                        class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-gutter max-w-container-max mx-auto px-margin-desktop mb-16">
+                        <div class="col-span-2 lg:col-span-2">
+                                <div class="font-display-lg text-headline-lg text-primary-fixed mb-6">Executive Motion
+                                </div>
+                                <p class="font-body-md text-body-md text-white max-w-sm mb-6">
+                                        Corporate Mobility, Managed Better. Executive transport solutions for teams that
+                                        demand excellence.</p>
+                        </div>
+                        <div class="col-span-1 lg:col-span-1">
+                                <h4 class="font-label-caps text-label-caps text-on-primary-fixed mb-4">Platform</h4>
+                                <ul class="space-y-3 font-body-md text-body-md text-on-primary-fixed-variant">
+                                        <li><a class="hover:text-primary-fixed transition-colors"
+                                                        href="fleet.html">Solutions</a></li>
+                                        <li><a class="hover:text-primary-fixed transition-colors"
+                                                        href="fleet.html">Fleet</a></li>
+                                        <li><a class="hover:text-primary-fixed transition-colors"
+                                                        href="dashboard.html">Platform</a></li>
+                                </ul>
+                        </div>
+                        <div class="col-span-1 lg:col-span-1">
+                                <h4 class="font-label-caps text-label-caps text-on-primary-fixed mb-4">Company</h4>
+                                <ul class="space-y-3 font-body-md text-body-md text-on-primary-fixed-variant">
+                                        <li><a class="hover:text-primary-fixed transition-colors"
+                                                        href="company.html">About Us</a></li>
+                                        <li><a class="hover:text-primary-fixed transition-colors"
+                                                        href="careers.html">Careers</a></li>
+                                        <li><a class="hover:text-primary-fixed transition-colors"
+                                                        href="contact.html">Contact</a></li>
+                                </ul>
+                        </div>
+                        <div class="col-span-2 lg:col-span-2">
+                                <h4 class="font-label-caps text-label-caps text-on-primary-fixed mb-4">Stay Updated</h4>
+                                <div class="flex">
+                                        <input class="bg-surface-container-highest border-0 rounded-l-lg px-4 py-3 w-full font-body-md text-body-md text-primary focus:ring-2 focus:ring-primary focus:outline-none placeholder-on-surface-variant"
+                                                placeholder="Corporate Email" type="email" />
+                                        <button
+                                                class="bg-primary text-white rounded-r-lg px-6 font-label-caps text-label-caps">Subscribe</button>
+                                </div>
+                        </div>
+                </div>
+                <div
+                        class="max-w-container-max mx-auto px-margin-desktop border-t border-outline-variant/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                        <p class="font-body-md text-body-md text-white">© 2026 Executive Motion. All
+                                rights reserved.</p>
+                        <div class="flex gap-6 font-body-md text-body-md text-on-primary-fixed-variant">
+                                <a class="hover:text-primary-fixed transition-colors" href="privacy-policy.html">Privacy
+                                        Policy</a>
+                                <a class="hover:text-primary-fixed transition-colors" href="terms-conditions.html">Terms
+                                        of Service</a>
+                        </div>
+                </div>
+        </footer>
+        <script>
+                gsap.registerPlugin(ScrollTrigger);
+
+                // Header scroll transition
+                const headerNav = document.querySelector('nav');
+                window.addEventListener('scroll', () => {
+                        if (window.scrollY > 80) {
+                                headerNav.classList.add('bg-white', 'shadow-sm');
+                                headerNav.classList.remove('absolute');
+                                headerNav.classList.add('sticky');
+                                headerNav.querySelectorAll('a').forEach(a => {
+                                        if (!a.classList.contains('btn-lime')) {
+                                                a.classList.add('text-primary');
+                                                a.classList.remove('text-white');
+                                        }
+                                });
+                                headerNav.querySelector('button.md\\:hidden')?.classList.remove('text-white');
+                                headerNav.querySelector('button.md\\:hidden')?.classList.add('text-primary');
+                        } else {
+                                headerNav.classList.remove('bg-white', 'shadow-sm');
+                                headerNav.classList.add('absolute');
+                                headerNav.classList.remove('sticky');
+                                headerNav.querySelectorAll('a').forEach(a => {
+                                        if (!a.classList.contains('btn-lime')) {
+                                                a.classList.add('text-white');
+                                                a.classList.remove('text-primary');
+                                        }
+                                });
+                                headerNav.querySelector('button.md\\:hidden')?.classList.remove('text-primary');
+                                headerNav.querySelector('button.md\\:hidden')?.classList.add('text-white');
+                        }
+                });
+
+                // Hero reveal
+                const heroTl = gsap.timeline({ defaults: { ease: "power3.out", duration: 1 } });
+                heroTl.from("main header h1", { y: 50, opacity: 0, delay: 0.3 })
+                        .from("main header p", { y: 40, opacity: 0 }, "-=0.8");
+
+                // Hub cards staggered reveal
+                gsap.from(".snap-x > div", {
+                        scrollTrigger: {
+                                trigger: ".snap-x",
+                                start: "top 85%"
+                        },
+                        opacity: 0,
+                        x: 30,
+                        stagger: 0.1,
+                        duration: 0.8,
+                        ease: "power2.out"
+                });
+
+                // Fleet cards staggered reveal
+                gsap.from("article.group", {
+                        scrollTrigger: {
+                                trigger: "article.group",
+                                start: "top 85%"
+                        },
+                        opacity: 0,
+                        y: 50,
+                        stagger: 0.15,
+                        duration: 1,
+                        ease: "power3.out"
+                });
+        </script>
+</body>
+
+</html>

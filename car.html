@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vehicle Details - Executive Motion</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-bright": "#fcf8f8",
+                      "on-surface-variant": "#45474a",
+                      "outline": "#75777a",
+                      "primary-fixed": "#e2e2e5",
+                      "error-container": "#ffdad6",
+                      "inverse-on-surface": "#f4f0ef",
+                      "on-background": "#1c1b1b",
+                      "tertiary-container": "#1f1b16",
+                      "background": "#fcf8f8",
+                      "tertiary-fixed": "#ebe1d9",
+                      "on-primary-fixed-variant": "#454749",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary": "#5c5f62",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed": "#1a1c1e",
+                      "surface-variant": "#e5e2e1",
+                      "on-secondary-fixed": "#191c1f",
+                      "tertiary-fixed-dim": "#cec5bd",
+                      "inverse-surface": "#313030",
+                      "on-secondary-fixed-variant": "#44474a",
+                      "secondary-fixed-dim": "#c5c6ca",
+                      "tertiary": "#000000",
+                      "secondary-container": "#dee0e4",
+                      "surface-container-highest": "#e5e2e1",
+                      "surface-container-low": "#f6f3f2",
+                      "primary-fixed-dim": "#c6c6c9",
+                      "error": "#ba1a1a",
+                      "surface": "#fcf8f8",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed": "#1f1b16",
+                      "surface-tint": "#5d5e61",
+                      "inverse-primary": "#c6c6c9",
+                      "outline-variant": "#c5c6ca",
+                      "on-surface": "#1c1b1b",
+                      "on-primary": "#ffffff",
+                      "on-primary-container": "#838486",
+                      "on-secondary": "#ffffff",
+                      "surface-container": "#f1eded",
+                      "on-tertiary-fixed-variant": "#4c4640",
+                      "surface-container-high": "#ebe7e7",
+                      "primary": "#000000",
+                      "surface-dim": "#ddd9d9",
+                      "primary-container": "#1a1c1e",
+                      "on-tertiary-container": "#8a827c",
+                      "on-secondary-container": "#606366",
+                      "on-tertiary": "#ffffff",
+                      "secondary-fixed": "#e1e2e6",
+                      "electric-lime": "#ccff00",
+                      "obsidian": "#000000",
+                      "graphite": "#222222"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "margin-mobile": "16px",
+                      "section-gap": "120px",
+                      "container-max": "1440px",
+                      "unit": "8px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": ["Inter"],
+                      "body-md": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "label-caps": ["Inter"],
+                      "headline-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "display-lg-mobile": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                      "display-lg": ["72px", {"lineHeight": "1.0", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "500"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body {
+            background-color: #F5F4F0;
+            color: #1c1b1b;
+        }
+        .card-shadow {
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.04);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(34, 34, 34, 0.1);
+        }
+    </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body class="antialiased min-h-screen font-body-md text-body-md overflow-x-hidden">
+<main class="w-full max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile pb-section-gap">
+<!-- Back Link -->
+<div class="pt-8 pb-4">
+<a class="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="fleet.html">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+                Back to Fleet
+            </a>
+</div>
+<!-- Hero Section -->
+<section class="relative w-full h-[500px] md:h-[600px] rounded-xl overflow-hidden mb-gutter">
+<div id="car-bg-img" class="absolute inset-0 bg-cover bg-center w-full h-full"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 md:p-12 w-full text-white">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span id="car-category-tag" class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded border border-white/30 font-label-caps text-label-caps mb-4">Executive Class</span>
+<h1 id="car-title" class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-2">Mercedes-Benz S-Class</h1>
+<p id="car-tagline" class="font-body-lg text-body-lg text-white/80 max-w-xl">The pinnacle of executive comfort, combining state-of-the-art technology with unparalleled refinement.</p>
+</div>
+<button class="bg-electric-lime text-obsidian px-8 py-4 rounded font-label-caps text-label-caps hover:bg-[#b3e600] transition-colors shadow-lg self-start md:self-end">
+                        Book This Vehicle
+                    </button>
+</div>
+</div>
+</section>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mt-12">
+<!-- Left Column: Specs & Details -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+<!-- Overview Card -->
+<div class="bg-surface-container-lowest rounded-xl p-8 card-shadow">
+<h2 id="car-overview-title" class="font-headline-lg text-headline-lg text-primary mb-6">The Pinnacle of Executive Comfort</h2>
+<p id="car-overview-description" class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        Experience the ultimate in luxury travel. The S-Class sets the standard for executive transport, offering an exceptionally quiet cabin, active air suspension for a cloud-like ride, and meticulous craftsmanship throughout. Perfect for inter-city transfers, roadshows, or when you need a mobile office environment that compromises nothing.
+                    </p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+<div class="flex flex-col gap-1">
+<span class="material-symbols-outlined text-outline mb-1">group</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Capacity</span>
+<span id="car-capacity" class="font-body-lg text-body-lg text-primary">3 Passengers</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="material-symbols-outlined text-outline mb-1">work</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Luggage</span>
+<span id="car-luggage" class="font-body-lg text-body-lg text-primary">2 Large, 2 Small</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="material-symbols-outlined text-outline mb-1">wifi</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Connectivity</span>
+<span id="car-connectivity" class="font-body-lg text-body-lg text-primary">5G Wi-Fi</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="material-symbols-outlined text-outline mb-1">thermostat</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Climate</span>
+<span id="car-climate" class="font-body-lg text-body-lg text-primary">4-Zone Auto</span>
+</div>
+</div>
+</div>
+<!-- Technical Specs Bento -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest rounded-xl p-8 card-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">settings_suggest</span>
+<h3 class="font-headline-md text-headline-md text-primary">Performance</h3>
+</div>
+<ul class="space-y-4">
+<li class="flex justify-between items-center border-b border-outline-variant/30 pb-2">
+<span class="font-body-md text-body-md text-on-surface-variant">Engine</span>
+<span id="car-spec-engine" class="font-body-md text-body-md text-primary font-medium">3.0L Inline-6 Turbo</span>
+</li>
+<li class="flex justify-between items-center border-b border-outline-variant/30 pb-2">
+<span class="font-body-md text-body-md text-on-surface-variant">Drive</span>
+<span id="car-spec-drive" class="font-body-md text-body-md text-primary font-medium">4MATIC All-Wheel</span>
+</li>
+<li class="flex justify-between items-center pb-2">
+<span class="font-body-md text-body-md text-on-surface-variant">Suspension</span>
+<span id="car-spec-suspension" class="font-body-md text-body-md text-primary font-medium">AIRMATIC</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-8 card-shadow flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">weekend</span>
+<h3 class="font-headline-md text-headline-md text-primary">Interior</h3>
+</div>
+<ul class="space-y-4">
+<li class="flex justify-between items-center border-b border-outline-variant/30 pb-2">
+<span class="font-body-md text-body-md text-on-surface-variant">Upholstery</span>
+<span id="car-spec-upholstery" class="font-body-md text-body-md text-primary font-medium">Nappa Leather</span>
+</li>
+<li class="flex justify-between items-center border-b border-outline-variant/30 pb-2">
+<span class="font-body-md text-body-md text-on-surface-variant">Seating</span>
+<span id="car-spec-seating" class="font-body-md text-body-md text-primary font-medium">Active Multicontour</span>
+</li>
+<li class="flex justify-between items-center pb-2">
+<span class="font-body-md text-body-md text-on-surface-variant">Audio</span>
+<span class="font-body-md text-body-md text-primary font-medium">Premium Surround 3D</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Chauffeur & Action -->
+<div class="lg:col-span-4 flex flex-col gap-8">
+<!-- Chauffeur Profile -->
+<div class="bg-surface-container-lowest rounded-xl p-8 card-shadow border border-outline-variant/20 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-surface-container-low rounded-bl-full -mr-16 -mt-16 z-0"></div>
+<div class="relative z-10">
+<span class="font-label-caps text-label-caps text-on-surface-variant block mb-6">Assigned Chauffeur</span>
+<div class="flex items-center gap-4 mb-6">
+<div class="w-16 h-16 rounded-full bg-secondary-container overflow-hidden border-2 border-white shadow-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant">person</span>
+</div>
+<div>
+<h3 id="driver-name" class="font-headline-md text-headline-md text-primary">Rajesh Kumar</h3>
+<div class="flex items-center gap-1 mt-1">
+<span class="w-2 h-2 rounded-full bg-electric-lime"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Available</span>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline text-xl">history</span>
+<div>
+<span class="block font-label-caps text-label-caps text-on-surface-variant mb-1">Experience</span>
+<span id="driver-experience" class="font-body-md text-body-md text-primary font-medium">10 Years Corporate Transport</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline text-xl">language</span>
+<div>
+<span class="block font-label-caps text-label-caps text-on-surface-variant mb-1">Languages</span>
+<span id="driver-languages" class="font-body-md text-body-md text-primary font-medium">Hindi, English, Marathi</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-outline text-xl">verified_user</span>
+<div>
+<span class="block font-label-caps text-label-caps text-on-surface-variant mb-1">Certifications</span>
+<span class="font-body-md text-body-md text-primary font-medium">Advanced Defensive Driving, First Aid</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Booking Action -->
+<div class="bg-surface-container-lowest rounded-xl p-6 card-shadow sticky top-24">
+<div class="flex justify-between items-center mb-6">
+<span class="font-body-lg text-body-lg text-on-surface-variant">Hourly Rate</span>
+<span id="car-hourly-rate" class="font-headline-md text-headline-md text-primary">₹2,500<span class="font-body-md text-body-md text-on-surface-variant font-normal">/hr</span></span>
+</div>
+<button class="w-full bg-electric-lime text-obsidian px-6 py-4 rounded font-label-caps text-label-caps hover:bg-[#b3e600] transition-colors shadow-sm flex justify-center items-center gap-2">
+<span>Book This Vehicle</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<p class="text-center font-label-caps text-label-caps text-on-surface-variant mt-4 opacity-70">Minimum 3 hours required</p>
+</div>
+</div>
+</div>
+</main>
+
+<script>
+    // Extract ID parameter from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const carId = urlParams.get('id') || 'ertiga';
+
+    // Embedded car data (avoids CORS issues with file:// protocol)
+    const cars = {
+      "ertiga": {
+        "id": "ertiga",
+        "name": "Maruti Suzuki Ertiga",
+        "category": "Group Class",
+        "price": 2500,
+        "image": "assets/car_image1.png",
+        "description": "Versatile 7-seater MPV perfect for corporate group travel. Spacious interior with comfortable seating, fuel-efficient performance, and ample luggage space for team outings and business trips.",
+        "capacity": "7 Passengers",
+        "luggage": "4 Large",
+        "connectivity": "4G Wi-Fi",
+        "climate": "Dual-Zone Auto AC",
+        "engine": "1.5L K-Series Petrol",
+        "drive": "Front-Wheel Drive",
+        "suspension": "McPherson Strut / Torsion Beam",
+        "upholstery": "Premium Fabric",
+        "seating": "Captain Seats with Armrest",
+        "driver": {
+          "name": "Rajesh Kumar",
+          "experience": "10 Years Corporate Transport",
+          "languages": "Hindi, English, Marathi"
+        }
+      },
+      "hector": {
+        "id": "hector",
+        "name": "MG Hector",
+        "category": "Premium Class",
+        "price": 3500,
+        "image": "assets/car_image2.png",
+        "description": "Premium SUV with commanding road presence. Features luxurious interior, advanced infotainment system, and smooth ride quality ideal for executive travel and client meetings.",
+        "capacity": "5 Passengers",
+        "luggage": "3 Large",
+        "connectivity": "5G Wi-Fi",
+        "climate": "Automatic Climate Control",
+        "engine": "2.0L Turbo Diesel / 1.5L Turbo Petrol",
+        "drive": "Front-Wheel Drive",
+        "suspension": "MacPherson Strut / Multi-Link",
+        "upholstery": "Leatherette Seats",
+        "seating": "6-Way Power Adjustable Driver",
+        "driver": {
+          "name": "Suresh Patel",
+          "experience": "8 Years Executive Transport",
+          "languages": "Hindi, English, Gujarati"
+        }
+      },
+      "byd-e6": {
+        "id": "byd-e6",
+        "name": "BYD e6",
+        "category": "Electric Class",
+        "price": 4000,
+        "image": "assets/car_image3.png",
+        "description": "Zero-emission electric MPV for sustainable corporate travel. Silent operation, spacious cabin with premium seating, and eco-friendly mobility for environmentally conscious organizations.",
+        "capacity": "7 Passengers",
+        "luggage": "5 Large",
+        "connectivity": "4G Wi-Fi",
+        "climate": "Automatic Climate Control",
+        "engine": "71.7 kWh Blade Battery",
+        "drive": "Front-Wheel Drive",
+        "suspension": "MacPherson Strut / Multi-Link",
+        "upholstery": "Premium Leatherette",
+        "seating": "8-Way Power Adjustable Driver",
+        "driver": {
+          "name": "Anand Sharma",
+          "experience": "12 Years Corporate Transport",
+          "languages": "Hindi, English, Tamil"
+        }
+      },
+      "mobilio": {
+        "id": "mobilio",
+        "name": "Honda Mobilio",
+        "category": "Workforce Class",
+        "price": 2000,
+        "image": "assets/car_image4.png",
+        "description": "Reliable 7-seater for daily corporate commute and workforce transportation. Honda's trusted build quality, comfortable ride, and efficient performance for regular business travel.",
+        "capacity": "7 Passengers",
+        "luggage": "3 Large",
+        "connectivity": "4G Wi-Fi",
+        "climate": "Manual AC with Rear Vents",
+        "engine": "1.5L i-VTEC Petrol",
+        "drive": "Front-Wheel Drive",
+        "suspension": "MacPherson Strut / Torsion Beam",
+        "upholstery": "Premium Fabric",
+        "seating": "Adjustable Headrests All Rows",
+        "driver": {
+          "name": "Vikram Singh",
+          "experience": "7 Years Corporate Transport",
+          "languages": "Hindi, English, Punjabi"
+        }
+      }
+    };
+
+    // Get car data directly from embedded object
+    const car = cars[carId];
+    if (!car) {
+        document.body.innerHTML = '<div class="flex flex-col items-center justify-center h-screen font-body-lg text-primary gap-4"><div>Vehicle not found.</div><a href="fleet.html" class="px-6 py-3 bg-electric-lime text-obsidian rounded font-bold">Back to Fleet</a></div>';
+    } else {
+        document.title = `${car.name} - Executive Motion`;
+        document.getElementById('car-bg-img').style.backgroundImage = `url('${car.image}')`;
+        document.getElementById('car-category-tag').innerText = car.category;
+        document.getElementById('car-title').innerText = car.name;
+        document.getElementById('car-tagline').innerText = `Experience the ultimate in ${car.category.toLowerCase()}.`;
+        document.getElementById('car-overview-title').innerText = `The Pinnacle of ${car.category}`;
+        document.getElementById('car-overview-description').innerText = car.description;
+        document.getElementById('car-capacity').innerText = car.capacity;
+        document.getElementById('car-luggage').innerText = car.luggage;
+        document.getElementById('car-connectivity').innerText = car.connectivity;
+        document.getElementById('car-climate').innerText = car.climate;
+
+        // Specifications
+        document.getElementById('car-spec-engine').innerText = car.engine;
+        document.getElementById('car-spec-drive').innerText = car.drive;
+        document.getElementById('car-spec-suspension').innerText = car.suspension;
+        document.getElementById('car-spec-upholstery').innerText = car.upholstery;
+        document.getElementById('car-spec-seating').innerText = car.seating;
+        
+        // Hourly rate in Indian Rupees
+        document.getElementById('car-hourly-rate').innerHTML = `₹${car.price.toLocaleString('en-IN')}<span class="font-body-md text-body-md text-on-surface-variant font-normal">/hr</span>`;
+
+        // Driver information
+        if (car.driver) {
+            document.getElementById('driver-name').innerText = car.driver.name;
+            document.getElementById('driver-experience').innerText = car.driver.experience;
+            document.getElementById('driver-languages').innerText = car.driver.languages;
+        }
+
+        // Run GSAP ScrollTrigger animations after DOM is ready
+        gsap.registerPlugin(ScrollTrigger);
+
+        const heroTl = gsap.timeline({ defaults: { ease: "power3.out", duration: 1 } });
+        heroTl.from("#car-category-tag", { y: 20, opacity: 0, delay: 0.1 })
+              .from("#car-title", { y: 30, opacity: 0 }, "-=0.8")
+              .from("#car-tagline", { y: 20, opacity: 0 }, "-=0.8");
+
+        gsap.from(".card-shadow", {
+                scrollTrigger: {
+                        trigger: ".card-shadow",
+                        start: "top 90%"
+                },
+                opacity: 0,
+                y: 30,
+                stagger: 0.15,
+                duration: 0.8,
+                ease: "power2.out"
+        });
+    }
+</script>
+</body></html>

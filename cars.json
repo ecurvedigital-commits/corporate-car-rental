@@ -1,0 +1,90 @@
+{
+  "ertiga": {
+    "id": "ertiga",
+    "name": "Maruti Suzuki Ertiga",
+    "category": "Group Class",
+    "price": 2500,
+    "image": "assets/car_image1.png",
+    "description": "Versatile 7-seater MPV perfect for corporate group travel. Spacious interior with comfortable seating, fuel-efficient performance, and ample luggage space for team outings and business trips.",
+    "capacity": "7 Passengers",
+    "luggage": "4 Large",
+    "connectivity": "4G Wi-Fi",
+    "climate": "Dual-Zone Auto AC",
+    "engine": "1.5L K-Series Petrol",
+    "drive": "Front-Wheel Drive",
+    "suspension": "McPherson Strut / Torsion Beam",
+    "upholstery": "Premium Fabric",
+    "seating": "Captain Seats with Armrest",
+    "driver": {
+      "name": "Rajesh Kumar",
+      "experience": "10 Years Corporate Transport",
+      "languages": "Hindi, English, Marathi"
+    }
+  },
+  "hector": {
+    "id": "hector",
+    "name": "MG Hector",
+    "category": "Premium Class",
+    "price": 3500,
+    "image": "assets/car_image2.png",
+    "description": "Premium SUV with commanding road presence. Features luxurious interior, advanced infotainment system, and smooth ride quality ideal for executive travel and client meetings.",
+    "capacity": "5 Passengers",
+    "luggage": "3 Large",
+    "connectivity": "5G Wi-Fi",
+    "climate": "Automatic Climate Control",
+    "engine": "2.0L Turbo Diesel / 1.5L Turbo Petrol",
+    "drive": "Front-Wheel Drive",
+    "suspension": "MacPherson Strut / Multi-Link",
+    "upholstery": "Leatherette Seats",
+    "seating": "6-Way Power Adjustable Driver",
+    "driver": {
+      "name": "Suresh Patel",
+      "experience": "8 Years Executive Transport",
+      "languages": "Hindi, English, Gujarati"
+    }
+  },
+  "byd-e6": {
+    "id": "byd-e6",
+    "name": "BYD e6",
+    "category": "Electric Class",
+    "price": 4000,
+    "image": "assets/car_image3.png",
+    "description": "Zero-emission electric MPV for sustainable corporate travel. Silent operation, spacious cabin with premium seating, and eco-friendly mobility for environmentally conscious organizations.",
+    "capacity": "7 Passengers",
+    "luggage": "5 Large",
+    "connectivity": "4G Wi-Fi",
+    "climate": "Automatic Climate Control",
+    "engine": "71.7 kWh Blade Battery",
+    "drive": "Front-Wheel Drive",
+    "suspension": "MacPherson Strut / Multi-Link",
+    "upholstery": "Premium Leatherette",
+    "seating": "8-Way Power Adjustable Driver",
+    "driver": {
+      "name": "Anand Sharma",
+      "experience": "12 Years Corporate Transport",
+      "languages": "Hindi, English, Tamil"
+    }
+  },
+  "mobilio": {
+    "id": "mobilio",
+    "name": "Honda Mobilio",
+    "category": "Workforce Class",
+    "price": 2000,
+    "image": "assets/car_image4.png",
+    "description": "Reliable 7-seater for daily corporate commute and workforce transportation. Honda's trusted build quality, comfortable ride, and efficient performance for regular business travel.",
+    "capacity": "7 Passengers",
+    "luggage": "3 Large",
+    "connectivity": "4G Wi-Fi",
+    "climate": "Manual AC with Rear Vents",
+    "engine": "1.5L i-VTEC Petrol",
+    "drive": "Front-Wheel Drive",
+    "suspension": "MacPherson Strut / Torsion Beam",
+    "upholstery": "Premium Fabric",
+    "seating": "Adjustable Headrests All Rows",
+    "driver": {
+      "name": "Vikram Singh",
+      "experience": "7 Years Corporate Transport",
+      "languages": "Hindi, English, Punjabi"
+    }
+  }
+}
