@@ -1,0 +1,302 @@
+<!-- BOOKING POPUP - Shared Component -->
+<style>
+        /* Booking Modal Styles */
+        .booking-modal-overlay {
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.5);
+                backdrop-filter: blur(4px);
+                z-index: 9999;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .booking-modal-overlay.active {
+                opacity: 1;
+                visibility: visible;
+        }
+
+        .booking-modal {
+                background: white;
+                border-radius: 16px;
+                width: 90%;
+                max-width: 560px;
+                max-height: 90vh;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                transform: translateY(30px) scale(0.97);
+                transition: transform 0.3s ease;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .booking-modal-overlay.active .booking-modal {
+                transform: translateY(0) scale(1);
+        }
+
+        .booking-modal-scroll {
+                overflow-y: auto;
+                flex: 1;
+                position: relative;
+        }
+
+        .booking-modal-scroll::-webkit-scrollbar {
+                width: 6px;
+        }
+
+        .booking-modal-scroll::-webkit-scrollbar-track {
+                background: transparent;
+        }
+
+        .booking-modal-scroll::-webkit-scrollbar-thumb {
+                background: #cbd5e1;
+                border-radius: 3px;
+        }
+
+        .booking-modal-scroll::-webkit-scrollbar-thumb:hover {
+                background: #94a3b8;
+        }
+
+        .booking-modal input:focus,
+        .booking-modal select:focus,
+        .booking-modal textarea:focus {
+                outline: none;
+                border-color: #C8FF3D;
+                box-shadow: 0 0 0 3px rgba(200, 255, 61, 0.2);
+        }
+
+        .form-field {
+                transition: all 0.3s ease;
+        }
+
+        .form-field.error input,
+        .form-field.error select {
+                border-color: #ba1a1a;
+                box-shadow: 0 0 0 3px rgba(186, 26, 26, 0.1);
+        }
+
+        .form-field .error-msg {
+                color: #ba1a1a;
+                font-size: 12px;
+                margin-top: 4px;
+                display: none;
+        }
+
+        .form-field.error .error-msg {
+                display: block;
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+                position: absolute;
+                right: 8px;
+                top: 8px;
+                bottom: 8px;
+                width: 4px;
+                background: rgba(0, 0, 0, 0.1);
+                border-radius: 2px;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+        }
+
+        .scroll-indicator.active {
+                opacity: 1;
+        }
+
+        .scroll-indicator-thumb {
+                position: absolute;
+                width: 100%;
+                background: #C8FF3D;
+                border-radius: 2px;
+                top: 0;
+                transition: top 0.1s ease;
+        }
+</style>
+
+<!-- Booking Popup Modal -->
+<div class="booking-modal-overlay" id="bookingModal">
+        <div class="booking-modal">
+                <!-- Modal Header (fixed, non-scrolling) -->
+                <div class="bg-primary p-8 rounded-t-xl relative shrink-0">
+                        <button onclick="closeBookingModal()"
+                                class="absolute top-4 right-4 text-white/60 hover:text-white transition-colors">
+                                <span class="material-symbols-outlined text-2xl">close</span>
+                        </button>
+                        <span
+                                class="font-label-caps text-label-caps text-electric-lime tracking-widest uppercase mb-2 block">Book
+                                Your Ride</span>
+                        <h2 class="font-headline-lg text-headline-lg text-white">
+                                Request a Corporate Quote</h2>
+                        <p class="font-body-md text-body-md text-surface-container-high mt-2">
+                                Fill in your details and our team will get back to you within 2 hours.</p>
+                </div>
+                <!-- Scrollable Content -->
+                <div class="booking-modal-scroll" id="bookingScroll">
+                        <div class="scroll-indicator" id="scrollIndicator">
+                                <div class="scroll-indicator-thumb" id="scrollThumb"></div>
+                        </div>
+                        <!-- Modal Body -->
+                        <form id="bookingForm" class="p-8 space-y-5" onsubmit="handleBookingSubmit(event)">
+                                <!-- Row 1: Name & Email -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                        <div class="form-field">
+                                                <label
+                                                        class="font-label-caps text-label-caps text-on-surface-variant block mb-2">Full
+                                                        Name *</label>
+                                                <input type="text" name="fullName" placeholder="John Doe"
+                                                        required
+                                                        class="w-full border border-outline-variant/30 rounded-lg px-4 py-3 font-body-md text-body-md text-primary bg-surface-container-low placeholder-on-surface-variant/50 transition-all" />
+                                                <p class="error-msg">Please enter your full name</p>
+                                        </div>
+                                        <div class="form-field">
+                                                <label
+                                                        class="font-label-caps text-label-caps text-on-surface-variant block mb-2">Work
+                                                        Email *</label>
+                                                <input type="email" name="email" placeholder="john@company.com"
+                                                        required
+                                                        class="w-full border border-outline-variant/30 rounded-lg px-4 py-3 font-body-md text-body-md text-primary bg-surface-container-low placeholder-on-surface-variant/50 transition-all" />
+                                                <p class="error-msg">Please enter a valid email</p>
+                                        </div>
+                                </div>
+                                <!-- Row 2: Phone & Company -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                        <div class="form-field">
+                                                <label
+                                                        class="font-label-caps text-label-caps text-on-surface-variant block mb-2">Phone
+                                                        Number *</label>
+                                                <input type="tel" name="phone" placeholder="+91 98765 43210"
+                                                        required
+                                                        class="w-full border border-outline-variant/30 rounded-lg px-4 py-3 font-body-md text-body-md text-primary bg-surface-container-low placeholder-on-surface-variant/50 transition-all" />
+                                                <p class="error-msg">Please enter a valid phone number</p>
+                                        </div>
+                                        <div class="form-field">
+                                                <label
+                                                        class="font-label-caps text-label-caps text-on-surface-variant block mb-2">Company
+                                                        Name *</label>
+                                                <input type="text" name="company" placeholder="Acme Corp"
+                                                        required
+                                                        class="w-full border border-outline-variant/30 rounded-lg px-4 py-3 font-body-md text-body-md text-primary bg-surface-container-low placeholder-on-surface-variant/50 transition-all" />
+                                                <p class="error-msg">Please enter your company name</p>
+                                        </div>
+                                </div>
+                                <!-- Row 3: Service Type -->
+                                <div class="form-field">
+                                        <label
+                                                class="font-label-caps text-label-caps text-on-surface-variant block mb-2">Service
+                                                Type *</label>
+                                        <select name="serviceType" required
+                                                class="w-full border border-outline-variant/30 rounded-lg px-4 py-3 font-body-md text-body-md text-primary bg-surface-container-low appearance-none transition-all">
+                                                <option value="" disabled selected>Select a service</option>
+                                                <option value="executive">Executive Travel</option>
+                                                <option value="airport">Airport Transfer</option>
+                                                <option value="events">Corporate Event</option>
+                                                <option value="employee">Employee Mobility</option>
+                                                <option value="custom">Custom Solution</option>
+                                        </select>
+                                        <p class="error-msg">Please select a service type</p>
+                                </div>
+                                <!-- Row 4: Pickup & Dropoff -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                        <div class="form-field">
+                                                <label
+                                                        class="font-label-caps text-label-caps text-on-surface-variant block mb-2">Pickup
+                                                        Location</label>
+                                                <input type="text" name="pickup"
+                                                        placeholder="Airport, Hotel, Office..."
+                                                        class="w-full border border-outline-variant/30 rounded-lg px-4 py-3 font-body-md text-body-md text-primary bg-surface-container-low placeholder-on-surface-variant/50 transition-all" />
+                                        </div>
+                                        <div class="form-field">
+                                                <label
+                                                        class="font-label-caps text-label-caps text-on-surface-variant block mb-2">Dropoff
+                                                        Location</label>
+                                                <input type="text" name="dropoff"
+                                                        placeholder="Office, Venue, Hotel..."
+                                                        class="w-full border border-outline-variant/30 rounded-lg px-4 py-3 font-body-md text-body-md text-primary bg-surface-container-low placeholder-on-surface-variant/50 transition-all" />
+                                        </div>
+                                </div>
+                                <!-- Row 5: Date & Passengers -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                        <div class="form-field">
+                                                <label
+                                                        class="font-label-caps text-label-caps text-on-surface-variant block mb-2">Travel
+                                                        Date *</label>
+                                                <input type="date" name="travelDate" required
+                                                        class="w-full border border-outline-variant/30 rounded-lg px-4 py-3 font-body-md text-body-md text-primary bg-surface-container-low transition-all" />
+                                                <p class="error-msg">Please select a date</p>
+                                        </div>
+                                        <div class="form-field">
+                                                <label
+                                                        class="font-label-caps text-label-caps text-on-surface-variant block mb-2">No.
+                                                        of
+                                                        Passengers</label>
+                                                <select name="passengers"
+                                                        class="w-full border border-outline-variant/30 rounded-lg px-4 py-3 font-body-md text-body-md text-primary bg-surface-container-low appearance-none transition-all">
+                                                        <option value="1">1 Passenger</option>
+                                                        <option value="2">2 Passengers</option>
+                                                        <option value="3-4">3-4 Passengers</option>
+                                                        <option value="5-6">5-6 Passengers</option>
+                                                        <option value="7+">7+ Passengers</option>
+                                                </select>
+                                        </div>
+                                </div>
+                                <!-- Row 6: Additional Notes -->
+                                <div class="form-field">
+                                        <label
+                                                class="font-label-caps text-label-caps text-on-surface-variant block mb-2">Additional
+                                                Requirements</label>
+                                        <textarea name="notes" rows="3"
+                                                placeholder="Child seat, wheelchair access, multiple stops, specific vehicle preference..."
+                                                class="w-full border border-outline-variant/30 rounded-lg px-4 py-3 font-body-md text-body-md text-primary bg-surface-container-low placeholder-on-surface-variant/50 transition-all resize-none"></textarea>
+                                </div>
+                                <!-- Row 7: Budget -->
+                                <div class="form-field">
+                                        <label
+                                                class="font-label-caps text-label-caps text-on-surface-variant block mb-2">Estimated
+                                                Monthly Budget</label>
+                                        <select name="budget"
+                                                class="w-full border border-outline-variant/30 rounded-lg px-4 py-3 font-body-md text-body-md text-primary bg-surface-container-low appearance-none transition-all">
+                                                <option value="" disabled selected>Select range</option>
+                                                <option value="under-5k">Under ₹50,000</option>
+                                                <option value="5k-15k">₹50,000 - ₹1,50,000</option>
+                                                <option value="15k-50k">₹1,50,000 - ₹5,00,000</option>
+                                                <option value="50k-100k">₹5,00,000 - ₹10,00,000</option>
+                                                <option value="100k+">₹10,00,000+</option>
+                                        </select>
+                                </div>
+                                <!-- Submit -->
+                                <button type="submit"
+                                        class="w-full font-label-caps text-label-caps uppercase tracking-widest px-8 py-4 rounded-lg font-bold btn-lime transition-colors flex items-center justify-center gap-2">
+                                        Submit Booking Request
+                                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </button>
+                                <p
+                                        class="text-center font-body-md text-body-md text-on-surface-variant text-xs">
+                                        By submitting, you agree to our <a href="#"
+                                                class="underline hover:text-primary">Privacy Policy</a> and <a
+                                                href="#" class="underline hover:text-primary">Terms of
+                                                Service</a>.</p>
+                        </form>
+                        <!-- Success State (hidden by default) -->
+                        <div id="bookingSuccess" class="p-8 text-center hidden">
+                                <div
+                                        class="w-16 h-16 bg-electric-lime rounded-full flex items-center justify-center mx-auto mb-6">
+                                        <span
+                                                class="material-symbols-outlined text-primary text-3xl">check_circle</span>
+                                </div>
+                                <h3 class="font-headline-lg text-headline-lg text-primary mb-3">
+                                        Request Received!</h3>
+                                <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                        Thank you for your interest in Executive Motion. Our corporate travel
+                                        specialist will contact you within 2 business hours with a tailored
+                                        quote.</p>
+                                <button onclick="closeBookingModal()"
+                                        class="font-label-caps text-label-caps uppercase tracking-widest px-8 py-3 rounded-lg font-bold border border-outline-variant/30 hover:bg-surface-container-low transition-colors">
+                                        Close</button>
+                        </div>
+                </div> <!-- end booking-modal-scroll -->
+        </div>
+</div>
