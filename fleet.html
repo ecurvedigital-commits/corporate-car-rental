@@ -219,6 +219,56 @@
                         -ms-overflow-style: none;
                         scrollbar-width: none;
                 }
+
+                :root {
+                        --page-gray: #e5e7eb;
+                        --card-white: #ffffff;
+                        --text-strong: #111827;
+                        --text-body: #4b5563;
+                        --border-soft: #d1d5db;
+                }
+
+                html {
+                        background: var(--page-gray);
+                }
+
+                body {
+                        background: var(--page-gray);
+                        color: var(--text-strong);
+                }
+
+                /* Section Rhythm Alternating Pattern matching index.html & pricing.html */
+                main>section:nth-of-type(1) {
+                        background: #e5e7eb !important;
+                }
+
+                main>section:nth-of-type(2) {
+                        background: #1a1d1f !important;
+                        color: #f8fafc;
+                }
+
+                main>section:nth-of-type(3) {
+                        background: #e5e7eb !important;
+                }
+
+                main>section:nth-of-type(2) h1, main>section:nth-of-type(2) h2, main>section:nth-of-type(2) h3, main>section:nth-of-type(2) h4, main>section:nth-of-type(2) h5, main>section:nth-of-type(2) h6 {
+                        color: #fff !important;
+                }
+
+                main>section:nth-of-type(2) p, main>section:nth-of-type(2) li, main>section:nth-of-type(2) .text-on-surface-variant {
+                        color: #cbd5e1 !important;
+                }
+
+                main>section:nth-of-type(2) .bg-surface-container-lowest,
+                main>section:nth-of-type(2) .bg-surface-container-low,
+                main>section:nth-of-type(2) .bg-surface-container {
+                        background: #24282b !important;
+                        border-color: rgba(255, 255, 255, .10) !important;
+                }
+
+                main>section:nth-of-type(2) .text-primary {
+                        color: #fff !important;
+                }
         </style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -243,6 +293,8 @@
                                         id="nav-company">Company</a>
                                 <a class="text-white border-b-2 border-electric-lime pb-1 font-bold" href="fleet.html"
                                         id="nav-fleet">Fleet</a>
+                                <a class="hover:text-white transition-colors duration-300" href="pricing.html"
+                                        id="nav-pricing">Pricing & Services</a>
                         </div>
                         <!-- Trailing Actions -->
                         <div class="hidden md:flex items-center gap-4">
@@ -259,8 +311,8 @@
                 </div>
         </nav>
         <!-- Main Content Area -->
-        <main class="flex-grow flex flex-col items-center w-full pb-section-gap">
-                <!-- Hero Section -->
+        <main class="flex-grow flex flex-col items-center w-full">
+                <!-- 1. Hero Section (First Image) -->
                 <header class="relative w-full h-[80vh] min-h-[600px] flex items-end pb-16 md:pb-24 overflow-hidden">
                         <!-- Hero Background Image -->
                         <div class="absolute inset-0 w-full h-full">
@@ -282,103 +334,113 @@
                                         solutions designed for modern enterprise.</p>
                         </div>
                 </header>
-                <!-- Operational Hubs (Horizontal Scroll) -->
+
+                <!-- 2. Operational Hubs & Partners (Light / Blue Section) -->
                 <section
-                        class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-16 mt-20 md:mb-24">
-                        <div class="flex items-center justify-between mb-6">
-                                <h2
-                                        class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase">
-                                        Operational Hubs &amp; Partners</h2>
-                        </div>
-                        <div class="flex gap-4 overflow-x-auto no-scrollbar pb-4 snap-x">
-                                <!-- Hub 1 - Connaught Place -->
-                                <div
-                                        class="snap-start shrink-0 w-64 md:w-72 bg-surface-container-lowest card-shadow rounded-lg p-6 flex flex-col justify-between thin-border hover:bg-surface-bright transition-colors cursor-pointer group">
-                                        <div>
-                                                <div
-                                                        class="w-10 h-10 bg-primary text-on-primary rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                                        <span class="material-symbols-outlined text-sm"
-                                                                data-icon="location_city">location_city</span>
-                                                </div>
-                                                <h3 class="font-headline-md text-headline-md text-primary mb-1">Connaught Place
-                                                </h3>
-                                                <p class="font-body-md text-body-md text-on-surface-variant">Delhi NCR
-                                                        Headquarters</p>
-                                        </div>
-                                        <div
-                                                class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between">
-                                                <span class="font-label-caps text-label-caps text-secondary">25
-                                                        Partners</span>
-                                                <div class="w-2 h-2 rounded-full electric-lime-btn"></div>
-                                        </div>
+                        class="w-full py-section-gap">
+                        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+                                <div class="flex items-center justify-between mb-6">
+                                        <h2
+                                                class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase">
+                                                Operational Hubs &amp; Partners</h2>
                                 </div>
-                                <!-- Hub 2 - Gurugram -->
-                                <div
-                                        class="snap-start shrink-0 w-64 md:w-72 bg-surface-container-lowest card-shadow rounded-lg p-6 flex flex-col justify-between thin-border hover:bg-surface-bright transition-colors cursor-pointer group">
-                                        <div>
-                                                <div
-                                                        class="w-10 h-10 bg-primary text-on-primary rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                                        <span class="material-symbols-outlined text-sm"
-                                                                data-icon="apartment">apartment</span>
-                                                </div>
-                                                <h3 class="font-headline-md text-headline-md text-primary mb-1">Gurugram
-                                                </h3>
-                                                <p class="font-body-md text-body-md text-on-surface-variant">Cyber City
-                                                        Hub</p>
-                                        </div>
+                                <div class="flex gap-4 overflow-x-auto no-scrollbar pb-4 snap-x">
+                                        <!-- Hub 1 - Connaught Place -->
                                         <div
-                                                class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between">
-                                                <span class="font-label-caps text-label-caps text-secondary">18
-                                                        Partners</span>
-                                                <div class="w-2 h-2 rounded-full electric-lime-btn"></div>
-                                        </div>
-                                </div>
-                                <!-- Hub 3 - Noida -->
-                                <div
-                                        class="snap-start shrink-0 w-64 md:w-72 bg-surface-container-lowest card-shadow rounded-lg p-6 flex flex-col justify-between thin-border hover:bg-surface-bright transition-colors cursor-pointer group">
-                                        <div>
-                                                <div
-                                                        class="w-10 h-10 bg-primary text-on-primary rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                                        <span class="material-symbols-outlined text-sm"
-                                                                data-icon="business">business</span>
+                                                class="snap-start shrink-0 w-64 md:w-72 bg-surface-container-lowest card-shadow rounded-lg p-6 flex flex-col justify-between thin-border hover:bg-surface-bright transition-colors cursor-pointer group">
+                                                <div>
+                                                        <div
+                                                                class="w-10 h-10 bg-primary text-on-primary rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                                                <span class="material-symbols-outlined text-sm"
+                                                                        data-icon="location_city">location_city</span>
+                                                        </div>
+                                                        <h3 class="font-headline-md text-headline-md text-primary mb-1">Connaught Place
+                                                        </h3>
+                                                        <p class="font-body-md text-body-md text-on-surface-variant">Delhi NCR
+                                                                Headquarters</p>
                                                 </div>
-                                                <h3 class="font-headline-md text-headline-md text-primary mb-1">
-                                                        Noida</h3>
-                                                <p class="font-body-md text-body-md text-on-surface-variant">IT Corridor
-                                                </p>
-                                        </div>
-                                        <div
-                                                class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between">
-                                                <span class="font-label-caps text-label-caps text-secondary">15
-                                                        Partners</span>
-                                                <div class="w-2 h-2 rounded-full electric-lime-btn"></div>
-                                        </div>
-                                </div>
-                                <!-- Hub 4 - Delhi Airport -->
-                                <div
-                                        class="snap-start shrink-0 w-64 md:w-72 bg-surface-container-lowest card-shadow rounded-lg p-6 flex flex-col justify-between thin-border hover:bg-surface-bright transition-colors cursor-pointer group">
-                                        <div>
                                                 <div
-                                                        class="w-10 h-10 bg-primary text-on-primary rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                                        <span class="material-symbols-outlined text-sm"
-                                                                data-icon="corporate_fare">corporate_fare</span>
+                                                        class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between">
+                                                        <span class="font-label-caps text-label-caps text-secondary">25
+                                                                Partners</span>
+                                                        <div class="w-2 h-2 rounded-full electric-lime-btn"></div>
                                                 </div>
-                                                <h3 class="font-headline-md text-headline-md text-primary mb-1">Delhi Airport
-                                                </h3>
-                                                <p class="font-body-md text-body-md text-on-surface-variant">IGI Terminal
-                                                        Ops</p>
                                         </div>
+                                        <!-- Hub 2 - Gurugram -->
                                         <div
-                                                class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between">
-                                                <span class="font-label-caps text-label-caps text-secondary">20
-                                                        Partners</span>
-                                                <div class="w-2 h-2 rounded-full electric-lime-btn"></div>
+                                                class="snap-start shrink-0 w-64 md:w-72 bg-surface-container-lowest card-shadow rounded-lg p-6 flex flex-col justify-between thin-border hover:bg-surface-bright transition-colors cursor-pointer group">
+                                                <div>
+                                                        <div
+                                                                class="w-10 h-10 bg-primary text-on-primary rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                                                <span class="material-symbols-outlined text-sm"
+                                                                        data-icon="apartment">apartment</span>
+                                                        </div>
+                                                        <h3 class="font-headline-md text-headline-md text-primary mb-1">Gurugram
+                                                        </h3>
+                                                        <p class="font-body-md text-body-md text-on-surface-variant">Cyber City
+                                                                Hub</p>
+                                                </div>
+                                                <div
+                                                        class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between">
+                                                        <span class="font-label-caps text-label-caps text-secondary">18
+                                                                Partners</span>
+                                                        <div class="w-2 h-2 rounded-full electric-lime-btn"></div>
+                                                </div>
+                                        </div>
+                                        <!-- Hub 3 - Noida -->
+                                        <div
+                                                class="snap-start shrink-0 w-64 md:w-72 bg-surface-container-lowest card-shadow rounded-lg p-6 flex flex-col justify-between thin-border hover:bg-surface-bright transition-colors cursor-pointer group">
+                                                <div>
+                                                        <div
+                                                                class="w-10 h-10 bg-primary text-on-primary rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                                                <span class="material-symbols-outlined text-sm"
+                                                                        data-icon="business">business</span>
+                                                        </div>
+                                                        <h3 class="font-headline-md text-headline-md text-primary mb-1">
+                                                                Noida</h3>
+                                                        <p class="font-body-md text-body-md text-on-surface-variant">IT Corridor
+                                                        </p>
+                                                </div>
+                                                <div
+                                                        class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between">
+                                                        <span class="font-label-caps text-label-caps text-secondary">15
+                                                                Partners</span>
+                                                        <div class="w-2 h-2 rounded-full electric-lime-btn"></div>
+                                                </div>
+                                        </div>
+                                        <!-- Hub 4 - Delhi Airport -->
+                                        <div
+                                                class="snap-start shrink-0 w-64 md:w-72 bg-surface-container-lowest card-shadow rounded-lg p-6 flex flex-col justify-between thin-border hover:bg-surface-bright transition-colors cursor-pointer group">
+                                                <div>
+                                                        <div
+                                                                class="w-10 h-10 bg-primary text-on-primary rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                                                                <span class="material-symbols-outlined text-sm"
+                                                                        data-icon="corporate_fare">corporate_fare</span>
+                                                        </div>
+                                                        <h3 class="font-headline-md text-headline-md text-primary mb-1">Delhi Airport
+                                                        </h3>
+                                                        <p class="font-body-md text-body-md text-on-surface-variant">IGI Terminal
+                                                                Ops</p>
+                                                </div>
+                                                <div
+                                                        class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between">
+                                                        <span class="font-label-caps text-label-caps text-secondary">20
+                                                                Partners</span>
+                                                        <div class="w-2 h-2 rounded-full electric-lime-btn"></div>
+                                                </div>
                                         </div>
                                 </div>
                         </div>
                 </section>
-                <!-- Fleet Grid -->
-                <section class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+
+                <!-- 3. Fleet Grid (Dark Section) -->
+                <section class="w-full py-section-gap bg-primary-container border-y border-outline-variant/10">
+                        <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+                                <!-- Title -->
+                                <div class="mb-10 text-center md:text-left">
+                                        <span class="font-label-caps text-label-caps text-electric-lime tracking-widest uppercase mb-2 block">Our Fleet Directory</span>
+                                        <h2 class="font-headline-lg text-headline-lg md:text-display-lg-mobile text-white">Select Your Mobility Class</h2>
+                                </div>
                         <!-- Filters -->
                         <div class="flex flex-wrap items-center gap-4 mb-8 border-b border-outline-variant/20 pb-4">
                                 <button
@@ -563,8 +625,9 @@
                                         </div>
                                 </article>
                         </div>
-                </section>
-        </main>
+                </div>
+        </section>
+</main>
         <!-- Footer -->
         <footer
                 class="bg-primary-container relative w-full bottom-0 border-t border-outline-variant/20 pt-section-gap pb-12">

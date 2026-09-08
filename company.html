@@ -170,6 +170,26 @@
                 }
         </script>
         <style>
+                :root {
+                        --page-gray: #e5e7eb;
+                        --page-dark: #1a1d1f;
+                        --card-white: #ffffff;
+                        --card-soft: #f8fafc;
+                        --text-strong: #111827;
+                        --text-body: #4b5563;
+                        --border-soft: #d1d5db;
+                        --accent: #c8ff3d;
+                }
+
+                html {
+                        background: var(--page-gray);
+                }
+
+                body {
+                        background: var(--page-gray);
+                        color: var(--text-strong);
+                }
+
                 .premium-shadow {
                         box-shadow: 0px 4px 20px rgba(11, 13, 15, 0.04);
                 }
@@ -185,6 +205,149 @@
 
                 .btn-lime:hover {
                         background-color: #b3e637;
+                }
+
+                /* White cards on gray background */
+                .card-white {
+                        background-color: var(--card-white);
+                        border: 1px solid var(--border-soft);
+                        border-radius: 16px;
+                        box-shadow:
+                                0 1px 2px rgba(15, 23, 42, 0.04),
+                                0 8px 24px rgba(15, 23, 42, 0.07);
+                }
+
+                .card-white:hover {
+                        box-shadow:
+                                0 2px 4px rgba(15, 23, 42, 0.05),
+                                0 14px 32px rgba(15, 23, 42, 0.10);
+                }
+
+                /* Dark section cards */
+                .card-dark {
+                        background: #24282b;
+                        border: 1px solid rgba(255, 255, 255, .10);
+                        border-radius: 16px;
+                }
+
+                .card-dark:hover {
+                        border-color: rgba(200, 255, 61, 0.4);
+                }
+
+                /* === SECTION BACKGROUND RHYTHM (image → light → dark → light → dark …, same pattern as index.html) === */
+                section.section-gray,
+                section.section-light {
+                        background: #e5e7eb !important;
+                        color: #111827 !important;
+                }
+
+                section.section-dark {
+                        background: #1a1d1f !important;
+                        color: #f8fafc !important;
+                }
+
+                /* Dark section text overrides */
+                section.section-dark h1,
+                section.section-dark h2,
+                section.section-dark h3,
+                section.section-dark h4,
+                section.section-dark h5,
+                section.section-dark h6 {
+                        color: #ffffff !important;
+                }
+
+                section.section-dark p,
+                section.section-dark li,
+                section.section-dark div:not(.bg-electric-lime),
+                section.section-dark .text-on-surface-variant,
+                section.section-dark .text-on-primary,
+                section.section-dark .text-on-primary\/70,
+                section.section-dark .text-on-primary\/80,
+                section.section-dark .text-on-primary\/60 {
+                        color: #cbd5e1 !important;
+                }
+
+                section.section-dark span.text-electric-lime,
+                section.section-dark .text-electric-lime {
+                        color: #C8FF3D !important;
+                }
+
+                /* Dark section cards (Our Partners, Sustainability, Safety boxes, Team avatars) */
+                section.section-dark .card-white,
+                section.section-dark .stat-box,
+                section.section-dark .premium-shadow,
+                section.section-dark .bg-white\/5,
+                section.section-dark .bg-surface-container-low,
+                section.section-dark .bg-surface-bright,
+                section.section-dark .border {
+                        background: #24282b !important;
+                        border-color: rgba(255, 255, 255, .15) !important;
+                        color: #ffffff !important;
+                }
+
+                section.section-dark .text-primary {
+                        color: #ffffff !important;
+                }
+
+                /* Light section cards (Recognition, Testimonials, Values, etc.) */
+                section.section-gray .card-white,
+                section.section-gray .bg-surface-bright,
+                section.section-gray .bg-surface-container-low,
+                section.section-gray .bg-white\/5,
+                section.section-gray .border,
+                section.section-gray .border-outline-variant\/10,
+                section.section-light .card-white,
+                section.section-light .bg-surface-bright,
+                section.section-light .bg-surface-container-low,
+                section.section-light .bg-white\/5,
+                section.section-light .border,
+                section.section-light .border-outline-variant\/10 {
+                        background: #ffffff !important;
+                        border-color: #cbd5e1 !important;
+                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+                }
+
+                section.section-gray h1,
+                section.section-gray h2,
+                section.section-gray h3,
+                section.section-gray h4,
+                section.section-gray h5,
+                section.section-gray h6,
+                section.section-gray .text-primary,
+                section.section-light h1,
+                section.section-light h2,
+                section.section-light h3:not(.bg-primary *),
+                section.section-light h4,
+                section.section-light h5,
+                section.section-light h6,
+                section.section-light .text-primary {
+                        color: #111827 !important;
+                }
+
+                section.section-gray p,
+                section.section-gray .text-on-surface-variant,
+                section.section-light p,
+                section.section-light .text-on-surface-variant {
+                        color: #4b5563 !important;
+                }
+
+                /* Value cards */
+                .value-card {
+                        transition: all 0.3s ease;
+                }
+
+                .value-card:hover {
+                        border-color: rgba(200, 255, 61, 0.3);
+                }
+
+                /* Partner logo cards on dark */
+                .partner-card {
+                        transition: all 0.3s ease;
+                }
+
+                .partner-card:hover {
+                        border-color: rgba(200, 255, 61, 0.4);
+                        background: rgba(255, 255, 255, 0.07);
                 }
         </style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -211,6 +374,8 @@
                                         id="nav-company">Company</a>
                                 <a class="hover:text-white transition-colors duration-300" href="fleet.html"
                                         id="nav-fleet">Fleet</a>
+                                <a class="hover:text-white transition-colors duration-300" href="pricing.html"
+                                        id="nav-pricing">Pricing & Services</a>
                         </div>
                         <!-- Trailing Actions -->
                         <div class="hidden md:flex items-center gap-4">
@@ -251,7 +416,7 @@
                         </div>
                 </section>
                 <!-- OUR MISSION -->
-                <section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+                <section class="py-section-gap px-margin-mobile md:px-margin-desktop section-light">
                         <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
                                 <div class="md:col-span-5">
                                         <h2 class="font-headline-lg text-headline-lg text-primary mb-6">Redefining how
@@ -295,16 +460,15 @@
                         </div>
                 </section>
                 <!-- OUR PHILOSOPHY (FLEET & PEOPLE) -->
-                <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-lowest">
+                <section class="py-section-gap px-margin-mobile md:px-margin-desktop section-dark">
                         <div class="max-w-container-max mx-auto">
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
                                         <!-- The Fleet -->
-                                        <div
-                                                class="bg-surface-bright premium-shadow rounded-lg overflow-hidden group company-card">
+                                        <div class="card-white rounded-lg overflow-hidden group company-card">
                                                 <div class="h-64 overflow-hidden">
                                                         <div class="w-full h-full bg-cover bg-center transform group-hover:scale-105 transition-transform duration-700"
                                                                 data-alt="A close-up, desaturated shot of the front grille and sleek headlights of a high-end luxury black executive sedan. The lighting is soft and sophisticated, emphasizing the polished metal and pristine condition of the vehicle. The mood is premium, controlled, and distinctly corporate."
-                                                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCNMcYBY8XELnq_GvGX1D3c5_-vuaZpTFBGt-qOUoV7uuoPnc2CNxy2CN6Q3xen4-e8zzW-toqg-n75Mw3W4Gl02wbhc_zaHOYBBeV7xNn5SFIqVAAZO01LGAVywh6CLxel8IJuL3SCcQ75xB7IwinNikw8BSUuKcl6i0h3x5gQRkiruASUCIQ-T3DEZstfkrZIcXp8tiXQr_iW7t7azB8GqulF-1aCnnFLklLeS6MCaMFUKzbv')">
+                                                                style="background-image: url('https://api.indususedcars.com/uploads/image_1751696812219_zjcsk_07666e8cbf.jpg')">
                                                         </div>
                                                 </div>
                                                 <div class="p-8 space-y-4">
@@ -320,12 +484,11 @@
                                                 </div>
                                         </div>
                                         <!-- The Chauffeurs -->
-                                        <div
-                                                class="bg-surface-bright premium-shadow rounded-lg overflow-hidden group company-card">
+                                        <div class="card-white rounded-lg overflow-hidden group company-card">
                                                 <div class="h-64 overflow-hidden">
                                                         <div class="w-full h-full bg-cover bg-center transform group-hover:scale-105 transition-transform duration-700"
                                                                 data-alt="A cinematic, shallow depth-of-field shot of a professional chauffeur in a crisp, dark suit opening the door of a black luxury vehicle. The image is black-and-white, focusing on the meticulous detail of the uniform and the gesture of service. The aesthetic is polished, trustworthy, and elite."
-                                                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDIJRaHQswG1TsA_h14TMA6XMfY9YxMvCpl6Xb_IN1FM4aRF9f09uaMLCI-q66n8lPyWsPop8nKEG1TH5Ue5SRWo6Rfza-RYbCweh3Or8XlxdEcw3gYP2FK016VvjWUh3DiLZWnTBtF8ERSXN6oJ7-nMKxN8IpSPUTkTl387QfoVRg38wVuUSXIP4LlOKrXCHbneuX4KnP-82Tk9uz5qk5_qQSb2BFYh-VqhLlKadGPztTPl0_o')">
+                                                                style="background-image: url('https://pritinaixa.com/cars/new-cars/maruti-suzuki/maruti-ertiga-tourm-2.png')">
                                                         </div>
                                                 </div>
                                                 <div class="p-8 space-y-4">
@@ -344,7 +507,7 @@
                         </div>
                 </section>
                 <!-- GLOBAL REACH -->
-                <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-obsidian-black text-on-primary">
+                <section class="py-section-gap px-margin-mobile md:px-margin-desktop section-light">
                         <div class="max-w-container-max mx-auto">
                                 <div class="text-center mb-16">
                                         <h2 class="font-headline-lg text-headline-lg text-on-primary">A local presence
@@ -374,50 +537,60 @@
                         </div>
                 </section>
                 <!-- OUR VALUES -->
-                <section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-                        <div class="text-center mb-16">
-                                <span
-                                        class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase mb-4 block">Our
-                                        Values</span>
-                                <h2 class="font-headline-lg text-headline-lg text-primary">The principles that drive
-                                        every mile.</h2>
-                        </div>
-                        <div class="grid md:grid-cols-3 gap-gutter">
-                                <div
-                                        class="text-center p-8 rounded-lg border border-outline-variant/10 hover:border-electric-lime/30 transition-colors group">
+                <section class="py-section-gap px-margin-mobile md:px-margin-desktop section-dark">
+                        <div class="max-w-container-max mx-auto">
+                                <div class="text-center mb-16">
                                         <span
-                                                class="material-symbols-outlined text-electric-lime text-4xl mb-4 block group-hover:scale-110 transition-transform">precision_manufacturing</span>
-                                        <h3 class="font-headline-md text-headline-md text-primary mb-3">Precision</h3>
-                                        <p class="font-body-md text-body-md text-on-surface-variant">Every detail
-                                                matters — from route planning and vehicle maintenance to billing
-                                                accuracy. We operate with surgical precision because your time is your
-                                                most valuable asset.</p>
+                                                class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase mb-4 block">Our
+                                                Values</span>
+                                        <h2 class="font-headline-lg text-headline-lg text-primary">The principles that
+                                                drive
+                                                every mile.</h2>
                                 </div>
-                                <div
-                                        class="text-center p-8 rounded-lg border border-outline-variant/10 hover:border-electric-lime/30 transition-colors group">
-                                        <span
-                                                class="material-symbols-outlined text-electric-lime text-4xl mb-4 block group-hover:scale-110 transition-transform">handshake</span>
-                                        <h3 class="font-headline-md text-headline-md text-primary mb-3">Trust</h3>
-                                        <p class="font-body-md text-body-md text-on-surface-variant">Confidentiality,
-                                                discretion, and reliability form the backbone of every relationship.
-                                                Corporate leaders trust us with their most sensitive travel needs — and
-                                                we never break that trust.</p>
+                                <div class="grid md:grid-cols-3 gap-gutter">
+                                        <div class="text-center p-8 rounded-lg card-white value-card">
+                                                <span
+                                                        class="material-symbols-outlined text-electric-lime text-4xl mb-4 block group-hover:scale-110 transition-transform">precision_manufacturing</span>
+                                                <h3 class="font-headline-md text-headline-md text-primary mb-3">
+                                                        Precision</h3>
+                                                <p class="font-body-md text-body-md text-on-surface-variant">Every
+                                                        detail
+                                                        matters — from route planning and vehicle maintenance to billing
+                                                        accuracy. We operate with surgical precision because your time
+                                                        is your
+                                                        most valuable asset.</p>
+                                        </div>
+                                        <div class="text-center p-8 rounded-lg card-white value-card">
+                                                <span
+                                                        class="material-symbols-outlined text-electric-lime text-4xl mb-4 block group-hover:scale-110 transition-transform">handshake</span>
+                                                <h3 class="font-headline-md text-headline-md text-primary mb-3">Trust
+                                                </h3>
+                                                <p class="font-body-md text-body-md text-on-surface-variant">
+                                                        Confidentiality,
+                                                        discretion, and reliability form the backbone of every
+                                                        relationship.
+                                                        Corporate leaders trust us with their most sensitive travel
+                                                        needs — and
+                                                        we never break that trust.</p>
+                                        </div>
+                                        <div class="text-center p-8 rounded-lg card-white value-card">
+                                                <span
+                                                        class="material-symbols-outlined text-electric-lime text-4xl mb-4 block group-hover:scale-110 transition-transform">eco</span>
+                                                <h3 class="font-headline-md text-headline-md text-primary mb-3">
+                                                        Responsibility
+                                                </h3>
+                                                <p class="font-body-md text-body-md text-on-surface-variant">We are
+                                                        committed to
+                                                        reducing our environmental footprint through sustainable fleet
+                                                        choices,
+                                                        carbon offset programs, and responsible business practices that
+                                                        benefit
+                                                        future generations.</p>
+                                        </div>
                                 </div>
-                                <div
-                                        class="text-center p-8 rounded-lg border border-outline-variant/10 hover:border-electric-lime/30 transition-colors group">
-                                        <span
-                                                class="material-symbols-outlined text-electric-lime text-4xl mb-4 block group-hover:scale-110 transition-transform">eco</span>
-                                        <h3 class="font-headline-md text-headline-md text-primary mb-3">Responsibility
-                                        </h3>
-                                        <p class="font-body-md text-body-md text-on-surface-variant">We are committed to
-                                                reducing our environmental footprint through sustainable fleet choices,
-                                                carbon offset programs, and responsible business practices that benefit
-                                                future generations.</p>
-                                </div>
-                        </div>
                 </section>
                 <!-- TECHNOLOGY & PLATFORM -->
-                <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-lowest">
+                <section class="py-section-gap px-margin-mobile md:px-margin-desktop section-light">
                         <div class="max-w-container-max mx-auto">
                                 <div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
                                         <div class="md:col-span-5">
@@ -434,7 +607,7 @@
                                                 <div class="space-y-6">
                                                         <div class="flex items-start gap-4">
                                                                 <span
-                                                                        class="material-symbols-outlined text-electric-lime mt-1">dashboard</span>
+                                                                        class="material-symbols-outlined text-black mt-1">dashboard</span>
                                                                 <div>
                                                                         <h4
                                                                                 class="font-headline-md text-headline-md text-primary">
@@ -449,7 +622,7 @@
                                                         </div>
                                                         <div class="flex items-start gap-4">
                                                                 <span
-                                                                        class="material-symbols-outlined text-electric-lime mt-1">analytics</span>
+                                                                        class="material-symbols-outlined text-black mt-1">analytics</span>
                                                                 <div>
                                                                         <h4
                                                                                 class="font-headline-md text-headline-md text-primary">
@@ -463,7 +636,7 @@
                                                         </div>
                                                         <div class="flex items-start gap-4">
                                                                 <span
-                                                                        class="material-symbols-outlined text-electric-lime mt-1">route</span>
+                                                                        class="material-symbols-outlined text-black mt-1">route</span>
                                                                 <div>
                                                                         <h4
                                                                                 class="font-headline-md text-headline-md text-primary">
@@ -485,8 +658,8 @@
                                                                 class="absolute top-0 right-0 w-64 h-64 bg-electric-lime/10 rounded-full -translate-y-1/2 translate-x-1/2">
                                                         </div>
                                                         <div class="relative z-10">
-                                                                <h3
-                                                                        class="font-headline-md text-headline-md text-electric-lime mb-8">
+                                                                <h3 class="font-headline-md text-headline-lg !text-white mb-8"
+                                                                        style="color: #ffffff !important;">
                                                                         Platform Capabilities</h3>
                                                                 <div class="grid grid-cols-2 gap-8">
                                                                         <div
@@ -545,7 +718,7 @@
                         </div>
                 </section>
                 <!-- SAFETY & COMPLIANCE -->
-                <section class="py-section-gap px-margin-mobile md:px-margin-desktop">
+                <section class="py-section-gap px-margin-mobile md:px-margin-desktop section-dark">
                         <div class="max-w-container-max mx-auto">
                                 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
                                         <div class="md:col-span-5">
@@ -560,8 +733,7 @@
                                                         industry.
                                                 </p>
                                                 <div class="grid grid-cols-2 gap-6">
-                                                        <div
-                                                                class="text-center p-6 rounded-lg bg-surface-container-low">
+                                                        <div class="text-center p-6 rounded-lg stat-box">
                                                                 <div
                                                                         class="font-headline-lg text-headline-lg text-primary mb-1">
                                                                         99.8%</div>
@@ -569,8 +741,7 @@
                                                                         class="font-label-caps text-label-caps text-on-surface-variant">
                                                                         Safety Record</div>
                                                         </div>
-                                                        <div
-                                                                class="text-center p-6 rounded-lg bg-surface-container-low">
+                                                        <div class="text-center p-6 rounded-lg stat-box">
                                                                 <div
                                                                         class="font-headline-lg text-headline-lg text-primary mb-1">
                                                                         100%</div>
@@ -578,8 +749,7 @@
                                                                         class="font-label-caps text-label-caps text-on-surface-variant">
                                                                         Background Checked</div>
                                                         </div>
-                                                        <div
-                                                                class="text-center p-6 rounded-lg bg-surface-container-low">
+                                                        <div class="text-center p-6 rounded-lg stat-box">
                                                                 <div
                                                                         class="font-headline-lg text-headline-lg text-primary mb-1">
                                                                         ISO</div>
@@ -587,8 +757,7 @@
                                                                         class="font-label-caps text-label-caps text-on-surface-variant">
                                                                         9001 & 27001</div>
                                                         </div>
-                                                        <div
-                                                                class="text-center p-6 rounded-lg bg-surface-container-low">
+                                                        <div class="text-center p-6 rounded-lg stat-box">
                                                                 <div
                                                                         class="font-headline-lg text-headline-lg text-primary mb-1">
                                                                         $5M</div>
@@ -666,15 +835,15 @@
                         </div>
                 </section>
                 <!-- SUSTAINABILITY -->
-                <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-obsidian-black text-on-primary">
+                <section class="py-section-gap px-margin-mobile md:px-margin-desktop section-light">
                         <div class="max-w-container-max mx-auto">
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                                         <div>
                                                 <span
-                                                        class="font-label-caps text-label-caps text-electric-lime tracking-widest uppercase mb-4 block">Sustainability</span>
-                                                <h2 class="font-headline-lg text-headline-lg text-on-primary mb-6">
+                                                        class="font-label-caps text-label-caps text-black tracking-widest uppercase mb-4 block">Sustainability</span>
+                                                <h2 class="font-headline-lg text-headline-lg text-primary mb-6">
                                                         Moving forward, responsibly.</h2>
-                                                <p class="font-body-lg text-body-lg text-on-primary/70 mb-8">
+                                                <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
                                                         We believe luxury mobility and environmental responsibility are
                                                         not mutually exclusive. Our sustainability initiatives are woven
                                                         into every aspect of our operations — from the vehicles we
@@ -683,13 +852,13 @@
                                                 <div class="space-y-6">
                                                         <div class="flex items-start gap-4">
                                                                 <span
-                                                                        class="material-symbols-outlined text-electric-lime text-2xl">electric_car</span>
+                                                                        class="material-symbols-outlined text-black text-2xl">electric_car</span>
                                                                 <div>
                                                                         <h4
                                                                                 class="font-headline-md text-headline-md text-on-primary mb-1">
                                                                                 Green Fleet Expansion</h4>
                                                                         <p
-                                                                                class="font-body-md text-body-md text-on-primary/60">
+                                                                                class="font-body-md text-body-md text-on-surface-variant">
                                                                                 30% of our fleet now comprises hybrid
                                                                                 and fully electric vehicles, with a
                                                                                 target of 60% by 2028.</p>
@@ -697,13 +866,13 @@
                                                         </div>
                                                         <div class="flex items-start gap-4">
                                                                 <span
-                                                                        class="material-symbols-outlined text-electric-lime text-2xl">forest</span>
+                                                                        class="material-symbols-outlined text-black text-2xl">forest</span>
                                                                 <div>
                                                                         <h4
                                                                                 class="font-headline-md text-headline-md text-on-primary mb-1">
                                                                                 Carbon Offset Program</h4>
                                                                         <p
-                                                                                class="font-body-md text-body-md text-on-primary/60">
+                                                                                class="font-body-md text-body-md text-on-surface-variant">
                                                                                 We offset 100% of emissions from every
                                                                                 trip through verified carbon removal
                                                                                 projects, contributing over $50,000
@@ -712,13 +881,13 @@
                                                         </div>
                                                         <div class="flex items-start gap-4">
                                                                 <span
-                                                                        class="material-symbols-outlined text-electric-lime text-2xl">route</span>
+                                                                        class="material-symbols-outlined text-black text-2xl">route</span>
                                                                 <div>
                                                                         <h4
                                                                                 class="font-headline-md text-headline-md text-on-primary mb-1">
                                                                                 Smart Route Optimization</h4>
                                                                         <p
-                                                                                class="font-body-md text-body-md text-on-primary/60">
+                                                                                class="font-body-md text-body-md text-on-surface-variant">
                                                                                 AI-powered routing reduces fuel
                                                                                 consumption by 18% and cuts average trip
                                                                                 emissions by 22% across our global
@@ -735,7 +904,8 @@
                                                         <div
                                                                 class="font-headline-lg text-headline-lg text-electric-lime mb-1">
                                                                 -42%</div>
-                                                        <div class="font-label-caps text-label-caps text-on-primary/60">
+                                                        <div
+                                                                class="font-label-caps text-label-caps text-on-surface-variant">
                                                                 CO2 Reduction Since 2022</div>
                                                 </div>
                                                 <div
@@ -745,7 +915,8 @@
                                                         <div
                                                                 class="font-headline-lg text-headline-lg text-electric-lime mb-1">
                                                                 30%</div>
-                                                        <div class="font-label-caps text-label-caps text-on-primary/60">
+                                                        <div
+                                                                class="font-label-caps text-label-caps text-on-surface-variant">
                                                                 Electric & Hybrid Fleet</div>
                                                 </div>
                                                 <div
@@ -755,7 +926,8 @@
                                                         <div
                                                                 class="font-headline-lg text-headline-lg text-electric-lime mb-1">
                                                                 100%</div>
-                                                        <div class="font-label-caps text-label-caps text-on-primary/60">
+                                                        <div
+                                                                class="font-label-caps text-label-caps text-on-surface-variant">
                                                                 Emissions Offset Annually</div>
                                                 </div>
                                                 <div
@@ -765,7 +937,8 @@
                                                         <div
                                                                 class="font-headline-lg text-headline-lg text-electric-lime mb-1">
                                                                 Zero</div>
-                                                        <div class="font-label-caps text-label-caps text-on-primary/60">
+                                                        <div
+                                                                class="font-label-caps text-label-caps text-on-surface-variant">
                                                                 Single-Use Plastics in Fleet</div>
                                                 </div>
                                         </div>
@@ -773,77 +946,149 @@
                         </div>
                 </section>
                 <!-- LEADERSHIP TEAM -->
-                <section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-                        <div class="text-center mb-16">
-                                <span
-                                        class="font-label-caps text-label-caps text-on-surface-variant tracking-widest uppercase mb-4 block">Leadership</span>
-                                <h2 class="font-headline-lg text-headline-lg text-primary">The minds behind the
-                                        movement.</h2>
+                <section class="py-section-gap px-margin-mobile md:px-margin-desktop section-dark">
+                        <div class="max-w-container-max mx-auto">
+                                <div class="text-center mb-16">
+                                        <span
+                                                class="font-label-caps text-label-caps text-electric-lime tracking-widest uppercase mb-4 block">Leadership</span>
+                                        <h2 class="font-headline-lg text-headline-lg text-white">The minds behind the
+                                                movement.</h2>
+                                </div>
+                                <div class="grid md:grid-cols-4 gap-gutter">
+                                        <div class="text-center group card-dark p-6 rounded-xl border border-white/10">
+                                                <div
+                                                        class="w-full aspect-square rounded-xl bg-white/5 border border-white/10 overflow-hidden mb-4 flex items-center justify-center">
+                                                        <span
+                                                                class="material-symbols-outlined text-white/40 text-8xl">person</span>
+                                                </div>
+                                                <h4 class="font-headline-md text-headline-md text-white mb-1">Arjun
+                                                        Mehta
+                                                </h4>
+                                                <p class="font-label-caps text-label-caps text-electric-lime">CEO &
+                                                        Founder
+                                                </p>
+                                                <p class="font-body-md text-body-md text-slate-300 text-sm mt-2">
+                                                        Former
+                                                        VP at Ola Fleet. 20+ years in mobility and fleet operations.</p>
+                                        </div>
+                                        <div class="text-center group card-dark p-6 rounded-xl border border-white/10">
+                                                <div
+                                                        class="w-full aspect-square rounded-xl bg-white/5 border border-white/10 overflow-hidden mb-4 flex items-center justify-center">
+                                                        <span
+                                                                class="material-symbols-outlined text-white/40 text-8xl">person</span>
+                                                </div>
+                                                <h4 class="font-headline-md text-headline-md text-white mb-1">Priya
+                                                        Sharma
+                                                </h4>
+                                                <p class="font-label-caps text-label-caps text-electric-lime">Chief
+                                                        Technology Officer</p>
+                                                <p class="font-body-md text-body-md text-slate-300 text-sm mt-2">
+                                                        Ex-Ola Engineering Lead. Built mobility platforms serving 50M+
+                                                        users.
+                                                </p>
+                                        </div>
+                                        <div class="text-center group card-dark p-6 rounded-xl border border-white/10">
+                                                <div
+                                                        class="w-full aspect-square rounded-xl bg-white/5 border border-white/10 overflow-hidden mb-4 flex items-center justify-center">
+                                                        <span
+                                                                class="material-symbols-outlined text-white/40 text-8xl">person</span>
+                                                </div>
+                                                <h4 class="font-headline-md text-headline-md text-white mb-1">Rajesh
+                                                        Kapoor
+                                                </h4>
+                                                <p class="font-label-caps text-label-caps text-electric-lime">Chief
+                                                        Operations Officer</p>
+                                                <p class="font-body-md text-body-md text-slate-300 text-sm mt-2">
+                                                        15
+                                                        years in luxury hospitality. Previously MD at Blacklane India
+                                                        operations.
+                                                </p>
+                                        </div>
+                                        <div class="text-center group card-dark p-6 rounded-xl border border-white/10">
+                                                <div
+                                                        class="w-full aspect-square rounded-xl bg-white/5 border border-white/10 overflow-hidden mb-4 flex items-center justify-center">
+                                                        <span
+                                                                class="material-symbols-outlined text-white/40 text-8xl">person</span>
+                                                </div>
+                                                <h4 class="font-headline-md text-headline-md text-white mb-1">Neha Iyer
+                                                </h4>
+                                                <p class="font-label-caps text-label-caps text-electric-lime">VP of
+                                                        Client
+                                                        Success</p>
+                                                <p class="font-body-md text-body-md text-slate-300 text-sm mt-2">
+                                                        Enterprise SaaS veteran. Scaled client success at Freshworks and
+                                                        Zoho.
+                                                </p>
+                                        </div>
+                                </div>
                         </div>
-                        <div class="grid md:grid-cols-4 gap-gutter">
-                                <div class="text-center group">
-                                        <div
-                                                class="w-full aspect-square rounded-xl bg-surface-container-low overflow-hidden mb-4">
-                                                <div class="w-full h-full flex items-center justify-center">
-                                                        <span
-                                                                class="material-symbols-outlined text-on-surface-variant/30 text-8xl">person</span>
-                                                </div>
-                                        </div>
-                                        <h4 class="font-headline-md text-headline-md text-primary">James Mitchell</h4>
-                                        <p class="font-label-caps text-label-caps text-on-surface-variant">CEO & Founder
-                                        </p>
-                                        <p class="font-body-md text-body-md text-on-surface-variant text-sm mt-2">Former
-                                                VP at Hertz Global. 20+ years in mobility and fleet operations.</p>
+                </section>
+                <!-- TRUSTED PARTNERS -->
+                <section class="py-section-gap px-margin-mobile md:px-margin-desktop section-light">
+                        <div class="max-w-container-max mx-auto">
+                                <div class="text-center mb-16">
+                                        <span
+                                                class="font-label-caps text-label-caps text-black tracking-widest uppercase mb-4 block">Our
+                                                Partners</span>
+                                        <h2 class="font-headline-lg text-headline-lg text-primary">Trusted by
+                                                industry leaders across India.</h2>
                                 </div>
-                                <div class="text-center group">
+                                <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
                                         <div
-                                                class="w-full aspect-square rounded-xl bg-surface-container-low overflow-hidden mb-4">
-                                                <div class="w-full h-full flex items-center justify-center">
-                                                        <span
-                                                                class="material-symbols-outlined text-on-surface-variant/30 text-8xl">person</span>
+                                                class="bg-white/5 border border-white/10 rounded-xl p-8 flex items-center justify-center hover:border-electric-lime/40 hover:bg-white/[0.07] transition-all duration-300">
+                                                <div class="text-center">
+                                                        <img class="h-16 w-16 object-contain mx-auto mb-4"
+                                                                src="assets/tech-mahindra.png" alt="Tech Mahindra" />
+                                                        <p
+                                                                class="font-label-caps text-label-caps text-on-surface-variant">
+                                                                Tech Mahindra</p>
                                                 </div>
                                         </div>
-                                        <h4 class="font-headline-md text-headline-md text-primary">Sarah Chen</h4>
-                                        <p class="font-label-caps text-label-caps text-on-surface-variant">Chief
-                                                Technology Officer</p>
-                                        <p class="font-body-md text-body-md text-on-surface-variant text-sm mt-2">
-                                                Ex-Uber Engineering Lead. Built mobility platforms serving 50M+ users.
-                                        </p>
-                                </div>
-                                <div class="text-center group">
                                         <div
-                                                class="w-full aspect-square rounded-xl bg-surface-container-low overflow-hidden mb-4">
-                                                <div class="w-full h-full flex items-center justify-center">
-                                                        <span
-                                                                class="material-symbols-outlined text-on-surface-variant/30 text-8xl">person</span>
+                                                class="bg-white/5 border border-white/10 rounded-xl p-8 flex items-center justify-center hover:border-electric-lime/40 hover:bg-white/[0.07] transition-all duration-300">
+                                                <div class="text-center">
+                                                        <img class="h-16 w-16 object-contain mx-auto mb-4"
+                                                                src="assets/infosys.png" alt="Infosys" />
+                                                        <p
+                                                                class="font-label-caps text-label-caps text-on-surface-variant">
+                                                                Infosys</p>
                                                 </div>
                                         </div>
-                                        <h4 class="font-headline-md text-headline-md text-primary">Marcus Webb</h4>
-                                        <p class="font-label-caps text-label-caps text-on-surface-variant">Chief
-                                                Operations Officer</p>
-                                        <p class="font-body-md text-body-md text-on-surface-variant text-sm mt-2">15
-                                                years in luxury hospitality. Previously MD at Blacklane全球 operations.
-                                        </p>
-                                </div>
-                                <div class="text-center group">
                                         <div
-                                                class="w-full aspect-square rounded-xl bg-surface-container-low overflow-hidden mb-4">
-                                                <div class="w-full h-full flex items-center justify-center">
-                                                        <span
-                                                                class="material-symbols-outlined text-on-surface-variant/30 text-8xl">person</span>
+                                                class="bg-white/5 border border-white/10 rounded-xl p-8 flex items-center justify-center hover:border-electric-lime/40 hover:bg-white/[0.07] transition-all duration-300">
+                                                <div class="text-center">
+                                                        <img class="h-16 w-16 object-contain mx-auto mb-4"
+                                                                src="assets/raliance.png" alt="Reliance" />
+                                                        <p
+                                                                class="font-label-caps text-label-caps text-on-surface-variant">
+                                                                Reliance</p>
                                                 </div>
                                         </div>
-                                        <h4 class="font-headline-md text-headline-md text-primary">Elena Rossi</h4>
-                                        <p class="font-label-caps text-label-caps text-on-surface-variant">VP of Client
-                                                Success</p>
-                                        <p class="font-body-md text-body-md text-on-surface-variant text-sm mt-2">
-                                                Enterprise SaaS veteran. Scaled client success at SAP Concur and Amex
-                                                GBT.</p>
+                                        <div
+                                                class="bg-white/5 border border-white/10 rounded-xl p-8 flex items-center justify-center hover:border-electric-lime/40 hover:bg-white/[0.07] transition-all duration-300">
+                                                <div class="text-center">
+                                                        <img class="h-16 w-16 object-contain mx-auto mb-4"
+                                                                src="assets/rubico.png" alt="Rubico" />
+                                                        <p
+                                                                class="font-label-caps text-label-caps text-on-surface-variant">
+                                                                Rubico</p>
+                                                </div>
+                                        </div>
+                                        <div
+                                                class="bg-white/5 border border-white/10 rounded-xl p-8 flex items-center justify-center hover:border-electric-lime/40 hover:bg-white/[0.07] transition-all duration-300">
+                                                <div class="text-center">
+                                                        <img class="h-16 w-16 object-contain mx-auto mb-4"
+                                                                src="assets/tata.png" alt="Tata" />
+                                                        <p
+                                                                class="font-label-caps text-label-caps text-on-surface-variant">
+                                                                Tata</p>
+                                                </div>
+                                        </div>
                                 </div>
                         </div>
                 </section>
                 <!-- TESTIMONIALS -->
-                <section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-lowest">
+                <section class="py-section-gap px-margin-mobile md:px-margin-desktop section-dark">
                         <div class="max-w-container-max mx-auto">
                                 <div class="text-center mb-16">
                                         <span
@@ -853,7 +1098,7 @@
                                                 leaders worldwide.</h2>
                                 </div>
                                 <div class="grid md:grid-cols-3 gap-gutter">
-                                        <div class="bg-surface-bright premium-shadow rounded-lg p-8">
+                                        <div class="card-white rounded-lg p-8">
                                                 <div class="flex items-center gap-1 mb-4">
                                                         <span
                                                                 class="material-symbols-outlined text-electric-lime text-xl">star</span>
@@ -886,7 +1131,7 @@
                                                         </div>
                                                 </div>
                                         </div>
-                                        <div class="bg-surface-bright premium-shadow rounded-lg p-8">
+                                        <div class="card-white rounded-lg p-8">
                                                 <div class="flex items-center gap-1 mb-4">
                                                         <span
                                                                 class="material-symbols-outlined text-electric-lime text-xl">star</span>
@@ -956,7 +1201,7 @@
                         </div>
                 </section>
                 <!-- AWARDS & RECOGNITION -->
-                <section class="py-section-gap px-margin-mobile md:px-margin-desktop">
+                <section class="py-section-gap px-margin-mobile md:px-margin-desktop section-light">
                         <div class="max-w-container-max mx-auto">
                                 <div class="text-center mb-16">
                                         <span
@@ -965,7 +1210,7 @@
                                                 standards, independently verified.</h2>
                                 </div>
                                 <div class="grid md:grid-cols-4 gap-8">
-                                        <div class="text-center p-6 rounded-lg border border-outline-variant/10">
+                                        <div class="text-center p-6 rounded-lg card-white">
                                                 <span
                                                         class="material-symbols-outlined text-electric-lime text-4xl mb-4 block">emoji_events</span>
                                                 <h4 class="font-headline-md text-headline-md text-primary mb-2">Best
@@ -973,7 +1218,7 @@
                                                 <p class="font-body-md text-body-md text-on-surface-variant text-sm">
                                                         Global Travel Tech Awards</p>
                                         </div>
-                                        <div class="text-center p-6 rounded-lg border border-outline-variant/10">
+                                        <div class="text-center p-6 rounded-lg card-white">
                                                 <span
                                                         class="material-symbols-outlined text-electric-lime text-4xl mb-4 block">workspace_premium</span>
                                                 <h4 class="font-headline-md text-headline-md text-primary mb-2">ISO 9001
@@ -981,7 +1226,7 @@
                                                 <p class="font-body-md text-body-md text-on-surface-variant text-sm">
                                                         Quality & Information Security</p>
                                         </div>
-                                        <div class="text-center p-6 rounded-lg border border-outline-variant/10">
+                                        <div class="text-center p-6 rounded-lg card-white">
                                                 <span
                                                         class="material-symbols-outlined text-electric-lime text-4xl mb-4 block">star</span>
                                                 <h4 class="font-headline-md text-headline-md text-primary mb-2">4.9/5
@@ -989,7 +1234,7 @@
                                                 <p class="font-body-md text-body-md text-on-surface-variant text-sm">NPS
                                                         Score Across 250+ Clients</p>
                                         </div>
-                                        <div class="text-center p-6 rounded-lg border border-outline-variant/10">
+                                        <div class="text-center p-6 rounded-lg card-white">
                                                 <span
                                                         class="material-symbols-outlined text-electric-lime text-4xl mb-4 block">eco</span>
                                                 <h4 class="font-headline-md text-headline-md text-primary mb-2">Green
@@ -1001,7 +1246,7 @@
                         </div>
                 </section>
                 <!-- FINAL CTA -->
-                <section class="py-section-gap px-margin-mobile md:px-margin-desktop text-center">
+                <section class="py-section-gap px-margin-mobile md:px-margin-desktop text-center section-dark">
                         <div class="max-w-3xl mx-auto space-y-8">
                                 <h2
                                         class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary">
