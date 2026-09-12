@@ -286,7 +286,7 @@
                         </a>
                         <!-- Center Navigation (Hidden on Mobile) -->
                         <div
-                                class="hidden md:flex items-center gap-8 font-label-caps text-label-caps uppercase tracking-widest text-white/80">
+                                class="hidden md:flex items-center gap-6 font-label-caps text-label-caps uppercase tracking-widest text-white/80">
                                 <a class="hover:text-white transition-colors duration-300" href="index.html"
                                         id="nav-home">Home</a>
                                 <a class="hover:text-white transition-colors duration-300" href="company.html"
@@ -295,18 +295,22 @@
                                         id="nav-fleet">Fleet</a>
                                 <a class="hover:text-white transition-colors duration-300" href="pricing.html"
                                         id="nav-pricing">Pricing & Services</a>
+                                <a class="hover:text-white transition-colors duration-300" href="careers.html"
+                                        id="nav-careers">Careers</a>
+                                <a class="hover:text-white transition-colors duration-300" href="contact.html"
+                                        id="nav-contact">Contact</a>
                         </div>
                         <!-- Trailing Actions -->
                         <div class="hidden md:flex items-center gap-4">
-                                <a href="#"
+                                <a href="dashboard.html"
                                         class="font-label-caps text-label-caps uppercase tracking-widest text-white/80 hover:text-white transition-colors text-center inline-block">Corporate
                                         Login</a>
                                 <button onclick="openBookingModal()"
                                         class="font-label-caps text-label-caps uppercase tracking-widest px-6 py-3 rounded-lg font-bold btn-lime transition-colors">Get
                                         a Quote</button>
                         </div>
-                        <button class="md:hidden text-white">
-                                <span class="material-symbols-outlined">menu</span>
+                        <button onclick="openMobileMenu()" class="md:hidden text-white focus:outline-none p-2" aria-label="Open Navigation Menu">
+                                <span class="material-symbols-outlined text-2xl">menu</span>
                         </button>
                 </div>
         </nav>
@@ -327,11 +331,8 @@
                                 class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
                                 <h1
                                         class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-white mb-4">
-                                        The Fleet.</h1>
-                                <p class="font-body-lg text-body-lg text-white/80 max-w-2xl">Uncompromising
-                                        performance meets absolute refinement. Explore our curated selection of premium
-                                        mobility
-                                        solutions designed for modern enterprise.</p>
+                                        Our Indian Fleet.</h1>
+                                <p class="font-body-lg text-body-lg text-white/80 max-w-2xl">Dependable performance meets cost efficiency. Explore our standardized selection of practical, well-maintained Indian market vehicles for your enterprise travel desk.</p>
                         </div>
                 </header>
 
@@ -454,9 +455,49 @@
                                 <button
                                         class="bg-surface-container-lowest text-on-surface-variant border border-outline-variant/30 px-6 py-2 rounded-full font-label-caps text-label-caps uppercase tracking-widest hover:bg-surface-container transition-colors">Workforce</button>
                         </div>
-                        <!-- Grid -->
+                         <!-- Grid -->
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-gutter">
-                                <!-- Vehicle Card 1 - Maruti Suzuki Ertiga -->
+                                <!-- Vehicle Card 1 - Maruti Suzuki Dzire -->
+                                <article
+                                        class="bg-surface-container-lowest rounded-lg overflow-hidden card-shadow flex flex-col thin-border group">
+                                        <div
+                                                class="h-64 md:h-80 w-full overflow-hidden relative bg-surface-container-high">
+                                                <img alt="Maruti Suzuki Dzire"
+                                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                                        src="assets/dzire.png" />
+                                                <div
+                                                        class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-3 py-1 rounded font-label-caps text-label-caps text-primary border border-outline-variant/20">
+                                                        Compact Sedan</div>
+                                        </div>
+                                        <div class="p-8 flex flex-col flex-grow">
+                                                <div class="flex justify-between items-start mb-4">
+                                                        <h3
+                                                                class="font-headline-lg text-headline-lg text-primary leading-tight">
+                                                                Maruti Suzuki Dzire</h3>
+                                                </div>
+                                                <p
+                                                        class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                                                        India's most trusted corporate compact sedan. Outstanding fuel efficiency, quiet cabin, comfortable rear legroom, and reliable performance for daily staff commutes and city travel.</p>
+                                                <div
+                                                        class="flex items-center gap-6 mb-8 border-t border-b border-outline-variant/20 py-4">
+                                                        <div class="flex items-center gap-2 text-on-surface-variant">
+                                                                <span class="material-symbols-outlined text-secondary"
+                                                                        data-icon="group">group</span>
+                                                                <span class="font-label-caps text-label-caps">Max 4</span>
+                                                        </div>
+                                                        <div class="flex items-center gap-2 text-on-surface-variant">
+                                                                <span class="material-symbols-outlined text-secondary"
+                                                                        data-icon="luggage">luggage</span>
+                                                                <span class="font-label-caps text-label-caps">2 Large</span>
+                                                        </div>
+                                                </div>
+                                                <a href="car.html?id=dzire"
+                                                        class="w-full py-4 electric-lime-btn rounded-lg font-label-caps text-label-caps uppercase tracking-widest transition-colors font-bold text-center block">
+                                                        View Details
+                                                </a>
+                                        </div>
+                                </article>
+                                <!-- Vehicle Card 2 - Maruti Suzuki Ertiga -->
                                 <article
                                         class="bg-surface-container-lowest rounded-lg overflow-hidden card-shadow flex flex-col thin-border group">
                                         <div
@@ -466,7 +507,7 @@
                                                         src="assets/car_image1.png" />
                                                 <div
                                                         class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-3 py-1 rounded font-label-caps text-label-caps text-primary border border-outline-variant/20">
-                                                        Group</div>
+                                                        Group MUV</div>
                                         </div>
                                         <div class="p-8 flex flex-col flex-grow">
                                                 <div class="flex justify-between items-start mb-4">
@@ -476,20 +517,18 @@
                                                 </div>
                                                 <p
                                                         class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
-                                                        Versatile 7-seater MPV perfect for corporate group travel. Spacious interior with comfortable seating, fuel-efficient performance, and ample luggage space for team outings and business trips.</p>
+                                                        Versatile 7-seater MUV ideal for corporate team travel, project visits, and group airport transfers. Features flexible seating configurations, dual AC vents, and high luggage capacity.</p>
                                                 <div
                                                         class="flex items-center gap-6 mb-8 border-t border-b border-outline-variant/20 py-4">
                                                         <div class="flex items-center gap-2 text-on-surface-variant">
                                                                 <span class="material-symbols-outlined text-secondary"
                                                                         data-icon="group">group</span>
-                                                                <span class="font-label-caps text-label-caps">Max
-                                                                        7</span>
+                                                                <span class="font-label-caps text-label-caps">Max 6</span>
                                                         </div>
                                                         <div class="flex items-center gap-2 text-on-surface-variant">
                                                                 <span class="material-symbols-outlined text-secondary"
                                                                         data-icon="luggage">luggage</span>
-                                                                <span class="font-label-caps text-label-caps">4
-                                                                        Large</span>
+                                                                <span class="font-label-caps text-label-caps">4 Large</span>
                                                         </div>
                                                 </div>
                                                 <a href="car.html?id=ertiga"
@@ -498,127 +537,81 @@
                                                 </a>
                                         </div>
                                 </article>
-                                <!-- Vehicle Card 2 - MG Hector -->
+                                <!-- Vehicle Card 3 - Honda City -->
                                 <article
                                         class="bg-surface-container-lowest rounded-lg overflow-hidden card-shadow flex flex-col thin-border group">
                                         <div
                                                 class="h-64 md:h-80 w-full overflow-hidden relative bg-surface-container-high">
-                                                <img alt="MG Hector"
+                                                <img alt="Honda City"
                                                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                                        src="assets/car_image2.png" />
+                                                        src="assets/city.png" />
                                                 <div
                                                         class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-3 py-1 rounded font-label-caps text-label-caps text-primary border border-outline-variant/20">
-                                                        Premium</div>
+                                                        Executive Sedan</div>
                                         </div>
                                         <div class="p-8 flex flex-col flex-grow">
                                                 <div class="flex justify-between items-start mb-4">
                                                         <h3
                                                                 class="font-headline-lg text-headline-lg text-primary leading-tight">
-                                                                MG Hector</h3>
+                                                                Honda City</h3>
                                                 </div>
                                                 <p
                                                         class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
-                                                        Premium SUV with commanding road presence. Features luxurious interior, advanced infotainment system, and smooth ride quality ideal for executive travel and client meetings.</p>
+                                                        Spacious mid-executive sedan offering superior ride comfort, plush rear seat ergonomics, and refined performance for senior management travel and intercity business trips.</p>
                                                 <div
                                                         class="flex items-center gap-6 mb-8 border-t border-b border-outline-variant/20 py-4">
                                                         <div class="flex items-center gap-2 text-on-surface-variant">
                                                                 <span class="material-symbols-outlined text-secondary"
                                                                         data-icon="person">person</span>
-                                                                <span class="font-label-caps text-label-caps">Max
-                                                                        5</span>
+                                                                <span class="font-label-caps text-label-caps">Max 4</span>
                                                         </div>
                                                         <div class="flex items-center gap-2 text-on-surface-variant">
                                                                 <span class="material-symbols-outlined text-secondary"
                                                                         data-icon="luggage">luggage</span>
-                                                                <span class="font-label-caps text-label-caps">3
-                                                                        Large</span>
+                                                                <span class="font-label-caps text-label-caps">3 Large</span>
                                                         </div>
                                                 </div>
-                                                <a href="car.html?id=hector"
+                                                <a href="car.html?id=city"
                                                         class="w-full py-4 electric-lime-btn rounded-lg font-label-caps text-label-caps uppercase tracking-widest transition-colors font-bold text-center block">
                                                         View Details
                                                 </a>
                                         </div>
                                 </article>
-                                <!-- Vehicle Card 3 - BYD e6 -->
+                                <!-- Vehicle Card 4 - Tata Nexon EV -->
                                 <article
                                         class="bg-surface-container-lowest rounded-lg overflow-hidden card-shadow flex flex-col thin-border group">
                                         <div
                                                 class="h-64 md:h-80 w-full overflow-hidden relative bg-surface-container-high">
-                                                <img alt="BYD e6"
+                                                <img alt="Tata Nexon EV"
                                                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                                        src="assets/car_image3.png" />
+                                                        src="assets/nexon_ev.png" />
                                                 <div
                                                         class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-3 py-1 rounded font-label-caps text-label-caps text-primary border border-outline-variant/20">
-                                                        Electric</div>
+                                                        Electric SUV</div>
                                         </div>
                                         <div class="p-8 flex flex-col flex-grow">
                                                 <div class="flex justify-between items-start mb-4">
                                                         <h3
                                                                 class="font-headline-lg text-headline-lg text-primary leading-tight">
-                                                                BYD e6</h3>
+                                                                Tata Nexon EV</h3>
                                                 </div>
                                                 <p
                                                         class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
-                                                        Zero-emission electric MPV for sustainable corporate travel. Silent operation, spacious cabin with premium seating, and eco-friendly mobility for environmentally conscious organizations.</p>
+                                                        Zero-emission electric compact SUV for eco-conscious enterprise mobility. Silent cabin, zero carbon footprint, advanced battery tech, and cost-efficient corporate transfers.</p>
                                                 <div
                                                         class="flex items-center gap-6 mb-8 border-t border-b border-outline-variant/20 py-4">
                                                         <div class="flex items-center gap-2 text-on-surface-variant">
                                                                 <span class="material-symbols-outlined text-secondary"
                                                                         data-icon="group">group</span>
-                                                                <span class="font-label-caps text-label-caps">Max
-                                                                        7</span>
+                                                                <span class="font-label-caps text-label-caps">Max 4</span>
                                                         </div>
                                                         <div class="flex items-center gap-2 text-on-surface-variant">
                                                                 <span class="material-symbols-outlined text-secondary"
                                                                         data-icon="luggage">luggage</span>
-                                                                <span class="font-label-caps text-label-caps">5
-                                                                        Large</span>
+                                                                <span class="font-label-caps text-label-caps">3 Large</span>
                                                         </div>
                                                 </div>
-                                                <a href="car.html?id=byd-e6"
-                                                        class="w-full py-4 electric-lime-btn rounded-lg font-label-caps text-label-caps uppercase tracking-widest transition-colors font-bold text-center block">
-                                                        View Details
-                                                </a>
-                                        </div>
-                                </article>
-                                <!-- Vehicle Card 4 - Honda Mobilio -->
-                                <article
-                                        class="bg-surface-container-lowest rounded-lg overflow-hidden card-shadow flex flex-col thin-border group">
-                                        <div
-                                                class="h-64 md:h-80 w-full overflow-hidden relative bg-surface-container-high">
-                                                <img alt="Honda Mobilio"
-                                                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                                        src="assets/car_image4.png" />
-                                                <div
-                                                        class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-sm px-3 py-1 rounded font-label-caps text-label-caps text-primary border border-outline-variant/20">
-                                                        Workforce</div>
-                                        </div>
-                                        <div class="p-8 flex flex-col flex-grow">
-                                                <div class="flex justify-between items-start mb-4">
-                                                        <h3
-                                                                class="font-headline-lg text-headline-lg text-primary leading-tight">
-                                                                Honda Mobilio</h3>
-                                                </div>
-                                                <p
-                                                        class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
-                                                        Reliable 7-seater for daily corporate commute and workforce transportation. Honda's trusted build quality, comfortable ride, and efficient performance for regular business travel.</p>
-                                                <div
-                                                        class="flex items-center gap-6 mb-8 border-t border-b border-outline-variant/20 py-4">
-                                                        <div class="flex items-center gap-2 text-on-surface-variant">
-                                                                <span class="material-symbols-outlined text-secondary"
-                                                                        data-icon="group">group</span>
-                                                                <span class="font-label-caps text-label-caps">Max
-                                                                        7</span>
-                                                        </div>
-                                                        <div class="flex items-center gap-2 text-on-surface-variant">
-                                                                <span class="material-symbols-outlined text-secondary"
-                                                                        data-icon="luggage">luggage</span>
-                                                                <span class="font-label-caps text-label-caps">3
-                                                                        Large</span>
-                                                        </div>
-                                                </div>
-                                                <a href="car.html?id=mobilio"
+                                                <a href="car.html?id=nexon-ev"
                                                         class="w-full py-4 electric-lime-btn rounded-lg font-label-caps text-label-caps uppercase tracking-widest transition-colors font-bold text-center block">
                                                         View Details
                                                 </a>

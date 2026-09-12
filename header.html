@@ -1,24 +1,26 @@
-<!-- TopNavBar (Shared Component) -->
+<!-- TopNavBar (Canonical Shared Component) -->
 <nav class="bg-surface dark:bg-inverse-surface text-primary dark:text-inverse-primary shadow-sm sticky top-0 z-50 transition-colors">
-<div class="flex justify-between items-center w-full px-margin-desktop h-20 max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
-<!-- Brand -->
-<a href="index.html" class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight">
-                Executive Motion
-            </a>
-<!-- Center Navigation (Hidden on Mobile) -->
-<div class="hidden md:flex items-center gap-8 font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant dark:text-on-primary-fixed-variant">
-<a class="hover:text-primary transition-colors duration-300" href="index.html" id="nav-home">Home</a>
-<a class="hover:text-primary transition-colors duration-300" href="company.html" id="nav-company">Company</a>
-<a class="hover:text-primary transition-colors duration-300" href="fleet.html" id="nav-fleet">Fleet</a>
-<a class="hover:text-primary transition-colors duration-300" href="pricing.html" id="nav-pricing">Pricing & Services</a>
-</div>
-<!-- Trailing Actions -->
-<div class="hidden md:flex items-center gap-4">
-<a href="#" class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors text-center inline-block">Corporate Login</a>
-<button class="font-label-caps text-label-caps uppercase tracking-widest px-6 py-3 rounded-lg font-bold electric-lime-btn transition-colors">Get a Quote</button>
-</div>
-<button class="md:hidden text-primary">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
+        <div class="flex justify-between items-center w-full px-margin-desktop h-20 max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
+                <!-- Brand -->
+                <a href="index.html" class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight">
+                        Executive Motion
+                </a>
+                <!-- Center Navigation (Hidden on Mobile) -->
+                <div class="hidden md:flex items-center gap-6 font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant dark:text-on-primary-fixed-variant">
+                        <a class="hover:text-primary transition-colors duration-300" href="index.html" id="nav-home">Home</a>
+                        <a class="hover:text-primary transition-colors duration-300" href="company.html" id="nav-company">Company</a>
+                        <a class="hover:text-primary transition-colors duration-300" href="fleet.html" id="nav-fleet">Fleet</a>
+                        <a class="hover:text-primary transition-colors duration-300" href="pricing.html" id="nav-pricing">Pricing & Services</a>
+                        <a class="hover:text-primary transition-colors duration-300" href="careers.html" id="nav-careers">Careers</a>
+                        <a class="hover:text-primary transition-colors duration-300" href="contact.html" id="nav-contact">Contact</a>
+                </div>
+                <!-- Trailing Actions -->
+                <div class="hidden md:flex items-center gap-4">
+                        <a href="dashboard.html" class="font-label-caps text-label-caps uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors text-center inline-block">Corporate Login</a>
+                        <button onclick="openBookingModal()" class="font-label-caps text-label-caps uppercase tracking-widest px-6 py-3 rounded-lg font-bold btn-lime transition-colors">Get a Quote</button>
+                </div>
+                <button class="md:hidden text-primary" aria-label="Toggle Navigation Menu">
+                        <span class="material-symbols-outlined">menu</span>
+                </button>
+        </div>
 </nav>

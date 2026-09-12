@@ -127,20 +127,24 @@
         <!-- TopNavBar -->
         <nav class="absolute top-0 left-0 w-full z-50 transition-colors">
                 <div class="flex justify-between items-center w-full px-margin-desktop h-20 max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
-                        <a href="index.html" class="font-headline-md text-headline-md font-bold text-white tracking-tight">
-                                Executive Motion
-                        </a>
+                        <!-- Brand -->
+                        <a href="index.html" class="font-headline-md text-headline-md font-bold text-white tracking-tight">Executive Motion</a>
+                        <!-- Center Navigation -->
                         <div class="hidden md:flex items-center gap-8 font-label-caps text-label-caps uppercase tracking-widest text-white/80">
-                                <a class="hover:text-white transition-colors duration-300" href="index.html">Home</a>
-                                <a class="hover:text-white transition-colors duration-300" href="company.html">Company</a>
-                                <a class="hover:text-white transition-colors duration-300" href="fleet.html">Fleet</a>
+                                <a class="hover:text-white transition-colors duration-300" href="index.html" id="nav-home">Home</a>
+                                <a class="hover:text-white transition-colors duration-300" href="company.html" id="nav-company">Company</a>
+                                <a class="hover:text-white transition-colors duration-300" href="fleet.html" id="nav-fleet">Fleet</a>
+                                <a class="hover:text-white transition-colors duration-300" href="pricing.html" id="nav-pricing">Pricing & Services</a>
+                                <a class="hover:text-white transition-colors duration-300" href="careers.html" id="nav-careers">Careers</a>
+                                <a class="text-white border-b-2 border-electric-lime pb-1 font-bold" href="contact.html" id="nav-contact">Contact</a>
                         </div>
+                        <!-- Trailing Actions -->
                         <div class="hidden md:flex items-center gap-4">
-                                <a href="#" class="font-label-caps text-label-caps uppercase tracking-widest text-white/80 hover:text-white transition-colors text-center inline-block">Corporate Login</a>
+                                <a href="dashboard.html" class="font-label-caps text-label-caps uppercase tracking-widest text-white/80 hover:text-white transition-colors text-center inline-block">Corporate Login</a>
                                 <button onclick="openBookingModal()" class="font-label-caps text-label-caps uppercase tracking-widest px-6 py-3 rounded-lg font-bold btn-lime transition-colors">Get a Quote</button>
                         </div>
-                        <button class="md:hidden text-white">
-                                <span class="material-symbols-outlined">menu</span>
+                        <button onclick="openMobileMenu()" class="md:hidden text-white focus:outline-none p-2" aria-label="Open Navigation Menu">
+                                <span class="material-symbols-outlined text-2xl">menu</span>
                         </button>
                 </div>
         </nav>
@@ -226,8 +230,8 @@
                                                                 <span class="material-symbols-outlined">location_on</span>
                                                         </div>
                                                         <div>
-                                                                <h3 class="font-headline-md text-headline-md text-primary mb-1">Global Headquarters</h3>
-                                                                <p class="font-body-md text-body-md text-on-surface-variant">350 Fifth Avenue, Suite 4800<br>New York, NY 10118</p>
+                                                                <h3 class="font-headline-md text-headline-md text-primary mb-1">Corporate Headquarters</h3>
+                                                                <p class="font-body-md text-body-md text-on-surface-variant">DLF Cyber City, Phase II<br>Gurugram, Haryana 122002 (Delhi NCR)</p>
                                                         </div>
                                                 </div>
                                         </div>
@@ -238,8 +242,8 @@
                                                                 <span class="material-symbols-outlined">call</span>
                                                         </div>
                                                         <div>
-                                                                <h3 class="font-headline-md text-headline-md text-primary mb-1">Phone</h3>
-                                                                <p class="font-body-md text-body-md text-on-surface-variant">+1 (888) 555-0199<br>Mon-Fri, 8am-6pm EST</p>
+                                                                <h3 class="font-headline-md text-headline-md text-primary mb-1">Helpline & Bookings</h3>
+                                                                <p class="font-body-md text-body-md text-on-surface-variant">+91 124 456 7890 / +91 98765 43210<br>Mon-Sat, 8am-8pm IST (24/7 Duty Support)</p>
                                                         </div>
                                                 </div>
                                         </div>
@@ -251,7 +255,7 @@
                                                         </div>
                                                         <div>
                                                                 <h3 class="font-headline-md text-headline-md text-primary mb-1">Email</h3>
-                                                                <p class="font-body-md text-body-md text-on-surface-variant">corporate@executivemotion.com<br>support@executivemotion.com</p>
+                                                                <p class="font-body-md text-body-md text-on-surface-variant">corporate@executivemotion.in<br>support@executivemotion.in</p>
                                                         </div>
                                                 </div>
                                         </div>
@@ -262,8 +266,8 @@
                                                                 <span class="material-symbols-outlined">schedule</span>
                                                         </div>
                                                         <div>
-                                                                <h3 class="font-headline-md text-headline-md text-primary mb-1">Business Hours</h3>
-                                                                <p class="font-body-md text-body-md text-on-surface-variant">24/7 for Emergency Travel<br>9am-6pm for Account Support</p>
+                                                                <h3 class="font-headline-md text-headline-md text-primary mb-1">Operations Hours</h3>
+                                                                <p class="font-body-md text-body-md text-on-surface-variant">24/7 Driver & Fleet Operations<br>9am-6pm for Billing & Account Support</p>
                                                         </div>
                                                 </div>
                                         </div>
@@ -275,21 +279,21 @@
                 <section class="py-section-gap bg-primary-container w-full">
                         <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
                                 <div class="text-center mb-16">
-                                        <span class="font-label-caps text-label-caps text-on-primary-fixed tracking-widest uppercase mb-4 block">Our Offices</span>
-                                        <h2 class="font-headline-lg text-headline-lg text-primary-fixed">Global Presence.</h2>
+                                        <span class="font-label-caps text-label-caps text-on-primary-fixed tracking-widest uppercase mb-4 block">Regional Hubs</span>
+                                        <h2 class="font-headline-lg text-headline-lg text-primary-fixed">National Hub Presence.</h2>
                                 </div>
                                 <div class="grid md:grid-cols-3 gap-8">
                                         <div class="bg-primary rounded-xl p-8 text-center">
-                                                <h3 class="font-headline-md text-headline-md text-primary-fixed mb-2">New York</h3>
-                                                <p class="font-body-md text-body-md text-on-primary-fixed-variant">Americas Headquarters</p>
+                                                <h3 class="font-headline-md text-headline-md text-primary-fixed mb-2">Delhi NCR</h3>
+                                                <p class="font-body-md text-body-md text-on-primary-fixed-variant">North India HQ & Dispatch Hub</p>
                                         </div>
                                         <div class="bg-primary rounded-xl p-8 text-center">
-                                                <h3 class="font-headline-md text-headline-md text-primary-fixed mb-2">London</h3>
-                                                <p class="font-body-md text-body-md text-on-primary-fixed-variant">EMEA Headquarters</p>
+                                                <h3 class="font-headline-md text-headline-md text-primary-fixed mb-2">Mumbai</h3>
+                                                <p class="font-body-md text-body-md text-on-primary-fixed-variant">BKC West Hub</p>
                                         </div>
                                         <div class="bg-primary rounded-xl p-8 text-center">
-                                                <h3 class="font-headline-md text-headline-md text-primary-fixed mb-2">Singapore</h3>
-                                                <p class="font-body-md text-body-md text-on-primary-fixed-variant">APAC Center</p>
+                                                <h3 class="font-headline-md text-headline-md text-primary-fixed mb-2">Bengaluru</h3>
+                                                <p class="font-body-md text-body-md text-on-primary-fixed-variant">Outer Ring Road Tech Hub</p>
                                         </div>
                                 </div>
                         </div>
@@ -301,22 +305,22 @@
                 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-gutter max-w-container-max mx-auto px-margin-desktop mb-16">
                         <div class="col-span-2 lg:col-span-2">
                                 <div class="font-display-lg text-headline-lg text-primary-fixed mb-6">Executive Motion</div>
-                                <p class="font-body-md text-body-md text-white max-w-sm mb-6">Corporate Mobility, Managed Better. Executive transport solutions for teams that demand excellence.</p>
+                                <p class="font-body-md text-body-md text-white max-w-sm mb-6">Corporate Mobility, Managed Better. Practical and affordable transport solutions for growing businesses.</p>
                         </div>
                         <div class="col-span-1 lg:col-span-1">
                                 <h4 class="font-label-caps text-label-caps text-on-primary-fixed mb-4">Platform</h4>
                                 <ul class="space-y-3 font-body-md text-body-md text-on-primary-fixed-variant">
+                                        <li><a class="hover:text-primary-fixed transition-colors" href="pricing.html">Pricing &amp; Services</a></li>
                                         <li><a class="hover:text-primary-fixed transition-colors" href="fleet.html">Solutions</a></li>
                                         <li><a class="hover:text-primary-fixed transition-colors" href="fleet.html">Fleet</a></li>
-                                        <li><a class="hover:text-primary-fixed transition-colors" href="dashboard.html">Platform</a></li>
                                 </ul>
                         </div>
                         <div class="col-span-1 lg:col-span-1">
                                 <h4 class="font-label-caps text-label-caps text-on-primary-fixed mb-4">Company</h4>
                                 <ul class="space-y-3 font-body-md text-body-md text-on-primary-fixed-variant">
                                         <li><a class="hover:text-primary-fixed transition-colors" href="company.html">About Us</a></li>
-                                        <li><a class="hover:text-primary-fixed transition-colors" href="#">Careers</a></li>
-                                        <li><a class="hover:text-primary-fixed transition-colors" href="#">Contact</a></li>
+                                        <li><a class="hover:text-primary-fixed transition-colors" href="careers.html">Careers</a></li>
+                                        <li><a class="hover:text-primary-fixed transition-colors" href="contact.html">Contact</a></li>
                                 </ul>
                         </div>
                         <div class="col-span-2 lg:col-span-2">

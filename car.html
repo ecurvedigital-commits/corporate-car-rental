@@ -117,7 +117,31 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
-<body class="antialiased min-h-screen font-body-md text-body-md overflow-x-hidden">
+<body class="antialiased min-h-screen font-body-md text-body-md overflow-x-hidden pt-20">
+        <!-- TopNavBar -->
+        <nav class="fixed top-0 left-0 w-full z-50 bg-black text-white transition-colors">
+                <div class="flex justify-between items-center w-full px-margin-desktop h-20 max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
+                        <!-- Brand -->
+                        <a href="index.html" class="font-headline-md text-headline-md font-bold text-white tracking-tight">Executive Motion</a>
+                        <!-- Center Navigation -->
+                        <div class="hidden md:flex items-center gap-8 font-label-caps text-label-caps uppercase tracking-widest text-white/80">
+                                <a class="hover:text-white transition-colors duration-300" href="index.html" id="nav-home">Home</a>
+                                <a class="hover:text-white transition-colors duration-300" href="company.html" id="nav-company">Company</a>
+                                <a class="hover:text-white transition-colors duration-300" href="fleet.html" id="nav-fleet">Fleet</a>
+                                <a class="hover:text-white transition-colors duration-300" href="pricing.html" id="nav-pricing">Pricing & Services</a>
+                                <a class="hover:text-white transition-colors duration-300" href="careers.html" id="nav-careers">Careers</a>
+                                <a class="hover:text-white transition-colors duration-300" href="contact.html" id="nav-contact">Contact</a>
+                        </div>
+                        <!-- Trailing Actions -->
+                        <div class="hidden md:flex items-center gap-4">
+                                <a href="dashboard.html" class="font-label-caps text-label-caps uppercase tracking-widest text-white/80 hover:text-white transition-colors text-center inline-block">Corporate Login</a>
+                                <button onclick="openBookingModal()" class="font-label-caps text-label-caps uppercase tracking-widest px-6 py-3 rounded-lg font-bold btn-lime transition-colors">Get a Quote</button>
+                        </div>
+                        <button onclick="openMobileMenu()" class="md:hidden text-white focus:outline-none p-2" aria-label="Open Navigation Menu">
+                                <span class="material-symbols-outlined text-2xl">menu</span>
+                        </button>
+                </div>
+        </nav>
 <main class="w-full max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile pb-section-gap">
 <!-- Back Link -->
 <div class="pt-8 pb-4">
@@ -134,10 +158,10 @@
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
 <div>
 <span id="car-category-tag" class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded border border-white/30 font-label-caps text-label-caps mb-4">Executive Class</span>
-<h1 id="car-title" class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-2">Mercedes-Benz S-Class</h1>
-<p id="car-tagline" class="font-body-lg text-body-lg text-white/80 max-w-xl">The pinnacle of executive comfort, combining state-of-the-art technology with unparalleled refinement.</p>
+<h1 id="car-title" class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-2">Maruti Suzuki Dzire</h1>
+<p id="car-tagline" class="font-body-lg text-body-lg text-white/80 max-w-xl">Reliable, comfortable Indian corporate sedan.</p>
 </div>
-<button class="bg-electric-lime text-obsidian px-8 py-4 rounded font-label-caps text-label-caps hover:bg-[#b3e600] transition-colors shadow-lg self-start md:self-end">
+<button onclick="openBookingModal()" class="bg-electric-lime text-obsidian px-8 py-4 rounded font-label-caps text-label-caps hover:bg-[#b3e600] transition-colors shadow-lg self-start md:self-end">
                         Book This Vehicle
                     </button>
 </div>
@@ -272,13 +296,13 @@
 <div class="bg-surface-container-lowest rounded-xl p-6 card-shadow sticky top-24">
 <div class="flex justify-between items-center mb-6">
 <span class="font-body-lg text-body-lg text-on-surface-variant">Hourly Rate</span>
-<span id="car-hourly-rate" class="font-headline-md text-headline-md text-primary">₹2,500<span class="font-body-md text-body-md text-on-surface-variant font-normal">/hr</span></span>
+<span id="car-hourly-rate" class="font-headline-md text-headline-md text-primary">₹2,400<span class="font-body-md text-body-md text-on-surface-variant font-normal">/hr</span></span>
 </div>
-<button class="w-full bg-electric-lime text-obsidian px-6 py-4 rounded font-label-caps text-label-caps hover:bg-[#b3e600] transition-colors shadow-sm flex justify-center items-center gap-2">
+<button onclick="openBookingModal()" class="w-full bg-electric-lime text-obsidian px-6 py-4 rounded font-label-caps text-label-caps hover:bg-[#b3e600] transition-colors shadow-sm flex justify-center items-center gap-2">
 <span>Book This Vehicle</span>
 <span class="material-symbols-outlined text-sm">arrow_forward</span>
 </button>
-<p class="text-center font-label-caps text-label-caps text-on-surface-variant mt-4 opacity-70">Minimum 3 hours required</p>
+<p class="text-center font-label-caps text-label-caps text-on-surface-variant mt-4 opacity-70">Minimum 4 hours required</p>
 </div>
 </div>
 </div>
@@ -287,111 +311,131 @@
 <script>
     // Extract ID parameter from URL
     const urlParams = new URLSearchParams(window.location.search);
-    const carId = urlParams.get('id') || 'ertiga';
+    const carId = urlParams.get('id') || 'dzire';
 
-    // Embedded car data (avoids CORS issues with file:// protocol)
+    // Embedded car data matching cars.json
     const cars = {
-      "ertiga": {
-        "id": "ertiga",
-        "name": "Maruti Suzuki Ertiga",
-        "category": "Group Class",
-        "price": 2500,
-        "image": "assets/car_image1.png",
-        "description": "Versatile 7-seater MPV perfect for corporate group travel. Spacious interior with comfortable seating, fuel-efficient performance, and ample luggage space for team outings and business trips.",
-        "capacity": "7 Passengers",
-        "luggage": "4 Large",
-        "connectivity": "4G Wi-Fi",
-        "climate": "Dual-Zone Auto AC",
-        "engine": "1.5L K-Series Petrol",
+      "dzire": {
+        "id": "dzire",
+        "name": "Maruti Suzuki Dzire",
+        "category": "Compact Sedan",
+        "price": 1800,
+        "image": "assets/dzire.png",
+        "description": "India's most trusted corporate compact sedan. Outstanding fuel efficiency, rear AC vents, comfortable seating, and ideal for daily staff commutes, airport runs, and city business trips.",
+        "capacity": "4 Passengers",
+        "luggage": "2 Medium Suitcases",
+        "connectivity": "4G GPS Tracking",
+        "climate": "Automatic Climate Control",
+        "engine": "1.2L DualJet Petrol",
         "drive": "Front-Wheel Drive",
-        "suspension": "McPherson Strut / Torsion Beam",
+        "suspension": "MacPherson Strut",
         "upholstery": "Premium Fabric",
-        "seating": "Captain Seats with Armrest",
+        "seating": "Ergonomic Rear Bench with Armrest",
         "driver": {
           "name": "Rajesh Kumar",
-          "experience": "10 Years Corporate Transport",
-          "languages": "Hindi, English, Marathi"
+          "experience": "10 Years Corporate Mobility",
+          "languages": "Hindi, English, Punjabi"
         }
       },
-      "hector": {
-        "id": "hector",
-        "name": "MG Hector",
-        "category": "Premium Class",
-        "price": 3500,
-        "image": "assets/car_image2.png",
-        "description": "Premium SUV with commanding road presence. Features luxurious interior, advanced infotainment system, and smooth ride quality ideal for executive travel and client meetings.",
-        "capacity": "5 Passengers",
-        "luggage": "3 Large",
-        "connectivity": "5G Wi-Fi",
-        "climate": "Automatic Climate Control",
-        "engine": "2.0L Turbo Diesel / 1.5L Turbo Petrol",
+      "city": {
+        "id": "city",
+        "name": "Honda City",
+        "category": "Mid-Executive Sedan",
+        "price": 2500,
+        "image": "assets/city.png",
+        "description": "Refined mid-segment executive sedan offering superior rear legroom, plush leatherette seating, advanced safety features, and smooth ride comfort for senior management and visiting delegates.",
+        "capacity": "4 Passengers",
+        "luggage": "3 Large Suitcases",
+        "connectivity": "5G Wi-Fi & GPS",
+        "climate": "Automatic Dual-Zone AC",
+        "engine": "1.5L i-VTEC Petrol",
         "drive": "Front-Wheel Drive",
-        "suspension": "MacPherson Strut / Multi-Link",
-        "upholstery": "Leatherette Seats",
-        "seating": "6-Way Power Adjustable Driver",
+        "suspension": "Torsion Beam Rear",
+        "upholstery": "Leatherette",
+        "seating": "Executive Rear Lounge Seating",
         "driver": {
           "name": "Suresh Patel",
           "experience": "8 Years Executive Transport",
           "languages": "Hindi, English, Gujarati"
         }
       },
-      "byd-e6": {
-        "id": "byd-e6",
-        "name": "BYD e6",
-        "category": "Electric Class",
-        "price": 4000,
-        "image": "assets/car_image3.png",
-        "description": "Zero-emission electric MPV for sustainable corporate travel. Silent operation, spacious cabin with premium seating, and eco-friendly mobility for environmentally conscious organizations.",
-        "capacity": "7 Passengers",
-        "luggage": "5 Large",
-        "connectivity": "4G Wi-Fi",
+      "nexon-ev": {
+        "id": "nexon-ev",
+        "name": "Tata Nexon EV",
+        "category": "Electric SUV",
+        "price": 2400,
+        "image": "assets/nexon_ev.png",
+        "description": "Zero-emission electric SUV for eco-conscious corporate ESG travel. Whisper-quiet cabin, high ground clearance, and modern connected tech ideal for sustainable urban mobility.",
+        "capacity": "4 Passengers",
+        "luggage": "2 Large Suitcases",
+        "connectivity": "Connected Car Tech & Wi-Fi",
         "climate": "Automatic Climate Control",
-        "engine": "71.7 kWh Blade Battery",
+        "engine": "40.5 kWh Ziptron Battery",
         "drive": "Front-Wheel Drive",
-        "suspension": "MacPherson Strut / Multi-Link",
-        "upholstery": "Premium Leatherette",
-        "seating": "8-Way Power Adjustable Driver",
+        "suspension": "Independent MacPherson",
+        "upholstery": "Eco Leatherette",
+        "seating": "Multi-way Adjustable",
         "driver": {
           "name": "Anand Sharma",
-          "experience": "12 Years Corporate Transport",
+          "experience": "12 Years Corporate Fleet",
           "languages": "Hindi, English, Tamil"
+        }
+      },
+      "ertiga": {
+        "id": "ertiga",
+        "name": "Maruti Suzuki Ertiga",
+        "category": "6-7 Seater MUV",
+        "price": 2200,
+        "image": "assets/car_image1.png",
+        "description": "Versatile 7-seater MPV perfect for corporate group travel. Efficient hybrid powertrain, flexible seating configuration, and generous luggage capacity for field teams and group airport transfers.",
+        "capacity": "6-7 Passengers",
+        "luggage": "4 Medium Bags",
+        "connectivity": "GPS & 4G Fleet Tracker",
+        "climate": "Roof-mounted Rear AC Vents",
+        "engine": "1.5L K15C Smart Hybrid",
+        "drive": "Front-Wheel Drive",
+        "suspension": "Torsion Beam",
+        "upholstery": "Durable Fabric",
+        "seating": "Reclining 2nd & 3rd Row",
+        "driver": {
+          "name": "Vikram Singh",
+          "experience": "9 Years Corporate Fleet",
+          "languages": "Hindi, English, Marathi"
         }
       },
       "mobilio": {
         "id": "mobilio",
         "name": "Honda Mobilio",
-        "category": "Workforce Class",
+        "category": "Workforce MUV",
         "price": 2000,
         "image": "assets/car_image4.png",
-        "description": "Reliable 7-seater for daily corporate commute and workforce transportation. Honda's trusted build quality, comfortable ride, and efficient performance for regular business travel.",
+        "description": "Reliable 7-seater MPV for shift commutes and workforce transit. Built for durability, safety, and operational reliability across city routes.",
         "capacity": "7 Passengers",
-        "luggage": "3 Large",
-        "connectivity": "4G Wi-Fi",
-        "climate": "Manual AC with Rear Vents",
-        "engine": "1.5L i-VTEC Petrol",
+        "luggage": "3 Large Suitcases",
+        "connectivity": "GPS Tracker",
+        "climate": "Rear AC Vents",
+        "engine": "1.5L i-VTEC",
         "drive": "Front-Wheel Drive",
-        "suspension": "MacPherson Strut / Torsion Beam",
-        "upholstery": "Premium Fabric",
-        "seating": "Adjustable Headrests All Rows",
+        "suspension": "MacPherson Strut",
+        "upholstery": "Commercial Fabric",
+        "seating": "Split-folding Bench",
         "driver": {
-          "name": "Vikram Singh",
-          "experience": "7 Years Corporate Transport",
-          "languages": "Hindi, English, Punjabi"
+          "name": "Amit Deshmukh",
+          "experience": "7 Years Employee Transit",
+          "languages": "Hindi, English, Marathi"
         }
       }
     };
 
     // Get car data directly from embedded object
-    const car = cars[carId];
-    if (!car) {
-        document.body.innerHTML = '<div class="flex flex-col items-center justify-center h-screen font-body-lg text-primary gap-4"><div>Vehicle not found.</div><a href="fleet.html" class="px-6 py-3 bg-electric-lime text-obsidian rounded font-bold">Back to Fleet</a></div>';
-    } else {
+    const car = cars[carId] || cars['dzire'];
+    if (car) {
         document.title = `${car.name} - Executive Motion`;
         document.getElementById('car-bg-img').style.backgroundImage = `url('${car.image}')`;
         document.getElementById('car-category-tag').innerText = car.category;
         document.getElementById('car-title').innerText = car.name;
-        document.getElementById('car-tagline').innerText = `Experience the ultimate in ${car.category.toLowerCase()}.`;
-        document.getElementById('car-overview-title').innerText = `The Pinnacle of ${car.category}`;
+        document.getElementById('car-tagline').innerText = car.description;
+        document.getElementById('car-overview-title').innerText = `${car.name} Corporate Overview`;
         document.getElementById('car-overview-description').innerText = car.description;
         document.getElementById('car-capacity').innerText = car.capacity;
         document.getElementById('car-luggage').innerText = car.luggage;
@@ -406,7 +450,7 @@
         document.getElementById('car-spec-seating').innerText = car.seating;
         
         // Hourly rate in Indian Rupees
-        document.getElementById('car-hourly-rate').innerHTML = `₹${car.price.toLocaleString('en-IN')}<span class="font-body-md text-body-md text-on-surface-variant font-normal">/hr</span>`;
+        document.getElementById('car-hourly-rate').innerHTML = `₹${car.price.toLocaleString('en-IN')}<span class="font-body-md text-body-md text-on-surface-variant font-normal">/8hr</span>`;
 
         // Driver information
         if (car.driver) {
@@ -436,4 +480,5 @@
         });
     }
 </script>
+<script src="booking-popup.js"></script>
 </body></html>

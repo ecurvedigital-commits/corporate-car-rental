@@ -379,15 +379,15 @@
                         </div>
                         <!-- Trailing Actions -->
                         <div class="hidden md:flex items-center gap-4">
-                                <a href="#"
+                                <a href="dashboard.html"
                                         class="font-label-caps text-label-caps uppercase tracking-widest text-white/80 hover:text-white transition-colors text-center inline-block">Corporate
                                         Login</a>
                                 <button onclick="openBookingModal()"
                                         class="font-label-caps text-label-caps uppercase tracking-widest px-6 py-3 rounded-lg font-bold btn-lime transition-colors">Get
                                         a Quote</button>
                         </div>
-                        <button class="md:hidden text-white">
-                                <span class="material-symbols-outlined">menu</span>
+                        <button onclick="openMobileMenu()" class="md:hidden text-white focus:outline-none p-2" aria-label="Open Navigation Menu">
+                                <span class="material-symbols-outlined text-2xl">menu</span>
                         </button>
                 </div>
         </nav>
@@ -1097,106 +1097,165 @@
                                         <h2 class="font-headline-lg text-headline-lg text-primary">Trusted by industry
                                                 leaders worldwide.</h2>
                                 </div>
-                                <div class="grid md:grid-cols-3 gap-gutter">
-                                        <div class="card-white rounded-lg p-8">
-                                                <div class="flex items-center gap-1 mb-4">
-                                                        <span
-                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
-                                                        <span
-                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
-                                                        <span
-                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
-                                                        <span
-                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
-                                                        <span
-                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+                                        <!-- Testimonial 1 (Existing Verbatim) -->
+                                        <div class="card-white rounded-lg p-8 flex flex-col justify-between">
+                                                <div>
+                                                        <div class="flex items-center gap-1 mb-4">
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                        </div>
+                                                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 italic">
+                                                                "Executive Motion has completely transformed how we manage corporate travel across our offices in Mumbai, Delhi, and Bangalore. The platform's real-time tracking and cost analytics gave us 31% savings in just the first quarter."</p>
                                                 </div>
-                                                <p
-                                                        class="font-body-md text-body-md text-on-surface-variant mb-6 italic">
-                                                        "Executive Motion has completely transformed how we manage
-                                                        corporate travel across our offices in Mumbai, Delhi, and
-                                                        Bangalore. The platform's real-time tracking and cost analytics
-                                                        gave us 31% savings in just the first quarter."</p>
                                                 <div class="flex items-center gap-3">
-                                                        <div
-                                                                class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+                                                        <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
                                                                 <span class="text-white font-bold text-sm">RK</span>
                                                         </div>
                                                         <div>
-                                                                <p
-                                                                        class="font-headline-md text-headline-md text-primary text-sm">
-                                                                        Rajesh Kumar</p>
-                                                                <p
-                                                                        class="font-body-md text-body-md text-on-surface-variant text-xs">
-                                                                        Head of Corporate Travel, Tata Group</p>
+                                                                <p class="font-headline-md text-headline-md text-primary text-sm">Rajesh Kumar</p>
+                                                                <p class="font-body-md text-body-md text-on-surface-variant text-xs">Head of Corporate Travel, Tata Group</p>
                                                         </div>
                                                 </div>
                                         </div>
-                                        <div class="card-white rounded-lg p-8">
-                                                <div class="flex items-center gap-1 mb-4">
-                                                        <span
-                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
-                                                        <span
-                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
-                                                        <span
-                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
-                                                        <span
-                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
-                                                        <span
-                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                        <!-- Testimonial 2 (Existing Hinglish Verbatim) -->
+                                        <div class="card-white rounded-lg p-8 flex flex-col justify-between">
+                                                <div>
+                                                        <div class="flex items-center gap-1 mb-4">
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                        </div>
+                                                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 italic">
+                                                                "Bhai, Executive Motion ka service ekdum zabardast hai! 18 mahine ho gaye, ek bhi baar late pickup nahi hua. Humari C-suite team ke liye yeh level of consistency non-negotiable hai. Definitely the best in the business!"</p>
                                                 </div>
-                                                <p
-                                                        class="font-body-md text-body-md text-on-surface-variant mb-6 italic">
-                                                        "Bhai, Executive Motion ka service ekdum zabardast hai! 18
-                                                        mahine ho gaye, ek bhi baar late pickup nahi hua. Humari
-                                                        C-suite team ke liye yeh level of consistency non-negotiable
-                                                        hai. Definitely the best in the business!"</p>
                                                 <div class="flex items-center gap-3">
-                                                        <div
-                                                                class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+                                                        <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
                                                                 <span class="text-white font-bold text-sm">VS</span>
                                                         </div>
                                                         <div>
-                                                                <p
-                                                                        class="font-headline-md text-headline-md text-primary text-sm">
-                                                                        Vikram Sharma</p>
-                                                                <p
-                                                                        class="font-body-md text-body-md text-on-surface-variant text-xs">
-                                                                        CFO, Infosys</p>
+                                                                <p class="font-headline-md text-headline-md text-primary text-sm">Vikram Sharma</p>
+                                                                <p class="font-body-md text-body-md text-on-surface-variant text-xs">CFO, Infosys</p>
                                                         </div>
                                                 </div>
                                         </div>
-                                        <div class="bg-surface-bright premium-shadow rounded-lg p-8">
-                                                <div class="flex items-center gap-1 mb-4">
-                                                        <span
-                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
-                                                        <span
-                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
-                                                        <span
-                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
-                                                        <span
-                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
-                                                        <span
-                                                                class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                        <!-- Testimonial 3 (Existing Verbatim) -->
+                                        <div class="card-white rounded-lg p-8 flex flex-col justify-between">
+                                                <div>
+                                                        <div class="flex items-center gap-1 mb-4">
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                        </div>
+                                                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 italic">
+                                                                "Whether our leadership team is in Hyderabad, Chennai, or Singapore for meetings, the service quality remains consistently excellent. Executive Motion is our single trusted partner for all corporate mobility needs."</p>
                                                 </div>
-                                                <p
-                                                        class="font-body-md text-body-md text-on-surface-variant mb-6 italic">
-                                                        "Whether our leadership team is in Hyderabad, Chennai, or
-                                                        Singapore for meetings, the service quality remains
-                                                        consistently excellent. Executive Motion is our single trusted
-                                                        partner for all corporate mobility needs."</p>
                                                 <div class="flex items-center gap-3">
-                                                        <div
-                                                                class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+                                                        <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
                                                                 <span class="text-white font-bold text-sm">PD</span>
                                                         </div>
                                                         <div>
-                                                                <p
-                                                                        class="font-headline-md text-headline-md text-primary text-sm">
-                                                                        Priya Deshpande</p>
-                                                                <p
-                                                                        class="font-body-md text-body-md text-on-surface-variant text-xs">
-                                                                        Director of Operations, Wipro</p>
+                                                                <p class="font-headline-md text-headline-md text-primary text-sm">Priya Deshpande</p>
+                                                                <p class="font-body-md text-body-md text-on-surface-variant text-xs">Director of Operations, Wipro</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- Testimonial 4 (New) -->
+                                        <div class="card-white rounded-lg p-8 flex flex-col justify-between">
+                                                <div>
+                                                        <div class="flex items-center gap-1 mb-4">
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                        </div>
+                                                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 italic">
+                                                                "The billing transparency and GST invoice automation saved our finance team hours of reconciliation every month. Exceptional service quality across Delhi NCR."</p>
+                                                </div>
+                                                <div class="flex items-center gap-3">
+                                                        <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+                                                                <span class="text-white font-bold text-sm">AS</span>
+                                                        </div>
+                                                        <div>
+                                                                <p class="font-headline-md text-headline-md text-primary text-sm">Alok Saxena</p>
+                                                                <p class="font-body-md text-body-md text-on-surface-variant text-xs">VP Finance, Tech Mahindra</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- Testimonial 5 (New) -->
+                                        <div class="card-white rounded-lg p-8 flex flex-col justify-between">
+                                                <div>
+                                                        <div class="flex items-center gap-1 mb-4">
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                        </div>
+                                                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 italic">
+                                                                "For our daily employee airport transfers and intercity factory visits, Executive Motion's Dzire and Ertiga fleet has been 100% reliable for over two years."</p>
+                                                </div>
+                                                <div class="flex items-center gap-3">
+                                                        <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+                                                                <span class="text-white font-bold text-sm">SR</span>
+                                                        </div>
+                                                        <div>
+                                                                <p class="font-headline-md text-headline-md text-primary text-sm">Sunita Rao</p>
+                                                                <p class="font-body-md text-body-md text-on-surface-variant text-xs">Sr. Operations Manager, Reliance Retail</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- Testimonial 6 (New) -->
+                                        <div class="card-white rounded-lg p-8 flex flex-col justify-between">
+                                                <div>
+                                                        <div class="flex items-center gap-1 mb-4">
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                        </div>
+                                                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 italic">
+                                                                "Punctual driver reporting, clean vehicles, and transparent per-kilometer rates. They are our go-to partner for all client and executive mobility in North India."</p>
+                                                </div>
+                                                <div class="flex items-center gap-3">
+                                                        <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+                                                                <span class="text-white font-bold text-sm">RM</span>
+                                                        </div>
+                                                        <div>
+                                                                <p class="font-headline-md text-headline-md text-primary text-sm">Rohan Mehta</p>
+                                                                <p class="font-body-md text-body-md text-on-surface-variant text-xs">Managing Director, Rubico Tech</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- Testimonial 7 (New) -->
+                                        <div class="card-white rounded-lg p-8 flex flex-col justify-between md:col-span-2 lg:col-span-1">
+                                                <div>
+                                                        <div class="flex items-center gap-1 mb-4">
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                                <span class="material-symbols-outlined text-electric-lime text-xl">star</span>
+                                                        </div>
+                                                        <p class="font-body-md text-body-md text-on-surface-variant mb-6 italic">
+                                                                "Switching our corporate travel contract to Executive Motion gave us zero-cancellation reliability and significant monthly cost savings across all regional hubs."</p>
+                                                </div>
+                                                <div class="flex items-center gap-3">
+                                                        <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+                                                                <span class="text-white font-bold text-sm">KI</span>
+                                                        </div>
+                                                        <div>
+                                                                <p class="font-headline-md text-headline-md text-primary text-sm">Kavita Iyer</p>
+                                                                <p class="font-body-md text-body-md text-on-surface-variant text-xs">Corporate Admin Head, Financial Services Solutions</p>
                                                         </div>
                                                 </div>
                                         </div>

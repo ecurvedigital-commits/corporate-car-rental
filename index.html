@@ -528,7 +528,7 @@
                         </a>
                         <!-- Center Navigation (Hidden on Mobile) -->
                         <div
-                                class="hidden md:flex items-center gap-8 font-label-caps text-label-caps uppercase tracking-widest text-white/80">
+                                class="hidden md:flex items-center gap-6 font-label-caps text-label-caps uppercase tracking-widest text-white/80">
                                 <a class="text-white border-b-2 border-electric-lime pb-1 font-bold" href="index.html"
                                         id="nav-home">Home</a>
                                 <a class="hover:text-white transition-colors duration-300" href="company.html"
@@ -537,18 +537,22 @@
                                         id="nav-fleet">Fleet</a>
                                 <a class="hover:text-white transition-colors duration-300" href="pricing.html"
                                         id="nav-pricing">Pricing & Services</a>
+                                <a class="hover:text-white transition-colors duration-300" href="careers.html"
+                                        id="nav-careers">Careers</a>
+                                <a class="hover:text-white transition-colors duration-300" href="contact.html"
+                                        id="nav-contact">Contact</a>
                         </div>
                         <!-- Trailing Actions -->
                         <div class="hidden md:flex items-center gap-4">
-                                <a href="#"
+                                <a href="dashboard.html"
                                         class="font-label-caps text-label-caps uppercase tracking-widest text-white/80 hover:text-white transition-colors text-center inline-block">Corporate
                                         Login</a>
                                 <button onclick="openBookingModal()"
                                         class="font-label-caps text-label-caps uppercase tracking-widest px-6 py-3 rounded-lg font-bold btn-lime transition-colors">Get
                                         a Quote</button>
                         </div>
-                        <button class="md:hidden text-white">
-                                <span class="material-symbols-outlined">menu</span>
+                        <button onclick="openMobileMenu()" class="md:hidden text-white focus:outline-none p-2" aria-label="Open Navigation Menu">
+                                <span class="material-symbols-outlined text-2xl">menu</span>
                         </button>
                 </div>
         </nav>
@@ -568,9 +572,7 @@
                                                 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-6">
                                                 Corporate Mobility,<br />Managed Better.</h1>
                                         <p class="font-body-lg text-body-lg text-surface-container-high max-w-2xl mb-8">
-                                                Elevate your enterprise travel with our centralized platform. Premium
-                                                chauffeur-driven transport, unified billing, and absolute precision for
-                                                teams that demand excellence.</p>
+                                                Dependable, budget-conscious ground transport across Indian cities. Built for daily staff commutes, airport transfers, and intercity visits with transparent pricing and full GST compliance.</p>
                                         <div class="flex flex-col sm:flex-row gap-4">
                                                 <button onclick="openBookingModal()"
                                                         class="font-label-caps text-label-caps uppercase tracking-widest px-8 py-4 rounded-lg font-bold btn-lime transition-colors flex items-center justify-center gap-2">Get
@@ -633,18 +635,10 @@
                                                 class="font-headline-lg text-headline-lg md:text-display-lg-mobile text-primary mb-6">
                                                 Redefining Corporate Mobility</h2>
                                         <p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
-                                                Executive Motion is a premium corporate car rental platform built for
-                                                enterprises that demand precision, reliability, and elevated travel
-                                                experiences. We combine luxury fleet management with cutting-edge
-                                                technology to deliver seamless ground transportation for businesses of
-                                                every scale.</p>
+                                                Executive Motion is a practical corporate car rental platform built for
+                                                Indian enterprises that require reliable, cost-effective, and punctual ground transport. We combine well-maintained Indian market vehicles with transparent per-kilometer and daily package rates for businesses of all sizes.</p>
                                         <p class="font-body-md text-body-md text-on-surface-variant mb-8">
-                                                From C-suite executive travel and airport transfers to large-scale
-                                                corporate events and daily employee commutes, we handle every aspect of
-                                                business mobility with uncompromising standards. Our centralized
-                                                platform
-                                                gives your team complete visibility, unified billing, and real-time
-                                                control over every trip.</p>
+                                                From daily staff commuting and airport transfers to intercity site visits and group employee shuttles, we handle corporate mobility with reliability and GST compliance. Our centralized portal gives your travel desk complete visibility and monthly unified billing.</p>
                                         <a href="company.html"
                                                 class="inline-flex items-center gap-2 font-label-caps text-label-caps uppercase tracking-widest text-primary hover:text-electric-lime transition-colors">
                                                 Learn Our Story <span
@@ -758,9 +752,7 @@
                                                 <h3 class="font-headline-md text-headline-md text-white mb-3">
                                                         Media & Entertainment</h3>
                                                 <p class="font-body-md text-body-md text-white/60">
-                                                        High-profile talent transport, production logistics, and
-                                                        VIP event coordination with absolute discretion and
-                                                        flexibility.</p>
+                                                        Punctual cast & crew transport, shoot location shuttles, and flexible production team mobility with transparent accounting.</p>
                                         </div>
                                         <div
                                                 class="group p-8 rounded-xl bg-white/[0.04] border border-white/10 hover:border-electric-lime/40 hover:bg-white/[0.07] transition-all duration-300">
@@ -942,13 +934,13 @@
                                         <div class="text-center">
                                                 <div
                                                         class="font-display-lg text-headline-lg md:text-display-lg-mobile text-electric-lime mb-2 stat-number">
-                                                        100+</div>
+                                                        15+</div>
                                                 <div
                                                         class="font-label-caps text-label-caps text-on-primary-fixed-variant">
-                                                        Cities Worldwide</div>
+                                                        Indian Cities Covered</div>
                                                 <p
                                                         class="font-body-md text-body-md text-on-primary-fixed-variant mt-2 text-sm">
-                                                        Global network spanning 6 continents</p>
+                                                        Operational hubs across Delhi NCR, Mumbai, Bengaluru, Hyderabad, and Pune</p>
                                         </div>
                                         <div class="text-center">
                                                 <div
@@ -1309,7 +1301,7 @@
                                                         class="font-body-md text-body-md text-on-surface-variant text-sm mb-4">
                                                         Our team is ready to help you find the right solution for your
                                                         organization.</p>
-                                                <a href="#"
+                                                <a href="contact.html"
                                                         class="inline-flex items-center gap-2 font-label-caps text-label-caps uppercase tracking-widest text-primary hover:text-electric-lime transition-colors">
                                                         Contact Sales <span
                                                                 class="material-symbols-outlined text-sm">arrow_forward</span>
@@ -1396,16 +1388,7 @@
                                                                 style="max-height: 0;">
                                                                 <p
                                                                         class="font-body-md text-body-md text-on-surface-variant pb-6">
-                                                                        Executive Motion operates in 100+ cities across
-                                                                        6 continents, with key hubs in London, New
-                                                                        York, Singapore, Mumbai, Dubai, and Sydney. Our
-                                                                        global network ensures consistent service
-                                                                        quality whether your team is traveling
-                                                                        domestically or internationally. We continuously
-                                                                        expand to new markets based on client demand and
-                                                                        can arrange services in additional cities
-                                                                        through our vetted partner network upon request.
-                                                                </p>
+                                                                        Executive Motion operates across major Indian metropolitan and industrial hubs, including Delhi NCR (Gurugram, Noida), Mumbai, Bengaluru, Hyderabad, Chennai, Pune, Kolkata, and Ahmedabad. Our regional fleet network ensures punctual service for local commutes and intercity routes.</p>
                                                         </div>
                                                 </div>
                                                 <!-- FAQ 4 -->
@@ -1544,17 +1527,7 @@
                                                                 style="max-height: 0;">
                                                                 <p
                                                                         class="font-body-md text-body-md text-on-surface-variant pb-6">
-                                                                        Our fleet includes premium sedans (Mercedes
-                                                                        S-Class, BMW 7 Series, Audi A8), luxury SUVs
-                                                                        (Range Rover, Mercedes GLS), executive vans for
-                                                                        group travel, and specialty vehicles for
-                                                                        VIP and diplomatic transport. All vehicles are
-                                                                        less than 2 years old, impeccably maintained,
-                                                                        and equipped with Wi-Fi, charging ports, and
-                                                                        refreshments. We also accommodate specific
-                                                                        vehicle requests and can source specialty or
-                                                                        armored vehicles for high-security requirements
-                                                                        with advance notice.</p>
+                                                                        Our fleet is standardized around reliable, efficient Indian market models across clear tiers: Hatchbacks (Maruti Suzuki WagonR, Tata Tiago, Hyundai Grand i10 Nios), Compact Sedans (Maruti Suzuki Dzire, Honda Amaze, Hyundai Aura), Mid-Executive Sedans (Honda City, Hyundai Verna, Maruti Ciaz), Corporate MUVs (Maruti Suzuki Ertiga, Toyota Rumion, Kia Carens), Workforce Shuttles (Honda Mobilio, Maruti Eeco), and Electric Vehicles (Tata Nexon EV, Tata Tigor EV). All vehicles are clean, well-serviced, and equipped with GPS tracking.</p>
                                                         </div>
                                                 </div>
                                         </div>
@@ -1581,7 +1554,7 @@
                                                         premium service for C-suite and VIPs. Uncompromising standards
                                                         of privacy and comfort.</p>
                                                 <a class="inline-flex items-center gap-2 mt-4 font-label-caps text-label-caps text-primary group-hover:text-electric-lime transition-colors"
-                                                        href="#">Learn More <span
+                                                        href="pricing.html">Learn More <span
                                                                 class="material-symbols-outlined text-sm">arrow_forward</span></a>
                                         </div>
                                         <div class="mt-auto h-2/3 w-full relative">
@@ -1603,7 +1576,7 @@
                                                                 Seamless arrivals and departures with real-time flight
                                                                 tracking and terminal meet-and-greets.</p>
                                                         <a class="inline-flex items-center gap-2 mt-4 font-label-caps text-label-caps text-primary group-hover:text-electric-lime transition-colors"
-                                                                href="#">Learn More <span
+                                                                href="pricing.html">Learn More <span
                                                                         class="material-symbols-outlined text-sm">arrow_forward</span></a>
                                                 </div>
                                                 <div
@@ -1628,7 +1601,7 @@
                                                                         and offsites.</p>
                                                         </div>
                                                         <a class="inline-flex items-center gap-2 mt-4 font-label-caps text-label-caps text-primary group-hover:text-electric-lime transition-colors"
-                                                                href="#">Learn More <span
+                                                                href="fleet.html">Learn More <span
                                                                         class="material-symbols-outlined text-sm">arrow_forward</span></a>
                                                 </div>
                                                 <div
@@ -1645,7 +1618,7 @@
                                                                         rides for staff.</p>
                                                         </div>
                                                         <a class="inline-flex items-center gap-2 mt-4 font-label-caps text-label-caps text-primary group-hover:text-electric-lime transition-colors"
-                                                                href="#">Learn More <span
+                                                                href="pricing.html">Learn More <span
                                                                         class="material-symbols-outlined text-sm">arrow_forward</span></a>
                                                 </div>
                                         </div>
